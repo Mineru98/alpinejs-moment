@@ -25,11 +25,20 @@ An Alpine JS **Moment Plugin** lets you programmatically monitor changes to the 
 <!-- You can choose the Locale. -->
 
 <!-- Alpine Plugins -->
-<script src="https://unpkg.com/@mineru98/alpinejs-moment@1.0.0/dist/moment.min.js" defer></script>
+<script
+    src="https://unpkg.com/@mineru98/alpinejs-moment@1.0.1/dist/moment.min.js"
+    defer
+></script>
 <!-- Alpine Plugins with Locale -->
-<script src="https://unpkg.com/@mineru98/alpinejs-moment@1.0.0/dist/ko/moment.min.js" defer></script>
+<script
+    src="https://unpkg.com/@mineru98/alpinejs-moment@1.0.1/dist/ko/moment.min.js"
+    defer
+></script>
 <!-- Alpine Plugins with Locale -->
-<script src="https://unpkg.com/@mineru98/alpinejs-moment@1.0.0/dist/jp/moment.min.js" defer></script>
+<script
+    src="https://unpkg.com/@mineru98/alpinejs-moment@1.0.1/dist/jp/moment.min.js"
+    defer
+></script>
 
 <!-- Alpine Core -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
