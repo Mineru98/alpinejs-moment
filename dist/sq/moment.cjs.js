@@ -3724,6 +3724,71 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/sq.js
+var require_sq = __commonJS({
+  "node_modules/moment/locale/sq.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var sq = moment2.defineLocale("sq", {
+        months: "Janar_Shkurt_Mars_Prill_Maj_Qershor_Korrik_Gusht_Shtator_Tetor_N\xEBntor_Dhjetor".split("_"),
+        monthsShort: "Jan_Shk_Mar_Pri_Maj_Qer_Kor_Gus_Sht_Tet_N\xEBn_Dhj".split("_"),
+        weekdays: "E Diel_E H\xEBn\xEB_E Mart\xEB_E M\xEBrkur\xEB_E Enjte_E Premte_E Shtun\xEB".split("_"),
+        weekdaysShort: "Die_H\xEBn_Mar_M\xEBr_Enj_Pre_Sht".split("_"),
+        weekdaysMin: "D_H_Ma_M\xEB_E_P_Sh".split("_"),
+        weekdaysParseExact: true,
+        meridiemParse: /PD|MD/,
+        isPM: function(input) {
+          return input.charAt(0) === "M";
+        },
+        meridiem: function(hours, minutes, isLower) {
+          return hours < 12 ? "PD" : "MD";
+        },
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Sot n\xEB] LT",
+          nextDay: "[Nes\xEBr n\xEB] LT",
+          nextWeek: "dddd [n\xEB] LT",
+          lastDay: "[Dje n\xEB] LT",
+          lastWeek: "dddd [e kaluar n\xEB] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "n\xEB %s",
+          past: "%s m\xEB par\xEB",
+          s: "disa sekonda",
+          ss: "%d sekonda",
+          m: "nj\xEB minut\xEB",
+          mm: "%d minuta",
+          h: "nj\xEB or\xEB",
+          hh: "%d or\xEB",
+          d: "nj\xEB dit\xEB",
+          dd: "%d dit\xEB",
+          M: "nj\xEB muaj",
+          MM: "%d muaj",
+          y: "nj\xEB vit",
+          yy: "%d vite"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return sq;
+    });
+  }
+});
+
 // builds/sq/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3796,9 @@ __export(exports, {
 
 // src/sq.js
 var import_moment = __toModule(require_moment());
+var import_sq = __toModule(require_sq());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("sq");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3808,13 @@ var sq_default = Plugin;
 var module_default = sq_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Flakërim Ismani : https://github.com/flakerimi
+//! author : Menelion Elensúle : https://github.com/Oire
+//! author : Oerd Cukalla : https://github.com/oerd
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Albanian [sq]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

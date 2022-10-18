@@ -3726,11 +3726,96 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ss.js
+var require_ss = __commonJS({
+  "node_modules/moment/locale/ss.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var ss = moment2.defineLocale("ss", {
+        months: "Bhimbidvwane_Indlovana_Indlov'lenkhulu_Mabasa_Inkhwekhweti_Inhlaba_Kholwane_Ingci_Inyoni_Imphala_Lweti_Ingongoni".split("_"),
+        monthsShort: "Bhi_Ina_Inu_Mab_Ink_Inh_Kho_Igc_Iny_Imp_Lwe_Igo".split("_"),
+        weekdays: "Lisontfo_Umsombuluko_Lesibili_Lesitsatfu_Lesine_Lesihlanu_Umgcibelo".split("_"),
+        weekdaysShort: "Lis_Umb_Lsb_Les_Lsi_Lsh_Umg".split("_"),
+        weekdaysMin: "Li_Us_Lb_Lt_Ls_Lh_Ug".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "h:mm A",
+          LTS: "h:mm:ss A",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY h:mm A",
+          LLLL: "dddd, D MMMM YYYY h:mm A"
+        },
+        calendar: {
+          sameDay: "[Namuhla nga] LT",
+          nextDay: "[Kusasa nga] LT",
+          nextWeek: "dddd [nga] LT",
+          lastDay: "[Itolo nga] LT",
+          lastWeek: "dddd [leliphelile] [nga] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "nga %s",
+          past: "wenteka nga %s",
+          s: "emizuzwana lomcane",
+          ss: "%d mzuzwana",
+          m: "umzuzu",
+          mm: "%d emizuzu",
+          h: "lihora",
+          hh: "%d emahora",
+          d: "lilanga",
+          dd: "%d emalanga",
+          M: "inyanga",
+          MM: "%d tinyanga",
+          y: "umnyaka",
+          yy: "%d iminyaka"
+        },
+        meridiemParse: /ekuseni|emini|entsambama|ebusuku/,
+        meridiem: function(hours, minutes, isLower) {
+          if (hours < 11) {
+            return "ekuseni";
+          } else if (hours < 15) {
+            return "emini";
+          } else if (hours < 19) {
+            return "entsambama";
+          } else {
+            return "ebusuku";
+          }
+        },
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "ekuseni") {
+            return hour;
+          } else if (meridiem === "emini") {
+            return hour >= 11 ? hour : hour + 12;
+          } else if (meridiem === "entsambama" || meridiem === "ebusuku") {
+            if (hour === 0) {
+              return 0;
+            }
+            return hour + 12;
+          }
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}/,
+        ordinal: "%d",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return ss;
+    });
+  }
+});
+
 // src/ss.js
 var import_moment = __toModule(require_moment());
+var import_ss = __toModule(require_ss());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ss");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3826,11 @@ var module_default = ss_default;
 export {
   module_default as default
 };
+//! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : siSwati [ss]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

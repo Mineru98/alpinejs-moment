@@ -3726,11 +3726,68 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/yo.js
+var require_yo = __commonJS({
+  "node_modules/moment/locale/yo.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var yo = moment2.defineLocale("yo", {
+        months: "S\u1EB9\u0301r\u1EB9\u0301_E\u0300re\u0300le\u0300_\u1EB8r\u1EB9\u0300na\u0300_I\u0300gbe\u0301_E\u0300bibi_O\u0300ku\u0300du_Ag\u1EB9mo_O\u0300gu\u0301n_Owewe_\u1ECC\u0300wa\u0300ra\u0300_Be\u0301lu\u0301_\u1ECC\u0300p\u1EB9\u0300\u0300".split("_"),
+        monthsShort: "S\u1EB9\u0301r_E\u0300rl_\u1EB8rn_I\u0300gb_E\u0300bi_O\u0300ku\u0300_Ag\u1EB9_O\u0300gu\u0301_Owe_\u1ECC\u0300wa\u0300_Be\u0301l_\u1ECC\u0300p\u1EB9\u0300\u0300".split("_"),
+        weekdays: "A\u0300i\u0300ku\u0301_Aje\u0301_I\u0300s\u1EB9\u0301gun_\u1ECCj\u1ECD\u0301ru\u0301_\u1ECCj\u1ECD\u0301b\u1ECD_\u1EB8ti\u0300_A\u0300ba\u0301m\u1EB9\u0301ta".split("_"),
+        weekdaysShort: "A\u0300i\u0300k_Aje\u0301_I\u0300s\u1EB9\u0301_\u1ECCjr_\u1ECCjb_\u1EB8ti\u0300_A\u0300ba\u0301".split("_"),
+        weekdaysMin: "A\u0300i\u0300_Aj_I\u0300s_\u1ECCr_\u1ECCb_\u1EB8t_A\u0300b".split("_"),
+        longDateFormat: {
+          LT: "h:mm A",
+          LTS: "h:mm:ss A",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY h:mm A",
+          LLLL: "dddd, D MMMM YYYY h:mm A"
+        },
+        calendar: {
+          sameDay: "[O\u0300ni\u0300 ni] LT",
+          nextDay: "[\u1ECC\u0300la ni] LT",
+          nextWeek: "dddd [\u1ECCs\u1EB9\u0300 to\u0301n'b\u1ECD] [ni] LT",
+          lastDay: "[A\u0300na ni] LT",
+          lastWeek: "dddd [\u1ECCs\u1EB9\u0300 to\u0301l\u1ECD\u0301] [ni] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "ni\u0301 %s",
+          past: "%s k\u1ECDja\u0301",
+          s: "i\u0300s\u1EB9ju\u0301 aaya\u0301 die",
+          ss: "aaya\u0301 %d",
+          m: "i\u0300s\u1EB9ju\u0301 kan",
+          mm: "i\u0300s\u1EB9ju\u0301 %d",
+          h: "wa\u0301kati kan",
+          hh: "wa\u0301kati %d",
+          d: "\u1ECDj\u1ECD\u0301 kan",
+          dd: "\u1ECDj\u1ECD\u0301 %d",
+          M: "osu\u0300 kan",
+          MM: "osu\u0300 %d",
+          y: "\u1ECDdu\u0301n kan",
+          yy: "\u1ECDdu\u0301n %d"
+        },
+        dayOfMonthOrdinalParse: /ọjọ́\s\d{1,2}/,
+        ordinal: "\u1ECDj\u1ECD\u0301 %d",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return yo;
+    });
+  }
+});
+
 // src/yo.js
 var import_moment = __toModule(require_moment());
+var import_yo = __toModule(require_yo());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("yo");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3798,11 @@ var module_default = yo_default;
 export {
   module_default as default
 };
+//! author : Atolagbe Abisoye : https://github.com/andela-batolagbe
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Yoruba Nigeria [yo]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

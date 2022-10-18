@@ -144,16 +144,16 @@ const makeFolder = (dir) => {
 
 for (let i = 0; i < locales.length; i++) {
     const input = `import moment from "moment";
+import "moment/locale/${locales[i]}";
 
-    const Plugin = function (Alpine) {
-        Alpine.magic("moment", () => {
-            moment.locale("${locales[i]}");
-            return (value) => moment(value);
-        });
-    };
-    
-    export default Plugin;
-    `;
+const Plugin = function (Alpine) {
+    Alpine.magic("moment", () => {
+        return (value) => moment(value);
+    });
+};
+
+export default Plugin;
+`;
 
     fs.writeFile(`src/${locales[i]}.js`, input, () => {});
 }

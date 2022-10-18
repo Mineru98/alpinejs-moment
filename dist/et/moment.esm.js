@@ -3726,11 +3726,87 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/et.js
+var require_et = __commonJS({
+  "node_modules/moment/locale/et.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function processRelativeTime(number, withoutSuffix, key, isFuture) {
+        var format = {
+          s: ["m\xF5ne sekundi", "m\xF5ni sekund", "paar sekundit"],
+          ss: [number + "sekundi", number + "sekundit"],
+          m: ["\xFChe minuti", "\xFCks minut"],
+          mm: [number + " minuti", number + " minutit"],
+          h: ["\xFChe tunni", "tund aega", "\xFCks tund"],
+          hh: [number + " tunni", number + " tundi"],
+          d: ["\xFChe p\xE4eva", "\xFCks p\xE4ev"],
+          M: ["kuu aja", "kuu aega", "\xFCks kuu"],
+          MM: [number + " kuu", number + " kuud"],
+          y: ["\xFChe aasta", "aasta", "\xFCks aasta"],
+          yy: [number + " aasta", number + " aastat"]
+        };
+        if (withoutSuffix) {
+          return format[key][2] ? format[key][2] : format[key][1];
+        }
+        return isFuture ? format[key][0] : format[key][1];
+      }
+      var et = moment2.defineLocale("et", {
+        months: "jaanuar_veebruar_m\xE4rts_aprill_mai_juuni_juuli_august_september_oktoober_november_detsember".split("_"),
+        monthsShort: "jaan_veebr_m\xE4rts_apr_mai_juuni_juuli_aug_sept_okt_nov_dets".split("_"),
+        weekdays: "p\xFChap\xE4ev_esmasp\xE4ev_teisip\xE4ev_kolmap\xE4ev_neljap\xE4ev_reede_laup\xE4ev".split("_"),
+        weekdaysShort: "P_E_T_K_N_R_L".split("_"),
+        weekdaysMin: "P_E_T_K_N_R_L".split("_"),
+        longDateFormat: {
+          LT: "H:mm",
+          LTS: "H:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D. MMMM YYYY",
+          LLL: "D. MMMM YYYY H:mm",
+          LLLL: "dddd, D. MMMM YYYY H:mm"
+        },
+        calendar: {
+          sameDay: "[T\xE4na,] LT",
+          nextDay: "[Homme,] LT",
+          nextWeek: "[J\xE4rgmine] dddd LT",
+          lastDay: "[Eile,] LT",
+          lastWeek: "[Eelmine] dddd LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s p\xE4rast",
+          past: "%s tagasi",
+          s: processRelativeTime,
+          ss: processRelativeTime,
+          m: processRelativeTime,
+          mm: processRelativeTime,
+          h: processRelativeTime,
+          hh: processRelativeTime,
+          d: processRelativeTime,
+          dd: "%d p\xE4eva",
+          M: processRelativeTime,
+          MM: processRelativeTime,
+          y: processRelativeTime,
+          yy: processRelativeTime
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return et;
+    });
+  }
+});
+
 // src/et.js
 var import_moment = __toModule(require_moment());
+var import_et = __toModule(require_et());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("et");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3817,12 @@ var module_default = et_default;
 export {
   module_default as default
 };
+//! author : Henry Kehlmann : https://github.com/madhenry
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+//! improvements : Illimar Tambek : https://github.com/ragulka
 //! license : MIT
+//! locale : Estonian [et]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

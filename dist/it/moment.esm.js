@@ -3726,11 +3726,85 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/it.js
+var require_it = __commonJS({
+  "node_modules/moment/locale/it.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var it = moment2.defineLocale("it", {
+        months: "gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre".split("_"),
+        monthsShort: "gen_feb_mar_apr_mag_giu_lug_ago_set_ott_nov_dic".split("_"),
+        weekdays: "domenica_luned\xEC_marted\xEC_mercoled\xEC_gioved\xEC_venerd\xEC_sabato".split("_"),
+        weekdaysShort: "dom_lun_mar_mer_gio_ven_sab".split("_"),
+        weekdaysMin: "do_lu_ma_me_gi_ve_sa".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: function() {
+            return "[Oggi a" + (this.hours() > 1 ? "lle " : this.hours() === 0 ? " " : "ll'") + "]LT";
+          },
+          nextDay: function() {
+            return "[Domani a" + (this.hours() > 1 ? "lle " : this.hours() === 0 ? " " : "ll'") + "]LT";
+          },
+          nextWeek: function() {
+            return "dddd [a" + (this.hours() > 1 ? "lle " : this.hours() === 0 ? " " : "ll'") + "]LT";
+          },
+          lastDay: function() {
+            return "[Ieri a" + (this.hours() > 1 ? "lle " : this.hours() === 0 ? " " : "ll'") + "]LT";
+          },
+          lastWeek: function() {
+            switch (this.day()) {
+              case 0:
+                return "[La scorsa] dddd [a" + (this.hours() > 1 ? "lle " : this.hours() === 0 ? " " : "ll'") + "]LT";
+              default:
+                return "[Lo scorso] dddd [a" + (this.hours() > 1 ? "lle " : this.hours() === 0 ? " " : "ll'") + "]LT";
+            }
+          },
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "tra %s",
+          past: "%s fa",
+          s: "alcuni secondi",
+          ss: "%d secondi",
+          m: "un minuto",
+          mm: "%d minuti",
+          h: "un'ora",
+          hh: "%d ore",
+          d: "un giorno",
+          dd: "%d giorni",
+          w: "una settimana",
+          ww: "%d settimane",
+          M: "un mese",
+          MM: "%d mesi",
+          y: "un anno",
+          yy: "%d anni"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}º/,
+        ordinal: "%d\xBA",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return it;
+    });
+  }
+});
+
 // src/it.js
 var import_moment = __toModule(require_moment());
+var import_it = __toModule(require_it());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("it");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3815,13 @@ var module_default = it_default;
 export {
   module_default as default
 };
+//! author : Lorenzo : https://github.com/aliem
+//! author: Marco : https://github.com/Manfre98
+//! author: Mattia Larentis: https://github.com/nostalgiaz
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Italian [it]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

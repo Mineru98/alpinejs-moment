@@ -3724,6 +3724,78 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/oc-lnc.js
+var require_oc_lnc = __commonJS({
+  "node_modules/moment/locale/oc-lnc.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var ocLnc = moment2.defineLocale("oc-lnc", {
+        months: {
+          standalone: "geni\xE8r_febri\xE8r_mar\xE7_abril_mai_junh_julhet_agost_setembre_oct\xF2bre_novembre_decembre".split("_"),
+          format: "de geni\xE8r_de febri\xE8r_de mar\xE7_d'abril_de mai_de junh_de julhet_d'agost_de setembre_d'oct\xF2bre_de novembre_de decembre".split("_"),
+          isFormat: /D[oD]?(\s)+MMMM/
+        },
+        monthsShort: "gen._febr._mar\xE7_abr._mai_junh_julh._ago._set._oct._nov._dec.".split("_"),
+        monthsParseExact: true,
+        weekdays: "dimenge_diluns_dimars_dim\xE8cres_dij\xF2us_divendres_dissabte".split("_"),
+        weekdaysShort: "dg._dl._dm._dc._dj._dv._ds.".split("_"),
+        weekdaysMin: "dg_dl_dm_dc_dj_dv_ds".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "H:mm",
+          LTS: "H:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM [de] YYYY",
+          ll: "D MMM YYYY",
+          LLL: "D MMMM [de] YYYY [a] H:mm",
+          lll: "D MMM YYYY, H:mm",
+          LLLL: "dddd D MMMM [de] YYYY [a] H:mm",
+          llll: "ddd D MMM YYYY, H:mm"
+        },
+        calendar: {
+          sameDay: "[u\xE8i a] LT",
+          nextDay: "[deman a] LT",
+          nextWeek: "dddd [a] LT",
+          lastDay: "[i\xE8r a] LT",
+          lastWeek: "dddd [passat a] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "d'aqu\xED %s",
+          past: "fa %s",
+          s: "unas segondas",
+          ss: "%d segondas",
+          m: "una minuta",
+          mm: "%d minutas",
+          h: "una ora",
+          hh: "%d oras",
+          d: "un jorn",
+          dd: "%d jorns",
+          M: "un mes",
+          MM: "%d meses",
+          y: "un an",
+          yy: "%d ans"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(r|n|t|è|a)/,
+        ordinal: function(number, period) {
+          var output = number === 1 ? "r" : number === 2 ? "n" : number === 3 ? "r" : number === 4 ? "t" : "\xE8";
+          if (period === "w" || period === "W") {
+            output = "a";
+          }
+          return number + output;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return ocLnc;
+    });
+  }
+});
+
 // builds/oc-lnc/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3803,9 @@ __export(exports, {
 
 // src/oc-lnc.js
 var import_moment = __toModule(require_moment());
+var import_oc_lnc = __toModule(require_oc_lnc());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("oc-lnc");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3815,11 @@ var oc_lnc_default = Plugin;
 var module_default = oc_lnc_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Quentin PAGÈS : https://github.com/Quenty31
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Occitan, lengadocian dialecte [oc-lnc]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

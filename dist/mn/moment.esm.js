@@ -3726,11 +3726,111 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/mn.js
+var require_mn = __commonJS({
+  "node_modules/moment/locale/mn.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function translate(number, withoutSuffix, key, isFuture) {
+        switch (key) {
+          case "s":
+            return withoutSuffix ? "\u0445\u044D\u0434\u0445\u044D\u043D \u0441\u0435\u043A\u0443\u043D\u0434" : "\u0445\u044D\u0434\u0445\u044D\u043D \u0441\u0435\u043A\u0443\u043D\u0434\u044B\u043D";
+          case "ss":
+            return number + (withoutSuffix ? " \u0441\u0435\u043A\u0443\u043D\u0434" : " \u0441\u0435\u043A\u0443\u043D\u0434\u044B\u043D");
+          case "m":
+          case "mm":
+            return number + (withoutSuffix ? " \u043C\u0438\u043D\u0443\u0442" : " \u043C\u0438\u043D\u0443\u0442\u044B\u043D");
+          case "h":
+          case "hh":
+            return number + (withoutSuffix ? " \u0446\u0430\u0433" : " \u0446\u0430\u0433\u0438\u0439\u043D");
+          case "d":
+          case "dd":
+            return number + (withoutSuffix ? " \u04E9\u0434\u04E9\u0440" : " \u04E9\u0434\u0440\u0438\u0439\u043D");
+          case "M":
+          case "MM":
+            return number + (withoutSuffix ? " \u0441\u0430\u0440" : " \u0441\u0430\u0440\u044B\u043D");
+          case "y":
+          case "yy":
+            return number + (withoutSuffix ? " \u0436\u0438\u043B" : " \u0436\u0438\u043B\u0438\u0439\u043D");
+          default:
+            return number;
+        }
+      }
+      var mn = moment2.defineLocale("mn", {
+        months: "\u041D\u044D\u0433\u0434\u04AF\u0433\u044D\u044D\u0440 \u0441\u0430\u0440_\u0425\u043E\u0451\u0440\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440_\u0413\u0443\u0440\u0430\u0432\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440_\u0414\u04E9\u0440\u04E9\u0432\u0434\u04AF\u0433\u044D\u044D\u0440 \u0441\u0430\u0440_\u0422\u0430\u0432\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440_\u0417\u0443\u0440\u0433\u0430\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440_\u0414\u043E\u043B\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440_\u041D\u0430\u0439\u043C\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440_\u0415\u0441\u0434\u04AF\u0433\u044D\u044D\u0440 \u0441\u0430\u0440_\u0410\u0440\u0430\u0432\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440_\u0410\u0440\u0432\u0430\u043D \u043D\u044D\u0433\u0434\u04AF\u0433\u044D\u044D\u0440 \u0441\u0430\u0440_\u0410\u0440\u0432\u0430\u043D \u0445\u043E\u0451\u0440\u0434\u0443\u0433\u0430\u0430\u0440 \u0441\u0430\u0440".split("_"),
+        monthsShort: "1 \u0441\u0430\u0440_2 \u0441\u0430\u0440_3 \u0441\u0430\u0440_4 \u0441\u0430\u0440_5 \u0441\u0430\u0440_6 \u0441\u0430\u0440_7 \u0441\u0430\u0440_8 \u0441\u0430\u0440_9 \u0441\u0430\u0440_10 \u0441\u0430\u0440_11 \u0441\u0430\u0440_12 \u0441\u0430\u0440".split("_"),
+        monthsParseExact: true,
+        weekdays: "\u041D\u044F\u043C_\u0414\u0430\u0432\u0430\u0430_\u041C\u044F\u0433\u043C\u0430\u0440_\u041B\u0445\u0430\u0433\u0432\u0430_\u041F\u04AF\u0440\u044D\u0432_\u0411\u0430\u0430\u0441\u0430\u043D_\u0411\u044F\u043C\u0431\u0430".split("_"),
+        weekdaysShort: "\u041D\u044F\u043C_\u0414\u0430\u0432_\u041C\u044F\u0433_\u041B\u0445\u0430_\u041F\u04AF\u0440_\u0411\u0430\u0430_\u0411\u044F\u043C".split("_"),
+        weekdaysMin: "\u041D\u044F_\u0414\u0430_\u041C\u044F_\u041B\u0445_\u041F\u04AF_\u0411\u0430_\u0411\u044F".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "YYYY-MM-DD",
+          LL: "YYYY \u043E\u043D\u044B MMMM\u044B\u043D D",
+          LLL: "YYYY \u043E\u043D\u044B MMMM\u044B\u043D D HH:mm",
+          LLLL: "dddd, YYYY \u043E\u043D\u044B MMMM\u044B\u043D D HH:mm"
+        },
+        meridiemParse: /ҮӨ|ҮХ/i,
+        isPM: function(input) {
+          return input === "\u04AE\u0425";
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 12) {
+            return "\u04AE\u04E8";
+          } else {
+            return "\u04AE\u0425";
+          }
+        },
+        calendar: {
+          sameDay: "[\u04E8\u043D\u04E9\u04E9\u0434\u04E9\u0440] LT",
+          nextDay: "[\u041C\u0430\u0440\u0433\u0430\u0430\u0448] LT",
+          nextWeek: "[\u0418\u0440\u044D\u0445] dddd LT",
+          lastDay: "[\u04E8\u0447\u0438\u0433\u0434\u04E9\u0440] LT",
+          lastWeek: "[\u04E8\u043D\u0433\u04E9\u0440\u0441\u04E9\u043D] dddd LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0434\u0430\u0440\u0430\u0430",
+          past: "%s \u04E9\u043C\u043D\u04E9",
+          s: translate,
+          ss: translate,
+          m: translate,
+          mm: translate,
+          h: translate,
+          hh: translate,
+          d: translate,
+          dd: translate,
+          M: translate,
+          MM: translate,
+          y: translate,
+          yy: translate
+        },
+        dayOfMonthOrdinalParse: /\d{1,2} өдөр/,
+        ordinal: function(number, period) {
+          switch (period) {
+            case "d":
+            case "D":
+            case "DDD":
+              return number + " \u04E9\u0434\u04E9\u0440";
+            default:
+              return number;
+          }
+        }
+      });
+      return mn;
+    });
+  }
+});
+
 // src/mn.js
 var import_moment = __toModule(require_moment());
+var import_mn = __toModule(require_mn());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("mn");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3841,11 @@ var module_default = mn_default;
 export {
   module_default as default
 };
+//! author : Javkhlantugs Nyamdorj : https://github.com/javkhaanj7
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Mongolian [mn]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

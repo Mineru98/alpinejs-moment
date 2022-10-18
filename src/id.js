@@ -1,11 +1,10 @@
 import moment from "moment";
+import "moment/locale/id";
 
-    const Plugin = function (Alpine) {
-        Alpine.magic("moment", () => {
-            moment.locale("id");
-            return (value) => moment(value);
-        });
-    };
-    
-    export default Plugin;
-    
+const Plugin = function (Alpine) {
+    Alpine.magic("moment", () => {
+        return (value) => moment(value);
+    });
+};
+
+export default Plugin;

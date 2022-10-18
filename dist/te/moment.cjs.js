@@ -3724,6 +3724,92 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/te.js
+var require_te = __commonJS({
+  "node_modules/moment/locale/te.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var te = moment2.defineLocale("te", {
+        months: "\u0C1C\u0C28\u0C35\u0C30\u0C3F_\u0C2B\u0C3F\u0C2C\u0C4D\u0C30\u0C35\u0C30\u0C3F_\u0C2E\u0C3E\u0C30\u0C4D\u0C1A\u0C3F_\u0C0F\u0C2A\u0C4D\u0C30\u0C3F\u0C32\u0C4D_\u0C2E\u0C47_\u0C1C\u0C42\u0C28\u0C4D_\u0C1C\u0C41\u0C32\u0C48_\u0C06\u0C17\u0C38\u0C4D\u0C1F\u0C41_\u0C38\u0C46\u0C2A\u0C4D\u0C1F\u0C46\u0C02\u0C2C\u0C30\u0C4D_\u0C05\u0C15\u0C4D\u0C1F\u0C4B\u0C2C\u0C30\u0C4D_\u0C28\u0C35\u0C02\u0C2C\u0C30\u0C4D_\u0C21\u0C3F\u0C38\u0C46\u0C02\u0C2C\u0C30\u0C4D".split("_"),
+        monthsShort: "\u0C1C\u0C28._\u0C2B\u0C3F\u0C2C\u0C4D\u0C30._\u0C2E\u0C3E\u0C30\u0C4D\u0C1A\u0C3F_\u0C0F\u0C2A\u0C4D\u0C30\u0C3F._\u0C2E\u0C47_\u0C1C\u0C42\u0C28\u0C4D_\u0C1C\u0C41\u0C32\u0C48_\u0C06\u0C17._\u0C38\u0C46\u0C2A\u0C4D._\u0C05\u0C15\u0C4D\u0C1F\u0C4B._\u0C28\u0C35._\u0C21\u0C3F\u0C38\u0C46.".split("_"),
+        monthsParseExact: true,
+        weekdays: "\u0C06\u0C26\u0C3F\u0C35\u0C3E\u0C30\u0C02_\u0C38\u0C4B\u0C2E\u0C35\u0C3E\u0C30\u0C02_\u0C2E\u0C02\u0C17\u0C33\u0C35\u0C3E\u0C30\u0C02_\u0C2C\u0C41\u0C27\u0C35\u0C3E\u0C30\u0C02_\u0C17\u0C41\u0C30\u0C41\u0C35\u0C3E\u0C30\u0C02_\u0C36\u0C41\u0C15\u0C4D\u0C30\u0C35\u0C3E\u0C30\u0C02_\u0C36\u0C28\u0C3F\u0C35\u0C3E\u0C30\u0C02".split("_"),
+        weekdaysShort: "\u0C06\u0C26\u0C3F_\u0C38\u0C4B\u0C2E_\u0C2E\u0C02\u0C17\u0C33_\u0C2C\u0C41\u0C27_\u0C17\u0C41\u0C30\u0C41_\u0C36\u0C41\u0C15\u0C4D\u0C30_\u0C36\u0C28\u0C3F".split("_"),
+        weekdaysMin: "\u0C06_\u0C38\u0C4B_\u0C2E\u0C02_\u0C2C\u0C41_\u0C17\u0C41_\u0C36\u0C41_\u0C36".split("_"),
+        longDateFormat: {
+          LT: "A h:mm",
+          LTS: "A h:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY, A h:mm",
+          LLLL: "dddd, D MMMM YYYY, A h:mm"
+        },
+        calendar: {
+          sameDay: "[\u0C28\u0C47\u0C21\u0C41] LT",
+          nextDay: "[\u0C30\u0C47\u0C2A\u0C41] LT",
+          nextWeek: "dddd, LT",
+          lastDay: "[\u0C28\u0C3F\u0C28\u0C4D\u0C28] LT",
+          lastWeek: "[\u0C17\u0C24] dddd, LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0C32\u0C4B",
+          past: "%s \u0C15\u0C4D\u0C30\u0C3F\u0C24\u0C02",
+          s: "\u0C15\u0C4A\u0C28\u0C4D\u0C28\u0C3F \u0C15\u0C4D\u0C37\u0C23\u0C3E\u0C32\u0C41",
+          ss: "%d \u0C38\u0C46\u0C15\u0C28\u0C4D\u0C32\u0C41",
+          m: "\u0C12\u0C15 \u0C28\u0C3F\u0C2E\u0C3F\u0C37\u0C02",
+          mm: "%d \u0C28\u0C3F\u0C2E\u0C3F\u0C37\u0C3E\u0C32\u0C41",
+          h: "\u0C12\u0C15 \u0C17\u0C02\u0C1F",
+          hh: "%d \u0C17\u0C02\u0C1F\u0C32\u0C41",
+          d: "\u0C12\u0C15 \u0C30\u0C4B\u0C1C\u0C41",
+          dd: "%d \u0C30\u0C4B\u0C1C\u0C41\u0C32\u0C41",
+          M: "\u0C12\u0C15 \u0C28\u0C46\u0C32",
+          MM: "%d \u0C28\u0C46\u0C32\u0C32\u0C41",
+          y: "\u0C12\u0C15 \u0C38\u0C02\u0C35\u0C24\u0C4D\u0C38\u0C30\u0C02",
+          yy: "%d \u0C38\u0C02\u0C35\u0C24\u0C4D\u0C38\u0C30\u0C3E\u0C32\u0C41"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}వ/,
+        ordinal: "%d\u0C35",
+        meridiemParse: /రాత్రి|ఉదయం|మధ్యాహ్నం|సాయంత్రం/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u0C30\u0C3E\u0C24\u0C4D\u0C30\u0C3F") {
+            return hour < 4 ? hour : hour + 12;
+          } else if (meridiem === "\u0C09\u0C26\u0C2F\u0C02") {
+            return hour;
+          } else if (meridiem === "\u0C2E\u0C27\u0C4D\u0C2F\u0C3E\u0C39\u0C4D\u0C28\u0C02") {
+            return hour >= 10 ? hour : hour + 12;
+          } else if (meridiem === "\u0C38\u0C3E\u0C2F\u0C02\u0C24\u0C4D\u0C30\u0C02") {
+            return hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 4) {
+            return "\u0C30\u0C3E\u0C24\u0C4D\u0C30\u0C3F";
+          } else if (hour < 10) {
+            return "\u0C09\u0C26\u0C2F\u0C02";
+          } else if (hour < 17) {
+            return "\u0C2E\u0C27\u0C4D\u0C2F\u0C3E\u0C39\u0C4D\u0C28\u0C02";
+          } else if (hour < 20) {
+            return "\u0C38\u0C3E\u0C2F\u0C02\u0C24\u0C4D\u0C30\u0C02";
+          } else {
+            return "\u0C30\u0C3E\u0C24\u0C4D\u0C30\u0C3F";
+          }
+        },
+        week: {
+          dow: 0,
+          doy: 6
+        }
+      });
+      return te;
+    });
+  }
+});
+
 // builds/te/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3817,9 @@ __export(exports, {
 
 // src/te.js
 var import_moment = __toModule(require_moment());
+var import_te = __toModule(require_te());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("te");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3829,11 @@ var te_default = Plugin;
 var module_default = te_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Krishna Chaitanya Thota : https://github.com/kcthota
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Telugu [te]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

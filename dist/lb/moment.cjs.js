@@ -3724,6 +3724,125 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/lb.js
+var require_lb = __commonJS({
+  "node_modules/moment/locale/lb.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function processRelativeTime(number, withoutSuffix, key, isFuture) {
+        var format = {
+          m: ["eng Minutt", "enger Minutt"],
+          h: ["eng Stonn", "enger Stonn"],
+          d: ["een Dag", "engem Dag"],
+          M: ["ee Mount", "engem Mount"],
+          y: ["ee Joer", "engem Joer"]
+        };
+        return withoutSuffix ? format[key][0] : format[key][1];
+      }
+      function processFutureTime(string) {
+        var number = string.substr(0, string.indexOf(" "));
+        if (eifelerRegelAppliesToNumber(number)) {
+          return "a " + string;
+        }
+        return "an " + string;
+      }
+      function processPastTime(string) {
+        var number = string.substr(0, string.indexOf(" "));
+        if (eifelerRegelAppliesToNumber(number)) {
+          return "viru " + string;
+        }
+        return "virun " + string;
+      }
+      function eifelerRegelAppliesToNumber(number) {
+        number = parseInt(number, 10);
+        if (isNaN(number)) {
+          return false;
+        }
+        if (number < 0) {
+          return true;
+        } else if (number < 10) {
+          if (4 <= number && number <= 7) {
+            return true;
+          }
+          return false;
+        } else if (number < 100) {
+          var lastDigit = number % 10, firstDigit = number / 10;
+          if (lastDigit === 0) {
+            return eifelerRegelAppliesToNumber(firstDigit);
+          }
+          return eifelerRegelAppliesToNumber(lastDigit);
+        } else if (number < 1e4) {
+          while (number >= 10) {
+            number = number / 10;
+          }
+          return eifelerRegelAppliesToNumber(number);
+        } else {
+          number = number / 1e3;
+          return eifelerRegelAppliesToNumber(number);
+        }
+      }
+      var lb = moment2.defineLocale("lb", {
+        months: "Januar_Februar_M\xE4erz_Abr\xEBll_Mee_Juni_Juli_August_September_Oktober_November_Dezember".split("_"),
+        monthsShort: "Jan._Febr._Mrz._Abr._Mee_Jun._Jul._Aug._Sept._Okt._Nov._Dez.".split("_"),
+        monthsParseExact: true,
+        weekdays: "Sonndeg_M\xE9indeg_D\xEBnschdeg_M\xEBttwoch_Donneschdeg_Freideg_Samschdeg".split("_"),
+        weekdaysShort: "So._M\xE9._D\xEB._M\xEB._Do._Fr._Sa.".split("_"),
+        weekdaysMin: "So_M\xE9_D\xEB_M\xEB_Do_Fr_Sa".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "H:mm [Auer]",
+          LTS: "H:mm:ss [Auer]",
+          L: "DD.MM.YYYY",
+          LL: "D. MMMM YYYY",
+          LLL: "D. MMMM YYYY H:mm [Auer]",
+          LLLL: "dddd, D. MMMM YYYY H:mm [Auer]"
+        },
+        calendar: {
+          sameDay: "[Haut um] LT",
+          sameElse: "L",
+          nextDay: "[Muer um] LT",
+          nextWeek: "dddd [um] LT",
+          lastDay: "[G\xEBschter um] LT",
+          lastWeek: function() {
+            switch (this.day()) {
+              case 2:
+              case 4:
+                return "[Leschten] dddd [um] LT";
+              default:
+                return "[Leschte] dddd [um] LT";
+            }
+          }
+        },
+        relativeTime: {
+          future: processFutureTime,
+          past: processPastTime,
+          s: "e puer Sekonnen",
+          ss: "%d Sekonnen",
+          m: processRelativeTime,
+          mm: "%d Minutten",
+          h: processRelativeTime,
+          hh: "%d Stonnen",
+          d: processRelativeTime,
+          dd: "%d Deeg",
+          M: processRelativeTime,
+          MM: "%d M\xE9int",
+          y: processRelativeTime,
+          yy: "%d Joer"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return lb;
+    });
+  }
+});
+
 // builds/lb/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3850,9 @@ __export(exports, {
 
 // src/lb.js
 var import_moment = __toModule(require_moment());
+var import_lb = __toModule(require_lb());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("lb");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3862,12 @@ var lb_default = Plugin;
 var module_default = lb_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : David Raison : https://github.com/kwisatz
+//! author : mweimerskirch : https://github.com/mweimerskirch
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Luxembourgish [lb]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

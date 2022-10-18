@@ -3726,11 +3726,74 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/eu.js
+var require_eu = __commonJS({
+  "node_modules/moment/locale/eu.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var eu = moment2.defineLocale("eu", {
+        months: "urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua".split("_"),
+        monthsShort: "urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.".split("_"),
+        monthsParseExact: true,
+        weekdays: "igandea_astelehena_asteartea_asteazkena_osteguna_ostirala_larunbata".split("_"),
+        weekdaysShort: "ig._al._ar._az._og._ol._lr.".split("_"),
+        weekdaysMin: "ig_al_ar_az_og_ol_lr".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "YYYY-MM-DD",
+          LL: "YYYY[ko] MMMM[ren] D[a]",
+          LLL: "YYYY[ko] MMMM[ren] D[a] HH:mm",
+          LLLL: "dddd, YYYY[ko] MMMM[ren] D[a] HH:mm",
+          l: "YYYY-M-D",
+          ll: "YYYY[ko] MMM D[a]",
+          lll: "YYYY[ko] MMM D[a] HH:mm",
+          llll: "ddd, YYYY[ko] MMM D[a] HH:mm"
+        },
+        calendar: {
+          sameDay: "[gaur] LT[etan]",
+          nextDay: "[bihar] LT[etan]",
+          nextWeek: "dddd LT[etan]",
+          lastDay: "[atzo] LT[etan]",
+          lastWeek: "[aurreko] dddd LT[etan]",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s barru",
+          past: "duela %s",
+          s: "segundo batzuk",
+          ss: "%d segundo",
+          m: "minutu bat",
+          mm: "%d minutu",
+          h: "ordu bat",
+          hh: "%d ordu",
+          d: "egun bat",
+          dd: "%d egun",
+          M: "hilabete bat",
+          MM: "%d hilabete",
+          y: "urte bat",
+          yy: "%d urte"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return eu;
+    });
+  }
+});
+
 // src/eu.js
 var import_moment = __toModule(require_moment());
+var import_eu = __toModule(require_eu());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("eu");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3804,11 @@ var module_default = eu_default;
 export {
   module_default as default
 };
+//! author : Eneko Illarramendi : https://github.com/eillarra
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Basque [eu]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

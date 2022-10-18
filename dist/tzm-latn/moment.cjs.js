@@ -3724,6 +3724,61 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/tzm-latn.js
+var require_tzm_latn = __commonJS({
+  "node_modules/moment/locale/tzm-latn.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var tzmLatn = moment2.defineLocale("tzm-latn", {
+        months: "innayr_br\u02E4ayr\u02E4_mar\u02E4s\u02E4_ibrir_mayyw_ywnyw_ywlywz_\u0263w\u0161t_\u0161wtanbir_kt\u02E4wbr\u02E4_nwwanbir_dwjnbir".split("_"),
+        monthsShort: "innayr_br\u02E4ayr\u02E4_mar\u02E4s\u02E4_ibrir_mayyw_ywnyw_ywlywz_\u0263w\u0161t_\u0161wtanbir_kt\u02E4wbr\u02E4_nwwanbir_dwjnbir".split("_"),
+        weekdays: "asamas_aynas_asinas_akras_akwas_asimwas_asi\u1E0Dyas".split("_"),
+        weekdaysShort: "asamas_aynas_asinas_akras_akwas_asimwas_asi\u1E0Dyas".split("_"),
+        weekdaysMin: "asamas_aynas_asinas_akras_akwas_asimwas_asi\u1E0Dyas".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[asdkh g] LT",
+          nextDay: "[aska g] LT",
+          nextWeek: "dddd [g] LT",
+          lastDay: "[assant g] LT",
+          lastWeek: "dddd [g] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "dadkh s yan %s",
+          past: "yan %s",
+          s: "imik",
+          ss: "%d imik",
+          m: "minu\u1E0D",
+          mm: "%d minu\u1E0D",
+          h: "sa\u025Ba",
+          hh: "%d tassa\u025Bin",
+          d: "ass",
+          dd: "%d ossan",
+          M: "ayowr",
+          MM: "%d iyyirn",
+          y: "asgas",
+          yy: "%d isgasn"
+        },
+        week: {
+          dow: 6,
+          doy: 12
+        }
+      });
+      return tzmLatn;
+    });
+  }
+});
+
 // builds/tzm-latn/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3786,9 @@ __export(exports, {
 
 // src/tzm-latn.js
 var import_moment = __toModule(require_moment());
+var import_tzm_latn = __toModule(require_tzm_latn());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("tzm-latn");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3798,11 @@ var tzm_latn_default = Plugin;
 var module_default = tzm_latn_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Abdel Said : https://github.com/abdelsaid
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Central Atlas Tamazight Latin [tzm-latn]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

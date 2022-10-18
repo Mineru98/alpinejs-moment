@@ -3724,6 +3724,95 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/tk.js
+var require_tk = __commonJS({
+  "node_modules/moment/locale/tk.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var suffixes = {
+        1: "'inji",
+        5: "'inji",
+        8: "'inji",
+        70: "'inji",
+        80: "'inji",
+        2: "'nji",
+        7: "'nji",
+        20: "'nji",
+        50: "'nji",
+        3: "'\xFCnji",
+        4: "'\xFCnji",
+        100: "'\xFCnji",
+        6: "'njy",
+        9: "'unjy",
+        10: "'unjy",
+        30: "'unjy",
+        60: "'ynjy",
+        90: "'ynjy"
+      };
+      var tk = moment2.defineLocale("tk", {
+        months: "\xDDanwar_Fewral_Mart_Aprel_Ma\xFD_I\xFDun_I\xFDul_Awgust_Sent\xFDabr_Okt\xFDabr_No\xFDabr_Dekabr".split("_"),
+        monthsShort: "\xDDan_Few_Mar_Apr_Ma\xFD_I\xFDn_I\xFDl_Awg_Sen_Okt_No\xFD_Dek".split("_"),
+        weekdays: "\xDDek\u015Fenbe_Du\u015Fenbe_Si\u015Fenbe_\xC7ar\u015Fenbe_Pen\u015Fenbe_Anna_\u015Eenbe".split("_"),
+        weekdaysShort: "\xDDek_Du\u015F_Si\u015F_\xC7ar_Pen_Ann_\u015Een".split("_"),
+        weekdaysMin: "\xDDk_D\u015F_S\u015F_\xC7r_Pn_An_\u015En".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[bug\xFCn sagat] LT",
+          nextDay: "[ertir sagat] LT",
+          nextWeek: "[indiki] dddd [sagat] LT",
+          lastDay: "[d\xFC\xFDn] LT",
+          lastWeek: "[ge\xE7en] dddd [sagat] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s so\u0148",
+          past: "%s \xF6\u0148",
+          s: "birn\xE4\xE7e sekunt",
+          m: "bir minut",
+          mm: "%d minut",
+          h: "bir sagat",
+          hh: "%d sagat",
+          d: "bir g\xFCn",
+          dd: "%d g\xFCn",
+          M: "bir a\xFD",
+          MM: "%d a\xFD",
+          y: "bir \xFDyl",
+          yy: "%d \xFDyl"
+        },
+        ordinal: function(number, period) {
+          switch (period) {
+            case "d":
+            case "D":
+            case "Do":
+            case "DD":
+              return number;
+            default:
+              if (number === 0) {
+                return number + "'unjy";
+              }
+              var a = number % 10, b = number % 100 - a, c = number >= 100 ? 100 : null;
+              return number + (suffixes[a] || suffixes[b] || suffixes[c]);
+          }
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return tk;
+    });
+  }
+});
+
 // builds/tk/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3820,9 @@ __export(exports, {
 
 // src/tk.js
 var import_moment = __toModule(require_moment());
+var import_tk = __toModule(require_tk());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("tk");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3832,11 @@ var tk_default = Plugin;
 var module_default = tk_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Atamyrat Abdyrahmanov : https://github.com/atamyratabdy
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Turkmen [tk]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

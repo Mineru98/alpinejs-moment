@@ -3726,11 +3726,111 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/es.js
+var require_es = __commonJS({
+  "node_modules/moment/locale/es.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var monthsShortDot = "ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.".split("_"), monthsShort = "ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic".split("_"), monthsParse = [
+        /^ene/i,
+        /^feb/i,
+        /^mar/i,
+        /^abr/i,
+        /^may/i,
+        /^jun/i,
+        /^jul/i,
+        /^ago/i,
+        /^sep/i,
+        /^oct/i,
+        /^nov/i,
+        /^dic/i
+      ], monthsRegex = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
+      var es = moment2.defineLocale("es", {
+        months: "enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre".split("_"),
+        monthsShort: function(m, format) {
+          if (!m) {
+            return monthsShortDot;
+          } else if (/-MMM-/.test(format)) {
+            return monthsShort[m.month()];
+          } else {
+            return monthsShortDot[m.month()];
+          }
+        },
+        monthsRegex,
+        monthsShortRegex: monthsRegex,
+        monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+        monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+        monthsParse,
+        longMonthsParse: monthsParse,
+        shortMonthsParse: monthsParse,
+        weekdays: "domingo_lunes_martes_mi\xE9rcoles_jueves_viernes_s\xE1bado".split("_"),
+        weekdaysShort: "dom._lun._mar._mi\xE9._jue._vie._s\xE1b.".split("_"),
+        weekdaysMin: "do_lu_ma_mi_ju_vi_s\xE1".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "H:mm",
+          LTS: "H:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D [de] MMMM [de] YYYY",
+          LLL: "D [de] MMMM [de] YYYY H:mm",
+          LLLL: "dddd, D [de] MMMM [de] YYYY H:mm"
+        },
+        calendar: {
+          sameDay: function() {
+            return "[hoy a la" + (this.hours() !== 1 ? "s" : "") + "] LT";
+          },
+          nextDay: function() {
+            return "[ma\xF1ana a la" + (this.hours() !== 1 ? "s" : "") + "] LT";
+          },
+          nextWeek: function() {
+            return "dddd [a la" + (this.hours() !== 1 ? "s" : "") + "] LT";
+          },
+          lastDay: function() {
+            return "[ayer a la" + (this.hours() !== 1 ? "s" : "") + "] LT";
+          },
+          lastWeek: function() {
+            return "[el] dddd [pasado a la" + (this.hours() !== 1 ? "s" : "") + "] LT";
+          },
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "en %s",
+          past: "hace %s",
+          s: "unos segundos",
+          ss: "%d segundos",
+          m: "un minuto",
+          mm: "%d minutos",
+          h: "una hora",
+          hh: "%d horas",
+          d: "un d\xEDa",
+          dd: "%d d\xEDas",
+          w: "una semana",
+          ww: "%d semanas",
+          M: "un mes",
+          MM: "%d meses",
+          y: "un a\xF1o",
+          yy: "%d a\xF1os"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}º/,
+        ordinal: "%d\xBA",
+        week: {
+          dow: 1,
+          doy: 4
+        },
+        invalidDate: "Fecha inv\xE1lida"
+      });
+      return es;
+    });
+  }
+});
+
 // src/es.js
 var import_moment = __toModule(require_moment());
+var import_es = __toModule(require_es());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("es");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3841,11 @@ var module_default = es_default;
 export {
   module_default as default
 };
+//! author : Julio Napurí : https://github.com/julionc
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Spanish [es]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

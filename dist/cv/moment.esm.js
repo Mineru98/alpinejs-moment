@@ -3726,11 +3726,71 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/cv.js
+var require_cv = __commonJS({
+  "node_modules/moment/locale/cv.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var cv = moment2.defineLocale("cv", {
+        months: "\u043A\u04D1\u0440\u043B\u0430\u0447_\u043D\u0430\u0440\u04D1\u0441_\u043F\u0443\u0448_\u0430\u043A\u0430_\u043C\u0430\u0439_\u04AB\u04D7\u0440\u0442\u043C\u0435_\u0443\u0442\u04D1_\u04AB\u0443\u0440\u043B\u0430_\u0430\u0432\u04D1\u043D_\u044E\u043F\u0430_\u0447\u04F3\u043A_\u0440\u0430\u0448\u0442\u0430\u0432".split("_"),
+        monthsShort: "\u043A\u04D1\u0440_\u043D\u0430\u0440_\u043F\u0443\u0448_\u0430\u043A\u0430_\u043C\u0430\u0439_\u04AB\u04D7\u0440_\u0443\u0442\u04D1_\u04AB\u0443\u0440_\u0430\u0432\u043D_\u044E\u043F\u0430_\u0447\u04F3\u043A_\u0440\u0430\u0448".split("_"),
+        weekdays: "\u0432\u044B\u0440\u0441\u0430\u0440\u043D\u0438\u043A\u0443\u043D_\u0442\u0443\u043D\u0442\u0438\u043A\u0443\u043D_\u044B\u0442\u043B\u0430\u0440\u0438\u043A\u0443\u043D_\u044E\u043D\u043A\u0443\u043D_\u043A\u04D7\u04AB\u043D\u0435\u0440\u043D\u0438\u043A\u0443\u043D_\u044D\u0440\u043D\u0435\u043A\u0443\u043D_\u0448\u04D1\u043C\u0430\u0442\u043A\u0443\u043D".split("_"),
+        weekdaysShort: "\u0432\u044B\u0440_\u0442\u0443\u043D_\u044B\u0442\u043B_\u044E\u043D_\u043A\u04D7\u04AB_\u044D\u0440\u043D_\u0448\u04D1\u043C".split("_"),
+        weekdaysMin: "\u0432\u0440_\u0442\u043D_\u044B\u0442_\u044E\u043D_\u043A\u04AB_\u044D\u0440_\u0448\u043C".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD-MM-YYYY",
+          LL: "YYYY [\u04AB\u0443\u043B\u0445\u0438] MMMM [\u0443\u0439\u04D1\u0445\u04D7\u043D] D[-\u043C\u04D7\u0448\u04D7]",
+          LLL: "YYYY [\u04AB\u0443\u043B\u0445\u0438] MMMM [\u0443\u0439\u04D1\u0445\u04D7\u043D] D[-\u043C\u04D7\u0448\u04D7], HH:mm",
+          LLLL: "dddd, YYYY [\u04AB\u0443\u043B\u0445\u0438] MMMM [\u0443\u0439\u04D1\u0445\u04D7\u043D] D[-\u043C\u04D7\u0448\u04D7], HH:mm"
+        },
+        calendar: {
+          sameDay: "[\u041F\u0430\u044F\u043D] LT [\u0441\u0435\u0445\u0435\u0442\u0440\u0435]",
+          nextDay: "[\u042B\u0440\u0430\u043D] LT [\u0441\u0435\u0445\u0435\u0442\u0440\u0435]",
+          lastDay: "[\u04D6\u043D\u0435\u0440] LT [\u0441\u0435\u0445\u0435\u0442\u0440\u0435]",
+          nextWeek: "[\u04AA\u0438\u0442\u0435\u0441] dddd LT [\u0441\u0435\u0445\u0435\u0442\u0440\u0435]",
+          lastWeek: "[\u0418\u0440\u0442\u043D\u04D7] dddd LT [\u0441\u0435\u0445\u0435\u0442\u0440\u0435]",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: function(output) {
+            var affix = /сехет$/i.exec(output) ? "\u0440\u0435\u043D" : /ҫул$/i.exec(output) ? "\u0442\u0430\u043D" : "\u0440\u0430\u043D";
+            return output + affix;
+          },
+          past: "%s \u043A\u0430\u044F\u043B\u043B\u0430",
+          s: "\u043F\u04D7\u0440-\u0438\u043A \u04AB\u0435\u043A\u043A\u0443\u043D\u0442",
+          ss: "%d \u04AB\u0435\u043A\u043A\u0443\u043D\u0442",
+          m: "\u043F\u04D7\u0440 \u043C\u0438\u043D\u0443\u0442",
+          mm: "%d \u043C\u0438\u043D\u0443\u0442",
+          h: "\u043F\u04D7\u0440 \u0441\u0435\u0445\u0435\u0442",
+          hh: "%d \u0441\u0435\u0445\u0435\u0442",
+          d: "\u043F\u04D7\u0440 \u043A\u0443\u043D",
+          dd: "%d \u043A\u0443\u043D",
+          M: "\u043F\u04D7\u0440 \u0443\u0439\u04D1\u0445",
+          MM: "%d \u0443\u0439\u04D1\u0445",
+          y: "\u043F\u04D7\u0440 \u04AB\u0443\u043B",
+          yy: "%d \u04AB\u0443\u043B"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}-мӗш/,
+        ordinal: "%d-\u043C\u04D7\u0448",
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return cv;
+    });
+  }
+});
+
 // src/cv.js
 var import_moment = __toModule(require_moment());
+var import_cv = __toModule(require_cv());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("cv");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3801,11 @@ var module_default = cv_default;
 export {
   module_default as default
 };
+//! author : Anatoly Mironov : https://github.com/mirontoli
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Chuvash [cv]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

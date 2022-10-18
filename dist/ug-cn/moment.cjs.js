@@ -3724,6 +3724,110 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ug-cn.js
+var require_ug_cn = __commonJS({
+  "node_modules/moment/locale/ug-cn.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var ugCn = moment2.defineLocale("ug-cn", {
+        months: "\u064A\u0627\u0646\u06CB\u0627\u0631_\u0641\u06D0\u06CB\u0631\u0627\u0644_\u0645\u0627\u0631\u062A_\u0626\u0627\u067E\u0631\u06D0\u0644_\u0645\u0627\u064A_\u0626\u0649\u064A\u06C7\u0646_\u0626\u0649\u064A\u06C7\u0644_\u0626\u0627\u06CB\u063A\u06C7\u0633\u062A_\u0633\u06D0\u0646\u062A\u06D5\u0628\u0649\u0631_\u0626\u06C6\u0643\u062A\u06D5\u0628\u0649\u0631_\u0646\u0648\u064A\u0627\u0628\u0649\u0631_\u062F\u06D0\u0643\u0627\u0628\u0649\u0631".split("_"),
+        monthsShort: "\u064A\u0627\u0646\u06CB\u0627\u0631_\u0641\u06D0\u06CB\u0631\u0627\u0644_\u0645\u0627\u0631\u062A_\u0626\u0627\u067E\u0631\u06D0\u0644_\u0645\u0627\u064A_\u0626\u0649\u064A\u06C7\u0646_\u0626\u0649\u064A\u06C7\u0644_\u0626\u0627\u06CB\u063A\u06C7\u0633\u062A_\u0633\u06D0\u0646\u062A\u06D5\u0628\u0649\u0631_\u0626\u06C6\u0643\u062A\u06D5\u0628\u0649\u0631_\u0646\u0648\u064A\u0627\u0628\u0649\u0631_\u062F\u06D0\u0643\u0627\u0628\u0649\u0631".split("_"),
+        weekdays: "\u064A\u06D5\u0643\u0634\u06D5\u0646\u0628\u06D5_\u062F\u06C8\u0634\u06D5\u0646\u0628\u06D5_\u0633\u06D5\u064A\u0634\u06D5\u0646\u0628\u06D5_\u0686\u0627\u0631\u0634\u06D5\u0646\u0628\u06D5_\u067E\u06D5\u064A\u0634\u06D5\u0646\u0628\u06D5_\u062C\u06C8\u0645\u06D5_\u0634\u06D5\u0646\u0628\u06D5".split("_"),
+        weekdaysShort: "\u064A\u06D5_\u062F\u06C8_\u0633\u06D5_\u0686\u0627_\u067E\u06D5_\u062C\u06C8_\u0634\u06D5".split("_"),
+        weekdaysMin: "\u064A\u06D5_\u062F\u06C8_\u0633\u06D5_\u0686\u0627_\u067E\u06D5_\u062C\u06C8_\u0634\u06D5".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "YYYY-MM-DD",
+          LL: "YYYY-\u064A\u0649\u0644\u0649M-\u0626\u0627\u064A\u0646\u0649\u06ADD-\u0643\u06C8\u0646\u0649",
+          LLL: "YYYY-\u064A\u0649\u0644\u0649M-\u0626\u0627\u064A\u0646\u0649\u06ADD-\u0643\u06C8\u0646\u0649\u060C HH:mm",
+          LLLL: "dddd\u060C YYYY-\u064A\u0649\u0644\u0649M-\u0626\u0627\u064A\u0646\u0649\u06ADD-\u0643\u06C8\u0646\u0649\u060C HH:mm"
+        },
+        meridiemParse: /يېرىم كېچە|سەھەر|چۈشتىن بۇرۇن|چۈش|چۈشتىن كېيىن|كەچ/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u064A\u06D0\u0631\u0649\u0645 \u0643\u06D0\u0686\u06D5" || meridiem === "\u0633\u06D5\u06BE\u06D5\u0631" || meridiem === "\u0686\u06C8\u0634\u062A\u0649\u0646 \u0628\u06C7\u0631\u06C7\u0646") {
+            return hour;
+          } else if (meridiem === "\u0686\u06C8\u0634\u062A\u0649\u0646 \u0643\u06D0\u064A\u0649\u0646" || meridiem === "\u0643\u06D5\u0686") {
+            return hour + 12;
+          } else {
+            return hour >= 11 ? hour : hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          var hm = hour * 100 + minute;
+          if (hm < 600) {
+            return "\u064A\u06D0\u0631\u0649\u0645 \u0643\u06D0\u0686\u06D5";
+          } else if (hm < 900) {
+            return "\u0633\u06D5\u06BE\u06D5\u0631";
+          } else if (hm < 1130) {
+            return "\u0686\u06C8\u0634\u062A\u0649\u0646 \u0628\u06C7\u0631\u06C7\u0646";
+          } else if (hm < 1230) {
+            return "\u0686\u06C8\u0634";
+          } else if (hm < 1800) {
+            return "\u0686\u06C8\u0634\u062A\u0649\u0646 \u0643\u06D0\u064A\u0649\u0646";
+          } else {
+            return "\u0643\u06D5\u0686";
+          }
+        },
+        calendar: {
+          sameDay: "[\u0628\u06C8\u06AF\u06C8\u0646 \u0633\u0627\u0626\u06D5\u062A] LT",
+          nextDay: "[\u0626\u06D5\u062A\u06D5 \u0633\u0627\u0626\u06D5\u062A] LT",
+          nextWeek: "[\u0643\u06D0\u0644\u06D5\u0631\u0643\u0649] dddd [\u0633\u0627\u0626\u06D5\u062A] LT",
+          lastDay: "[\u062A\u06C6\u0646\u06C8\u06AF\u06C8\u0646] LT",
+          lastWeek: "[\u0626\u0627\u0644\u062F\u0649\u0646\u0642\u0649] dddd [\u0633\u0627\u0626\u06D5\u062A] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0643\u06D0\u064A\u0649\u0646",
+          past: "%s \u0628\u06C7\u0631\u06C7\u0646",
+          s: "\u0646\u06D5\u0686\u0686\u06D5 \u0633\u06D0\u0643\u0648\u0646\u062A",
+          ss: "%d \u0633\u06D0\u0643\u0648\u0646\u062A",
+          m: "\u0628\u0649\u0631 \u0645\u0649\u0646\u06C7\u062A",
+          mm: "%d \u0645\u0649\u0646\u06C7\u062A",
+          h: "\u0628\u0649\u0631 \u0633\u0627\u0626\u06D5\u062A",
+          hh: "%d \u0633\u0627\u0626\u06D5\u062A",
+          d: "\u0628\u0649\u0631 \u0643\u06C8\u0646",
+          dd: "%d \u0643\u06C8\u0646",
+          M: "\u0628\u0649\u0631 \u0626\u0627\u064A",
+          MM: "%d \u0626\u0627\u064A",
+          y: "\u0628\u0649\u0631 \u064A\u0649\u0644",
+          yy: "%d \u064A\u0649\u0644"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(-كۈنى|-ئاي|-ھەپتە)/,
+        ordinal: function(number, period) {
+          switch (period) {
+            case "d":
+            case "D":
+            case "DDD":
+              return number + "-\u0643\u06C8\u0646\u0649";
+            case "w":
+            case "W":
+              return number + "-\u06BE\u06D5\u067E\u062A\u06D5";
+            default:
+              return number;
+          }
+        },
+        preparse: function(string) {
+          return string.replace(/،/g, ",");
+        },
+        postformat: function(string) {
+          return string.replace(/,/g, "\u060C");
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return ugCn;
+    });
+  }
+});
+
 // builds/ug-cn/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3835,9 @@ __export(exports, {
 
 // src/ug-cn.js
 var import_moment = __toModule(require_moment());
+var import_ug_cn = __toModule(require_ug_cn());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ug-cn");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3847,11 @@ var ug_cn_default = Plugin;
 var module_default = ug_cn_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author: boyaq : https://github.com/boyaq
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Uyghur (China) [ug-cn]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

@@ -3724,6 +3724,91 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/tzl.js
+var require_tzl = __commonJS({
+  "node_modules/moment/locale/tzl.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var tzl = moment2.defineLocale("tzl", {
+        months: "Januar_Fevraglh_Mar\xE7_Avr\xEFu_Mai_G\xFCn_Julia_Guscht_Setemvar_Listop\xE4ts_Noemvar_Zecemvar".split("_"),
+        monthsShort: "Jan_Fev_Mar_Avr_Mai_G\xFCn_Jul_Gus_Set_Lis_Noe_Zec".split("_"),
+        weekdays: "S\xFAladi_L\xFAne\xE7i_Maitzi_M\xE1rcuri_Xh\xFAadi_Vi\xE9ner\xE7i_S\xE1turi".split("_"),
+        weekdaysShort: "S\xFAl_L\xFAn_Mai_M\xE1r_Xh\xFA_Vi\xE9_S\xE1t".split("_"),
+        weekdaysMin: "S\xFA_L\xFA_Ma_M\xE1_Xh_Vi_S\xE1".split("_"),
+        longDateFormat: {
+          LT: "HH.mm",
+          LTS: "HH.mm.ss",
+          L: "DD.MM.YYYY",
+          LL: "D. MMMM [dallas] YYYY",
+          LLL: "D. MMMM [dallas] YYYY HH.mm",
+          LLLL: "dddd, [li] D. MMMM [dallas] YYYY HH.mm"
+        },
+        meridiemParse: /d\'o|d\'a/i,
+        isPM: function(input) {
+          return input.toLowerCase() === "d'o";
+        },
+        meridiem: function(hours, minutes, isLower) {
+          if (hours > 11) {
+            return isLower ? "d'o" : "D'O";
+          } else {
+            return isLower ? "d'a" : "D'A";
+          }
+        },
+        calendar: {
+          sameDay: "[oxhi \xE0] LT",
+          nextDay: "[dem\xE0 \xE0] LT",
+          nextWeek: "dddd [\xE0] LT",
+          lastDay: "[ieiri \xE0] LT",
+          lastWeek: "[s\xFCr el] dddd [lasteu \xE0] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "osprei %s",
+          past: "ja%s",
+          s: processRelativeTime,
+          ss: processRelativeTime,
+          m: processRelativeTime,
+          mm: processRelativeTime,
+          h: processRelativeTime,
+          hh: processRelativeTime,
+          d: processRelativeTime,
+          dd: processRelativeTime,
+          M: processRelativeTime,
+          MM: processRelativeTime,
+          y: processRelativeTime,
+          yy: processRelativeTime
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      function processRelativeTime(number, withoutSuffix, key, isFuture) {
+        var format = {
+          s: ["viensas secunds", "'iensas secunds"],
+          ss: [number + " secunds", "" + number + " secunds"],
+          m: ["'n m\xEDut", "'iens m\xEDut"],
+          mm: [number + " m\xEDuts", "" + number + " m\xEDuts"],
+          h: ["'n \xFEora", "'iensa \xFEora"],
+          hh: [number + " \xFEoras", "" + number + " \xFEoras"],
+          d: ["'n ziua", "'iensa ziua"],
+          dd: [number + " ziuas", "" + number + " ziuas"],
+          M: ["'n mes", "'iens mes"],
+          MM: [number + " mesen", "" + number + " mesen"],
+          y: ["'n ar", "'iens ar"],
+          yy: [number + " ars", "" + number + " ars"]
+        };
+        return isFuture ? format[key][0] : withoutSuffix ? format[key][0] : format[key][1];
+      }
+      return tzl;
+    });
+  }
+});
+
 // builds/tzl/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3816,9 @@ __export(exports, {
 
 // src/tzl.js
 var import_moment = __toModule(require_moment());
+var import_tzl = __toModule(require_tzl());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("tzl");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3828,12 @@ var tzl_default = Plugin;
 var module_default = tzl_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Iustì Canun
+//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Talossan [tzl]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

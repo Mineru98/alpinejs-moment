@@ -3724,6 +3724,202 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/mr.js
+var require_mr = __commonJS({
+  "node_modules/moment/locale/mr.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var symbolMap = {
+        1: "\u0967",
+        2: "\u0968",
+        3: "\u0969",
+        4: "\u096A",
+        5: "\u096B",
+        6: "\u096C",
+        7: "\u096D",
+        8: "\u096E",
+        9: "\u096F",
+        0: "\u0966"
+      }, numberMap = {
+        "\u0967": "1",
+        "\u0968": "2",
+        "\u0969": "3",
+        "\u096A": "4",
+        "\u096B": "5",
+        "\u096C": "6",
+        "\u096D": "7",
+        "\u096E": "8",
+        "\u096F": "9",
+        "\u0966": "0"
+      };
+      function relativeTimeMr(number, withoutSuffix, string, isFuture) {
+        var output = "";
+        if (withoutSuffix) {
+          switch (string) {
+            case "s":
+              output = "\u0915\u093E\u0939\u0940 \u0938\u0947\u0915\u0902\u0926";
+              break;
+            case "ss":
+              output = "%d \u0938\u0947\u0915\u0902\u0926";
+              break;
+            case "m":
+              output = "\u090F\u0915 \u092E\u093F\u0928\u093F\u091F";
+              break;
+            case "mm":
+              output = "%d \u092E\u093F\u0928\u093F\u091F\u0947";
+              break;
+            case "h":
+              output = "\u090F\u0915 \u0924\u093E\u0938";
+              break;
+            case "hh":
+              output = "%d \u0924\u093E\u0938";
+              break;
+            case "d":
+              output = "\u090F\u0915 \u0926\u093F\u0935\u0938";
+              break;
+            case "dd":
+              output = "%d \u0926\u093F\u0935\u0938";
+              break;
+            case "M":
+              output = "\u090F\u0915 \u092E\u0939\u093F\u0928\u093E";
+              break;
+            case "MM":
+              output = "%d \u092E\u0939\u093F\u0928\u0947";
+              break;
+            case "y":
+              output = "\u090F\u0915 \u0935\u0930\u094D\u0937";
+              break;
+            case "yy":
+              output = "%d \u0935\u0930\u094D\u0937\u0947";
+              break;
+          }
+        } else {
+          switch (string) {
+            case "s":
+              output = "\u0915\u093E\u0939\u0940 \u0938\u0947\u0915\u0902\u0926\u093E\u0902";
+              break;
+            case "ss":
+              output = "%d \u0938\u0947\u0915\u0902\u0926\u093E\u0902";
+              break;
+            case "m":
+              output = "\u090F\u0915\u093E \u092E\u093F\u0928\u093F\u091F\u093E";
+              break;
+            case "mm":
+              output = "%d \u092E\u093F\u0928\u093F\u091F\u093E\u0902";
+              break;
+            case "h":
+              output = "\u090F\u0915\u093E \u0924\u093E\u0938\u093E";
+              break;
+            case "hh":
+              output = "%d \u0924\u093E\u0938\u093E\u0902";
+              break;
+            case "d":
+              output = "\u090F\u0915\u093E \u0926\u093F\u0935\u0938\u093E";
+              break;
+            case "dd":
+              output = "%d \u0926\u093F\u0935\u0938\u093E\u0902";
+              break;
+            case "M":
+              output = "\u090F\u0915\u093E \u092E\u0939\u093F\u0928\u094D\u092F\u093E";
+              break;
+            case "MM":
+              output = "%d \u092E\u0939\u093F\u0928\u094D\u092F\u093E\u0902";
+              break;
+            case "y":
+              output = "\u090F\u0915\u093E \u0935\u0930\u094D\u0937\u093E";
+              break;
+            case "yy":
+              output = "%d \u0935\u0930\u094D\u0937\u093E\u0902";
+              break;
+          }
+        }
+        return output.replace(/%d/i, number);
+      }
+      var mr = moment2.defineLocale("mr", {
+        months: "\u091C\u093E\u0928\u0947\u0935\u093E\u0930\u0940_\u092B\u0947\u092C\u094D\u0930\u0941\u0935\u093E\u0930\u0940_\u092E\u093E\u0930\u094D\u091A_\u090F\u092A\u094D\u0930\u093F\u0932_\u092E\u0947_\u091C\u0942\u0928_\u091C\u0941\u0932\u0948_\u0911\u0917\u0938\u094D\u091F_\u0938\u092A\u094D\u091F\u0947\u0902\u092C\u0930_\u0911\u0915\u094D\u091F\u094B\u092C\u0930_\u0928\u094B\u0935\u094D\u0939\u0947\u0902\u092C\u0930_\u0921\u093F\u0938\u0947\u0902\u092C\u0930".split("_"),
+        monthsShort: "\u091C\u093E\u0928\u0947._\u092B\u0947\u092C\u094D\u0930\u0941._\u092E\u093E\u0930\u094D\u091A._\u090F\u092A\u094D\u0930\u093F._\u092E\u0947._\u091C\u0942\u0928._\u091C\u0941\u0932\u0948._\u0911\u0917._\u0938\u092A\u094D\u091F\u0947\u0902._\u0911\u0915\u094D\u091F\u094B._\u0928\u094B\u0935\u094D\u0939\u0947\u0902._\u0921\u093F\u0938\u0947\u0902.".split("_"),
+        monthsParseExact: true,
+        weekdays: "\u0930\u0935\u093F\u0935\u093E\u0930_\u0938\u094B\u092E\u0935\u093E\u0930_\u092E\u0902\u0917\u0933\u0935\u093E\u0930_\u092C\u0941\u0927\u0935\u093E\u0930_\u0917\u0941\u0930\u0942\u0935\u093E\u0930_\u0936\u0941\u0915\u094D\u0930\u0935\u093E\u0930_\u0936\u0928\u093F\u0935\u093E\u0930".split("_"),
+        weekdaysShort: "\u0930\u0935\u093F_\u0938\u094B\u092E_\u092E\u0902\u0917\u0933_\u092C\u0941\u0927_\u0917\u0941\u0930\u0942_\u0936\u0941\u0915\u094D\u0930_\u0936\u0928\u093F".split("_"),
+        weekdaysMin: "\u0930_\u0938\u094B_\u092E\u0902_\u092C\u0941_\u0917\u0941_\u0936\u0941_\u0936".split("_"),
+        longDateFormat: {
+          LT: "A h:mm \u0935\u093E\u091C\u0924\u093E",
+          LTS: "A h:mm:ss \u0935\u093E\u091C\u0924\u093E",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY, A h:mm \u0935\u093E\u091C\u0924\u093E",
+          LLLL: "dddd, D MMMM YYYY, A h:mm \u0935\u093E\u091C\u0924\u093E"
+        },
+        calendar: {
+          sameDay: "[\u0906\u091C] LT",
+          nextDay: "[\u0909\u0926\u094D\u092F\u093E] LT",
+          nextWeek: "dddd, LT",
+          lastDay: "[\u0915\u093E\u0932] LT",
+          lastWeek: "[\u092E\u093E\u0917\u0940\u0932] dddd, LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s\u092E\u0927\u094D\u092F\u0947",
+          past: "%s\u092A\u0942\u0930\u094D\u0935\u0940",
+          s: relativeTimeMr,
+          ss: relativeTimeMr,
+          m: relativeTimeMr,
+          mm: relativeTimeMr,
+          h: relativeTimeMr,
+          hh: relativeTimeMr,
+          d: relativeTimeMr,
+          dd: relativeTimeMr,
+          M: relativeTimeMr,
+          MM: relativeTimeMr,
+          y: relativeTimeMr,
+          yy: relativeTimeMr
+        },
+        preparse: function(string) {
+          return string.replace(/[१२३४५६७८९०]/g, function(match) {
+            return numberMap[match];
+          });
+        },
+        postformat: function(string) {
+          return string.replace(/\d/g, function(match) {
+            return symbolMap[match];
+          });
+        },
+        meridiemParse: /पहाटे|सकाळी|दुपारी|सायंकाळी|रात्री/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u092A\u0939\u093E\u091F\u0947" || meridiem === "\u0938\u0915\u093E\u0933\u0940") {
+            return hour;
+          } else if (meridiem === "\u0926\u0941\u092A\u093E\u0930\u0940" || meridiem === "\u0938\u093E\u092F\u0902\u0915\u093E\u0933\u0940" || meridiem === "\u0930\u093E\u0924\u094D\u0930\u0940") {
+            return hour >= 12 ? hour : hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour >= 0 && hour < 6) {
+            return "\u092A\u0939\u093E\u091F\u0947";
+          } else if (hour < 12) {
+            return "\u0938\u0915\u093E\u0933\u0940";
+          } else if (hour < 17) {
+            return "\u0926\u0941\u092A\u093E\u0930\u0940";
+          } else if (hour < 20) {
+            return "\u0938\u093E\u092F\u0902\u0915\u093E\u0933\u0940";
+          } else {
+            return "\u0930\u093E\u0924\u094D\u0930\u0940";
+          }
+        },
+        week: {
+          dow: 0,
+          doy: 6
+        }
+      });
+      return mr;
+    });
+  }
+});
+
 // builds/mr/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3927,9 @@ __export(exports, {
 
 // src/mr.js
 var import_moment = __toModule(require_moment());
+var import_mr = __toModule(require_mr());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("mr");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3939,12 @@ var mr_default = Plugin;
 var module_default = mr_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Harshad Kale : https://github.com/kalehv
+//! author : Vivek Athalye : https://github.com/vnathalye
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Marathi [mr]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

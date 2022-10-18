@@ -3724,6 +3724,73 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/si.js
+var require_si = __commonJS({
+  "node_modules/moment/locale/si.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var si = moment2.defineLocale("si", {
+        months: "\u0DA2\u0DB1\u0DC0\u0DCF\u0DBB\u0DD2_\u0DB4\u0DD9\u0DB6\u0DBB\u0DC0\u0DCF\u0DBB\u0DD2_\u0DB8\u0DCF\u0DBB\u0DCA\u0DAD\u0DD4_\u0D85\u0DB4\u0DCA\u200D\u0DBB\u0DDA\u0DBD\u0DCA_\u0DB8\u0DD0\u0DBA\u0DD2_\u0DA2\u0DD6\u0DB1\u0DD2_\u0DA2\u0DD6\u0DBD\u0DD2_\u0D85\u0D9C\u0DDD\u0DC3\u0DCA\u0DAD\u0DD4_\u0DC3\u0DD0\u0DB4\u0DCA\u0DAD\u0DD0\u0DB8\u0DCA\u0DB6\u0DBB\u0DCA_\u0D94\u0D9A\u0DCA\u0DAD\u0DDD\u0DB6\u0DBB\u0DCA_\u0DB1\u0DDC\u0DC0\u0DD0\u0DB8\u0DCA\u0DB6\u0DBB\u0DCA_\u0DAF\u0DD9\u0DC3\u0DD0\u0DB8\u0DCA\u0DB6\u0DBB\u0DCA".split("_"),
+        monthsShort: "\u0DA2\u0DB1_\u0DB4\u0DD9\u0DB6_\u0DB8\u0DCF\u0DBB\u0DCA_\u0D85\u0DB4\u0DCA_\u0DB8\u0DD0\u0DBA\u0DD2_\u0DA2\u0DD6\u0DB1\u0DD2_\u0DA2\u0DD6\u0DBD\u0DD2_\u0D85\u0D9C\u0DDD_\u0DC3\u0DD0\u0DB4\u0DCA_\u0D94\u0D9A\u0DCA_\u0DB1\u0DDC\u0DC0\u0DD0_\u0DAF\u0DD9\u0DC3\u0DD0".split("_"),
+        weekdays: "\u0D89\u0DBB\u0DD2\u0DAF\u0DCF_\u0DC3\u0DB3\u0DD4\u0DAF\u0DCF_\u0D85\u0D9F\u0DC4\u0DBB\u0DD4\u0DC0\u0DCF\u0DAF\u0DCF_\u0DB6\u0DAF\u0DCF\u0DAF\u0DCF_\u0DB6\u0DCA\u200D\u0DBB\u0DC4\u0DC3\u0DCA\u0DB4\u0DAD\u0DD2\u0DB1\u0DCA\u0DAF\u0DCF_\u0DC3\u0DD2\u0D9A\u0DD4\u0DBB\u0DCF\u0DAF\u0DCF_\u0DC3\u0DD9\u0DB1\u0DC3\u0DD4\u0DBB\u0DCF\u0DAF\u0DCF".split("_"),
+        weekdaysShort: "\u0D89\u0DBB\u0DD2_\u0DC3\u0DB3\u0DD4_\u0D85\u0D9F_\u0DB6\u0DAF\u0DCF_\u0DB6\u0DCA\u200D\u0DBB\u0DC4_\u0DC3\u0DD2\u0D9A\u0DD4_\u0DC3\u0DD9\u0DB1".split("_"),
+        weekdaysMin: "\u0D89_\u0DC3_\u0D85_\u0DB6_\u0DB6\u0DCA\u200D\u0DBB_\u0DC3\u0DD2_\u0DC3\u0DD9".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "a h:mm",
+          LTS: "a h:mm:ss",
+          L: "YYYY/MM/DD",
+          LL: "YYYY MMMM D",
+          LLL: "YYYY MMMM D, a h:mm",
+          LLLL: "YYYY MMMM D [\u0DC0\u0DD0\u0DB1\u0DD2] dddd, a h:mm:ss"
+        },
+        calendar: {
+          sameDay: "[\u0D85\u0DAF] LT[\u0DA7]",
+          nextDay: "[\u0DC4\u0DD9\u0DA7] LT[\u0DA7]",
+          nextWeek: "dddd LT[\u0DA7]",
+          lastDay: "[\u0D8A\u0DBA\u0DDA] LT[\u0DA7]",
+          lastWeek: "[\u0DB4\u0DC3\u0DD4\u0D9C\u0DD2\u0DBA] dddd LT[\u0DA7]",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s\u0D9A\u0DD2\u0DB1\u0DCA",
+          past: "%s\u0D9A\u0DA7 \u0DB4\u0DD9\u0DBB",
+          s: "\u0DAD\u0DAD\u0DCA\u0DB4\u0DBB \u0D9A\u0DD2\u0DC4\u0DD2\u0DB4\u0DBA",
+          ss: "\u0DAD\u0DAD\u0DCA\u0DB4\u0DBB %d",
+          m: "\u0DB8\u0DD2\u0DB1\u0DD2\u0DAD\u0DCA\u0DAD\u0DD4\u0DC0",
+          mm: "\u0DB8\u0DD2\u0DB1\u0DD2\u0DAD\u0DCA\u0DAD\u0DD4 %d",
+          h: "\u0DB4\u0DD0\u0DBA",
+          hh: "\u0DB4\u0DD0\u0DBA %d",
+          d: "\u0DAF\u0DD2\u0DB1\u0DBA",
+          dd: "\u0DAF\u0DD2\u0DB1 %d",
+          M: "\u0DB8\u0DCF\u0DC3\u0DBA",
+          MM: "\u0DB8\u0DCF\u0DC3 %d",
+          y: "\u0DC0\u0DC3\u0DBB",
+          yy: "\u0DC0\u0DC3\u0DBB %d"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2} වැනි/,
+        ordinal: function(number) {
+          return number + " \u0DC0\u0DD0\u0DB1\u0DD2";
+        },
+        meridiemParse: /පෙර වරු|පස් වරු|පෙ.ව|ප.ව./,
+        isPM: function(input) {
+          return input === "\u0DB4.\u0DC0." || input === "\u0DB4\u0DC3\u0DCA \u0DC0\u0DBB\u0DD4";
+        },
+        meridiem: function(hours, minutes, isLower) {
+          if (hours > 11) {
+            return isLower ? "\u0DB4.\u0DC0." : "\u0DB4\u0DC3\u0DCA \u0DC0\u0DBB\u0DD4";
+          } else {
+            return isLower ? "\u0DB4\u0DD9.\u0DC0." : "\u0DB4\u0DD9\u0DBB \u0DC0\u0DBB\u0DD4";
+          }
+        }
+      });
+      return si;
+    });
+  }
+});
+
 // builds/si/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3798,9 @@ __export(exports, {
 
 // src/si.js
 var import_moment = __toModule(require_moment());
+var import_si = __toModule(require_si());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("si");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3810,11 @@ var si_default = Plugin;
 var module_default = si_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Sinhalese [si]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

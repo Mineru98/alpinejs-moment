@@ -3724,6 +3724,88 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/kk.js
+var require_kk = __commonJS({
+  "node_modules/moment/locale/kk.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var suffixes = {
+        0: "-\u0448\u0456",
+        1: "-\u0448\u0456",
+        2: "-\u0448\u0456",
+        3: "-\u0448\u0456",
+        4: "-\u0448\u0456",
+        5: "-\u0448\u0456",
+        6: "-\u0448\u044B",
+        7: "-\u0448\u0456",
+        8: "-\u0448\u0456",
+        9: "-\u0448\u044B",
+        10: "-\u0448\u044B",
+        20: "-\u0448\u044B",
+        30: "-\u0448\u044B",
+        40: "-\u0448\u044B",
+        50: "-\u0448\u0456",
+        60: "-\u0448\u044B",
+        70: "-\u0448\u0456",
+        80: "-\u0448\u0456",
+        90: "-\u0448\u044B",
+        100: "-\u0448\u0456"
+      };
+      var kk = moment2.defineLocale("kk", {
+        months: "\u049B\u0430\u04A3\u0442\u0430\u0440_\u0430\u049B\u043F\u0430\u043D_\u043D\u0430\u0443\u0440\u044B\u0437_\u0441\u04D9\u0443\u0456\u0440_\u043C\u0430\u043C\u044B\u0440_\u043C\u0430\u0443\u0441\u044B\u043C_\u0448\u0456\u043B\u0434\u0435_\u0442\u0430\u043C\u044B\u0437_\u049B\u044B\u0440\u043A\u04AF\u0439\u0435\u043A_\u049B\u0430\u0437\u0430\u043D_\u049B\u0430\u0440\u0430\u0448\u0430_\u0436\u0435\u043B\u0442\u043E\u049B\u0441\u0430\u043D".split("_"),
+        monthsShort: "\u049B\u0430\u04A3_\u0430\u049B\u043F_\u043D\u0430\u0443_\u0441\u04D9\u0443_\u043C\u0430\u043C_\u043C\u0430\u0443_\u0448\u0456\u043B_\u0442\u0430\u043C_\u049B\u044B\u0440_\u049B\u0430\u0437_\u049B\u0430\u0440_\u0436\u0435\u043B".split("_"),
+        weekdays: "\u0436\u0435\u043A\u0441\u0435\u043D\u0431\u0456_\u0434\u04AF\u0439\u0441\u0435\u043D\u0431\u0456_\u0441\u0435\u0439\u0441\u0435\u043D\u0431\u0456_\u0441\u04D9\u0440\u0441\u0435\u043D\u0431\u0456_\u0431\u0435\u0439\u0441\u0435\u043D\u0431\u0456_\u0436\u04B1\u043C\u0430_\u0441\u0435\u043D\u0431\u0456".split("_"),
+        weekdaysShort: "\u0436\u0435\u043A_\u0434\u04AF\u0439_\u0441\u0435\u0439_\u0441\u04D9\u0440_\u0431\u0435\u0439_\u0436\u04B1\u043C_\u0441\u0435\u043D".split("_"),
+        weekdaysMin: "\u0436\u043A_\u0434\u0439_\u0441\u0439_\u0441\u0440_\u0431\u0439_\u0436\u043C_\u0441\u043D".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[\u0411\u04AF\u0433\u0456\u043D \u0441\u0430\u0493\u0430\u0442] LT",
+          nextDay: "[\u0415\u0440\u0442\u0435\u04A3 \u0441\u0430\u0493\u0430\u0442] LT",
+          nextWeek: "dddd [\u0441\u0430\u0493\u0430\u0442] LT",
+          lastDay: "[\u041A\u0435\u0448\u0435 \u0441\u0430\u0493\u0430\u0442] LT",
+          lastWeek: "[\u04E8\u0442\u043A\u0435\u043D \u0430\u043F\u0442\u0430\u043D\u044B\u04A3] dddd [\u0441\u0430\u0493\u0430\u0442] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0456\u0448\u0456\u043D\u0434\u0435",
+          past: "%s \u0431\u04B1\u0440\u044B\u043D",
+          s: "\u0431\u0456\u0440\u043D\u0435\u0448\u0435 \u0441\u0435\u043A\u0443\u043D\u0434",
+          ss: "%d \u0441\u0435\u043A\u0443\u043D\u0434",
+          m: "\u0431\u0456\u0440 \u043C\u0438\u043D\u0443\u0442",
+          mm: "%d \u043C\u0438\u043D\u0443\u0442",
+          h: "\u0431\u0456\u0440 \u0441\u0430\u0493\u0430\u0442",
+          hh: "%d \u0441\u0430\u0493\u0430\u0442",
+          d: "\u0431\u0456\u0440 \u043A\u04AF\u043D",
+          dd: "%d \u043A\u04AF\u043D",
+          M: "\u0431\u0456\u0440 \u0430\u0439",
+          MM: "%d \u0430\u0439",
+          y: "\u0431\u0456\u0440 \u0436\u044B\u043B",
+          yy: "%d \u0436\u044B\u043B"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}-(ші|шы)/,
+        ordinal: function(number) {
+          var a = number % 10, b = number >= 100 ? 100 : null;
+          return number + (suffixes[number] || suffixes[a] || suffixes[b]);
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return kk;
+    });
+  }
+});
+
 // builds/kk/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3813,9 @@ __export(exports, {
 
 // src/kk.js
 var import_moment = __toModule(require_moment());
+var import_kk = __toModule(require_kk());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("kk");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3825,11 @@ var kk_default = Plugin;
 var module_default = kk_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Kazakh [kk]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

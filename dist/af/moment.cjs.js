@@ -3724,6 +3724,76 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/af.js
+var require_af = __commonJS({
+  "node_modules/moment/locale/af.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var af = moment2.defineLocale("af", {
+        months: "Januarie_Februarie_Maart_April_Mei_Junie_Julie_Augustus_September_Oktober_November_Desember".split("_"),
+        monthsShort: "Jan_Feb_Mrt_Apr_Mei_Jun_Jul_Aug_Sep_Okt_Nov_Des".split("_"),
+        weekdays: "Sondag_Maandag_Dinsdag_Woensdag_Donderdag_Vrydag_Saterdag".split("_"),
+        weekdaysShort: "Son_Maa_Din_Woe_Don_Vry_Sat".split("_"),
+        weekdaysMin: "So_Ma_Di_Wo_Do_Vr_Sa".split("_"),
+        meridiemParse: /vm|nm/i,
+        isPM: function(input) {
+          return /^nm$/i.test(input);
+        },
+        meridiem: function(hours, minutes, isLower) {
+          if (hours < 12) {
+            return isLower ? "vm" : "VM";
+          } else {
+            return isLower ? "nm" : "NM";
+          }
+        },
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Vandag om] LT",
+          nextDay: "[M\xF4re om] LT",
+          nextWeek: "dddd [om] LT",
+          lastDay: "[Gister om] LT",
+          lastWeek: "[Laas] dddd [om] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "oor %s",
+          past: "%s gelede",
+          s: "'n paar sekondes",
+          ss: "%d sekondes",
+          m: "'n minuut",
+          mm: "%d minute",
+          h: "'n uur",
+          hh: "%d ure",
+          d: "'n dag",
+          dd: "%d dae",
+          M: "'n maand",
+          MM: "%d maande",
+          y: "'n jaar",
+          yy: "%d jaar"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(ste|de)/,
+        ordinal: function(number) {
+          return number + (number === 1 || number === 8 || number >= 20 ? "ste" : "de");
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return af;
+    });
+  }
+});
+
 // builds/af/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3801,9 @@ __export(exports, {
 
 // src/af.js
 var import_moment = __toModule(require_moment());
+var import_af = __toModule(require_af());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("af");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3813,11 @@ var af_default = Plugin;
 var module_default = af_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Werner Mollentze : https://github.com/wernerm
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Afrikaans [af]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

@@ -3724,6 +3724,67 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/x-pseudo.js
+var require_x_pseudo = __commonJS({
+  "node_modules/moment/locale/x-pseudo.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var xPseudo = moment2.defineLocale("x-pseudo", {
+        months: "J~\xE1\xF1\xFA\xE1~r\xFD_F~\xE9br\xFA~\xE1r\xFD_~M\xE1rc~h_\xC1p~r\xEDl_~M\xE1\xFD_~J\xFA\xF1\xE9~_J\xFAl~\xFD_\xC1\xFA~g\xFAst~_S\xE9p~t\xE9mb~\xE9r_\xD3~ct\xF3b~\xE9r_\xD1~\xF3v\xE9m~b\xE9r_~D\xE9c\xE9~mb\xE9r".split("_"),
+        monthsShort: "J~\xE1\xF1_~F\xE9b_~M\xE1r_~\xC1pr_~M\xE1\xFD_~J\xFA\xF1_~J\xFAl_~\xC1\xFAg_~S\xE9p_~\xD3ct_~\xD1\xF3v_~D\xE9c".split("_"),
+        monthsParseExact: true,
+        weekdays: "S~\xFA\xF1d\xE1~\xFD_M\xF3~\xF1d\xE1\xFD~_T\xFA\xE9~sd\xE1\xFD~_W\xE9d~\xF1\xE9sd~\xE1\xFD_T~h\xFArs~d\xE1\xFD_~Fr\xEDd~\xE1\xFD_S~\xE1t\xFAr~d\xE1\xFD".split("_"),
+        weekdaysShort: "S~\xFA\xF1_~M\xF3\xF1_~T\xFA\xE9_~W\xE9d_~Th\xFA_~Fr\xED_~S\xE1t".split("_"),
+        weekdaysMin: "S~\xFA_M\xF3~_T\xFA_~W\xE9_T~h_Fr~_S\xE1".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "HH:mm",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[T~\xF3d\xE1~\xFD \xE1t] LT",
+          nextDay: "[T~\xF3m\xF3~rr\xF3~w \xE1t] LT",
+          nextWeek: "dddd [\xE1t] LT",
+          lastDay: "[\xDD~\xE9st~\xE9rd\xE1~\xFD \xE1t] LT",
+          lastWeek: "[L~\xE1st] dddd [\xE1t] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "\xED~\xF1 %s",
+          past: "%s \xE1~g\xF3",
+          s: "\xE1 ~f\xE9w ~s\xE9c\xF3~\xF1ds",
+          ss: "%d s~\xE9c\xF3\xF1~ds",
+          m: "\xE1 ~m\xED\xF1~\xFAt\xE9",
+          mm: "%d m~\xED\xF1\xFA~t\xE9s",
+          h: "\xE1~\xF1 h\xF3~\xFAr",
+          hh: "%d h~\xF3\xFArs",
+          d: "\xE1 ~d\xE1\xFD",
+          dd: "%d d~\xE1\xFDs",
+          M: "\xE1 ~m\xF3\xF1~th",
+          MM: "%d m~\xF3\xF1t~hs",
+          y: "\xE1 ~\xFD\xE9\xE1r",
+          yy: "%d \xFD~\xE9\xE1rs"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
+        ordinal: function(number) {
+          var b = number % 10, output = ~~(number % 100 / 10) === 1 ? "th" : b === 1 ? "st" : b === 2 ? "nd" : b === 3 ? "rd" : "th";
+          return number + output;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return xPseudo;
+    });
+  }
+});
+
 // builds/x-pseudo/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3792,9 @@ __export(exports, {
 
 // src/x-pseudo.js
 var import_moment = __toModule(require_moment());
+var import_x_pseudo = __toModule(require_x_pseudo());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("x-pseudo");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3804,11 @@ var x_pseudo_default = Plugin;
 var module_default = x_pseudo_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Andrew Hood : https://github.com/andrewhood125
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Pseudo [x-pseudo]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

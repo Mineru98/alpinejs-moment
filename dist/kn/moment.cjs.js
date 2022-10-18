@@ -3724,6 +3724,127 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/kn.js
+var require_kn = __commonJS({
+  "node_modules/moment/locale/kn.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var symbolMap = {
+        1: "\u0CE7",
+        2: "\u0CE8",
+        3: "\u0CE9",
+        4: "\u0CEA",
+        5: "\u0CEB",
+        6: "\u0CEC",
+        7: "\u0CED",
+        8: "\u0CEE",
+        9: "\u0CEF",
+        0: "\u0CE6"
+      }, numberMap = {
+        "\u0CE7": "1",
+        "\u0CE8": "2",
+        "\u0CE9": "3",
+        "\u0CEA": "4",
+        "\u0CEB": "5",
+        "\u0CEC": "6",
+        "\u0CED": "7",
+        "\u0CEE": "8",
+        "\u0CEF": "9",
+        "\u0CE6": "0"
+      };
+      var kn = moment2.defineLocale("kn", {
+        months: "\u0C9C\u0CA8\u0CB5\u0CB0\u0CBF_\u0CAB\u0CC6\u0CAC\u0CCD\u0CB0\u0CB5\u0CB0\u0CBF_\u0CAE\u0CBE\u0CB0\u0CCD\u0C9A\u0CCD_\u0C8F\u0CAA\u0CCD\u0CB0\u0CBF\u0CB2\u0CCD_\u0CAE\u0CC6\u0CD5_\u0C9C\u0CC2\u0CA8\u0CCD_\u0C9C\u0CC1\u0CB2\u0CC6\u0CD6_\u0C86\u0C97\u0CB8\u0CCD\u0C9F\u0CCD_\u0CB8\u0CC6\u0CAA\u0CCD\u0C9F\u0CC6\u0C82\u0CAC\u0CB0\u0CCD_\u0C85\u0C95\u0CCD\u0C9F\u0CC6\u0CC2\u0CD5\u0CAC\u0CB0\u0CCD_\u0CA8\u0CB5\u0CC6\u0C82\u0CAC\u0CB0\u0CCD_\u0CA1\u0CBF\u0CB8\u0CC6\u0C82\u0CAC\u0CB0\u0CCD".split("_"),
+        monthsShort: "\u0C9C\u0CA8_\u0CAB\u0CC6\u0CAC\u0CCD\u0CB0_\u0CAE\u0CBE\u0CB0\u0CCD\u0C9A\u0CCD_\u0C8F\u0CAA\u0CCD\u0CB0\u0CBF\u0CB2\u0CCD_\u0CAE\u0CC6\u0CD5_\u0C9C\u0CC2\u0CA8\u0CCD_\u0C9C\u0CC1\u0CB2\u0CC6\u0CD6_\u0C86\u0C97\u0CB8\u0CCD\u0C9F\u0CCD_\u0CB8\u0CC6\u0CAA\u0CCD\u0C9F\u0CC6\u0C82_\u0C85\u0C95\u0CCD\u0C9F\u0CC6\u0CC2\u0CD5_\u0CA8\u0CB5\u0CC6\u0C82_\u0CA1\u0CBF\u0CB8\u0CC6\u0C82".split("_"),
+        monthsParseExact: true,
+        weekdays: "\u0CAD\u0CBE\u0CA8\u0CC1\u0CB5\u0CBE\u0CB0_\u0CB8\u0CC6\u0CC2\u0CD5\u0CAE\u0CB5\u0CBE\u0CB0_\u0CAE\u0C82\u0C97\u0CB3\u0CB5\u0CBE\u0CB0_\u0CAC\u0CC1\u0CA7\u0CB5\u0CBE\u0CB0_\u0C97\u0CC1\u0CB0\u0CC1\u0CB5\u0CBE\u0CB0_\u0CB6\u0CC1\u0C95\u0CCD\u0CB0\u0CB5\u0CBE\u0CB0_\u0CB6\u0CA8\u0CBF\u0CB5\u0CBE\u0CB0".split("_"),
+        weekdaysShort: "\u0CAD\u0CBE\u0CA8\u0CC1_\u0CB8\u0CC6\u0CC2\u0CD5\u0CAE_\u0CAE\u0C82\u0C97\u0CB3_\u0CAC\u0CC1\u0CA7_\u0C97\u0CC1\u0CB0\u0CC1_\u0CB6\u0CC1\u0C95\u0CCD\u0CB0_\u0CB6\u0CA8\u0CBF".split("_"),
+        weekdaysMin: "\u0CAD\u0CBE_\u0CB8\u0CC6\u0CC2\u0CD5_\u0CAE\u0C82_\u0CAC\u0CC1_\u0C97\u0CC1_\u0CB6\u0CC1_\u0CB6".split("_"),
+        longDateFormat: {
+          LT: "A h:mm",
+          LTS: "A h:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY, A h:mm",
+          LLLL: "dddd, D MMMM YYYY, A h:mm"
+        },
+        calendar: {
+          sameDay: "[\u0C87\u0C82\u0CA6\u0CC1] LT",
+          nextDay: "[\u0CA8\u0CBE\u0CB3\u0CC6] LT",
+          nextWeek: "dddd, LT",
+          lastDay: "[\u0CA8\u0CBF\u0CA8\u0CCD\u0CA8\u0CC6] LT",
+          lastWeek: "[\u0C95\u0CC6\u0CC2\u0CA8\u0CC6\u0CAF] dddd, LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0CA8\u0C82\u0CA4\u0CB0",
+          past: "%s \u0CB9\u0CBF\u0C82\u0CA6\u0CC6",
+          s: "\u0C95\u0CC6\u0CB2\u0CB5\u0CC1 \u0C95\u0CCD\u0CB7\u0CA3\u0C97\u0CB3\u0CC1",
+          ss: "%d \u0CB8\u0CC6\u0C95\u0CC6\u0C82\u0CA1\u0CC1\u0C97\u0CB3\u0CC1",
+          m: "\u0C92\u0C82\u0CA6\u0CC1 \u0CA8\u0CBF\u0CAE\u0CBF\u0CB7",
+          mm: "%d \u0CA8\u0CBF\u0CAE\u0CBF\u0CB7",
+          h: "\u0C92\u0C82\u0CA6\u0CC1 \u0C97\u0C82\u0C9F\u0CC6",
+          hh: "%d \u0C97\u0C82\u0C9F\u0CC6",
+          d: "\u0C92\u0C82\u0CA6\u0CC1 \u0CA6\u0CBF\u0CA8",
+          dd: "%d \u0CA6\u0CBF\u0CA8",
+          M: "\u0C92\u0C82\u0CA6\u0CC1 \u0CA4\u0CBF\u0C82\u0C97\u0CB3\u0CC1",
+          MM: "%d \u0CA4\u0CBF\u0C82\u0C97\u0CB3\u0CC1",
+          y: "\u0C92\u0C82\u0CA6\u0CC1 \u0CB5\u0CB0\u0CCD\u0CB7",
+          yy: "%d \u0CB5\u0CB0\u0CCD\u0CB7"
+        },
+        preparse: function(string) {
+          return string.replace(/[೧೨೩೪೫೬೭೮೯೦]/g, function(match) {
+            return numberMap[match];
+          });
+        },
+        postformat: function(string) {
+          return string.replace(/\d/g, function(match) {
+            return symbolMap[match];
+          });
+        },
+        meridiemParse: /ರಾತ್ರಿ|ಬೆಳಿಗ್ಗೆ|ಮಧ್ಯಾಹ್ನ|ಸಂಜೆ/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u0CB0\u0CBE\u0CA4\u0CCD\u0CB0\u0CBF") {
+            return hour < 4 ? hour : hour + 12;
+          } else if (meridiem === "\u0CAC\u0CC6\u0CB3\u0CBF\u0C97\u0CCD\u0C97\u0CC6") {
+            return hour;
+          } else if (meridiem === "\u0CAE\u0CA7\u0CCD\u0CAF\u0CBE\u0CB9\u0CCD\u0CA8") {
+            return hour >= 10 ? hour : hour + 12;
+          } else if (meridiem === "\u0CB8\u0C82\u0C9C\u0CC6") {
+            return hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 4) {
+            return "\u0CB0\u0CBE\u0CA4\u0CCD\u0CB0\u0CBF";
+          } else if (hour < 10) {
+            return "\u0CAC\u0CC6\u0CB3\u0CBF\u0C97\u0CCD\u0C97\u0CC6";
+          } else if (hour < 17) {
+            return "\u0CAE\u0CA7\u0CCD\u0CAF\u0CBE\u0CB9\u0CCD\u0CA8";
+          } else if (hour < 20) {
+            return "\u0CB8\u0C82\u0C9C\u0CC6";
+          } else {
+            return "\u0CB0\u0CBE\u0CA4\u0CCD\u0CB0\u0CBF";
+          }
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(ನೇ)/,
+        ordinal: function(number) {
+          return number + "\u0CA8\u0CC6\u0CD5";
+        },
+        week: {
+          dow: 0,
+          doy: 6
+        }
+      });
+      return kn;
+    });
+  }
+});
+
 // builds/kn/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3852,9 @@ __export(exports, {
 
 // src/kn.js
 var import_moment = __toModule(require_moment());
+var import_kn = __toModule(require_kn());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("kn");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3864,11 @@ var kn_default = Plugin;
 var module_default = kn_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Rajeev Naik : https://github.com/rajeevnaikte
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Kannada [kn]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

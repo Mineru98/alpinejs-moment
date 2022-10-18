@@ -3726,11 +3726,86 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/de-at.js
+var require_de_at = __commonJS({
+  "node_modules/moment/locale/de-at.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function processRelativeTime(number, withoutSuffix, key, isFuture) {
+        var format = {
+          m: ["eine Minute", "einer Minute"],
+          h: ["eine Stunde", "einer Stunde"],
+          d: ["ein Tag", "einem Tag"],
+          dd: [number + " Tage", number + " Tagen"],
+          w: ["eine Woche", "einer Woche"],
+          M: ["ein Monat", "einem Monat"],
+          MM: [number + " Monate", number + " Monaten"],
+          y: ["ein Jahr", "einem Jahr"],
+          yy: [number + " Jahre", number + " Jahren"]
+        };
+        return withoutSuffix ? format[key][0] : format[key][1];
+      }
+      var deAt = moment2.defineLocale("de-at", {
+        months: "J\xE4nner_Februar_M\xE4rz_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember".split("_"),
+        monthsShort: "J\xE4n._Feb._M\xE4rz_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.".split("_"),
+        monthsParseExact: true,
+        weekdays: "Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag".split("_"),
+        weekdaysShort: "So._Mo._Di._Mi._Do._Fr._Sa.".split("_"),
+        weekdaysMin: "So_Mo_Di_Mi_Do_Fr_Sa".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D. MMMM YYYY",
+          LLL: "D. MMMM YYYY HH:mm",
+          LLLL: "dddd, D. MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[heute um] LT [Uhr]",
+          sameElse: "L",
+          nextDay: "[morgen um] LT [Uhr]",
+          nextWeek: "dddd [um] LT [Uhr]",
+          lastDay: "[gestern um] LT [Uhr]",
+          lastWeek: "[letzten] dddd [um] LT [Uhr]"
+        },
+        relativeTime: {
+          future: "in %s",
+          past: "vor %s",
+          s: "ein paar Sekunden",
+          ss: "%d Sekunden",
+          m: processRelativeTime,
+          mm: "%d Minuten",
+          h: processRelativeTime,
+          hh: "%d Stunden",
+          d: processRelativeTime,
+          dd: processRelativeTime,
+          w: processRelativeTime,
+          ww: "%d Wochen",
+          M: processRelativeTime,
+          MM: processRelativeTime,
+          y: processRelativeTime,
+          yy: processRelativeTime
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return deAt;
+    });
+  }
+});
+
 // src/de-at.js
 var import_moment = __toModule(require_moment());
+var import_de_at = __toModule(require_de_at());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("de-at");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3816,14 @@ var module_default = de_at_default;
 export {
   module_default as default
 };
+//! author : Martin Groller : https://github.com/MadMG
+//! author : Mikolaj Dadela : https://github.com/mik01aj
+//! author : lluchs : https://github.com/lluchs
+//! author: Menelion Elensúle: https://github.com/Oire
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : German (Austria) [de-at]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

@@ -3724,6 +3724,88 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ky.js
+var require_ky = __commonJS({
+  "node_modules/moment/locale/ky.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var suffixes = {
+        0: "-\u0447\u04AF",
+        1: "-\u0447\u0438",
+        2: "-\u0447\u0438",
+        3: "-\u0447\u04AF",
+        4: "-\u0447\u04AF",
+        5: "-\u0447\u0438",
+        6: "-\u0447\u044B",
+        7: "-\u0447\u0438",
+        8: "-\u0447\u0438",
+        9: "-\u0447\u0443",
+        10: "-\u0447\u0443",
+        20: "-\u0447\u044B",
+        30: "-\u0447\u0443",
+        40: "-\u0447\u044B",
+        50: "-\u0447\u04AF",
+        60: "-\u0447\u044B",
+        70: "-\u0447\u0438",
+        80: "-\u0447\u0438",
+        90: "-\u0447\u0443",
+        100: "-\u0447\u04AF"
+      };
+      var ky = moment2.defineLocale("ky", {
+        months: "\u044F\u043D\u0432\u0430\u0440\u044C_\u0444\u0435\u0432\u0440\u0430\u043B\u044C_\u043C\u0430\u0440\u0442_\u0430\u043F\u0440\u0435\u043B\u044C_\u043C\u0430\u0439_\u0438\u044E\u043D\u044C_\u0438\u044E\u043B\u044C_\u0430\u0432\u0433\u0443\u0441\u0442_\u0441\u0435\u043D\u0442\u044F\u0431\u0440\u044C_\u043E\u043A\u0442\u044F\u0431\u0440\u044C_\u043D\u043E\u044F\u0431\u0440\u044C_\u0434\u0435\u043A\u0430\u0431\u0440\u044C".split("_"),
+        monthsShort: "\u044F\u043D\u0432_\u0444\u0435\u0432_\u043C\u0430\u0440\u0442_\u0430\u043F\u0440_\u043C\u0430\u0439_\u0438\u044E\u043D\u044C_\u0438\u044E\u043B\u044C_\u0430\u0432\u0433_\u0441\u0435\u043D_\u043E\u043A\u0442_\u043D\u043E\u044F_\u0434\u0435\u043A".split("_"),
+        weekdays: "\u0416\u0435\u043A\u0448\u0435\u043C\u0431\u0438_\u0414\u04AF\u0439\u0448\u04E9\u043C\u0431\u04AF_\u0428\u0435\u0439\u0448\u0435\u043C\u0431\u0438_\u0428\u0430\u0440\u0448\u0435\u043C\u0431\u0438_\u0411\u0435\u0439\u0448\u0435\u043C\u0431\u0438_\u0416\u0443\u043C\u0430_\u0418\u0448\u0435\u043C\u0431\u0438".split("_"),
+        weekdaysShort: "\u0416\u0435\u043A_\u0414\u04AF\u0439_\u0428\u0435\u0439_\u0428\u0430\u0440_\u0411\u0435\u0439_\u0416\u0443\u043C_\u0418\u0448\u0435".split("_"),
+        weekdaysMin: "\u0416\u043A_\u0414\u0439_\u0428\u0439_\u0428\u0440_\u0411\u0439_\u0416\u043C_\u0418\u0448".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[\u0411\u04AF\u0433\u04AF\u043D \u0441\u0430\u0430\u0442] LT",
+          nextDay: "[\u042D\u0440\u0442\u0435\u04A3 \u0441\u0430\u0430\u0442] LT",
+          nextWeek: "dddd [\u0441\u0430\u0430\u0442] LT",
+          lastDay: "[\u041A\u0435\u0447\u044D\u044D \u0441\u0430\u0430\u0442] LT",
+          lastWeek: "[\u04E8\u0442\u043A\u04E9\u043D \u0430\u043F\u0442\u0430\u043D\u044B\u043D] dddd [\u043A\u04AF\u043D\u04AF] [\u0441\u0430\u0430\u0442] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0438\u0447\u0438\u043D\u0434\u0435",
+          past: "%s \u043C\u0443\u0440\u0443\u043D",
+          s: "\u0431\u0438\u0440\u043D\u0435\u0447\u0435 \u0441\u0435\u043A\u0443\u043D\u0434",
+          ss: "%d \u0441\u0435\u043A\u0443\u043D\u0434",
+          m: "\u0431\u0438\u0440 \u043C\u04AF\u043D\u04E9\u0442",
+          mm: "%d \u043C\u04AF\u043D\u04E9\u0442",
+          h: "\u0431\u0438\u0440 \u0441\u0430\u0430\u0442",
+          hh: "%d \u0441\u0430\u0430\u0442",
+          d: "\u0431\u0438\u0440 \u043A\u04AF\u043D",
+          dd: "%d \u043A\u04AF\u043D",
+          M: "\u0431\u0438\u0440 \u0430\u0439",
+          MM: "%d \u0430\u0439",
+          y: "\u0431\u0438\u0440 \u0436\u044B\u043B",
+          yy: "%d \u0436\u044B\u043B"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}-(чи|чы|чү|чу)/,
+        ordinal: function(number) {
+          var a = number % 10, b = number >= 100 ? 100 : null;
+          return number + (suffixes[number] || suffixes[a] || suffixes[b]);
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return ky;
+    });
+  }
+});
+
 // builds/ky/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3813,9 @@ __export(exports, {
 
 // src/ky.js
 var import_moment = __toModule(require_moment());
+var import_ky = __toModule(require_ky());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ky");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3825,11 @@ var ky_default = Plugin;
 var module_default = ky_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Chyngyz Arystan uulu : https://github.com/chyngyz
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Kyrgyz [ky]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

@@ -3726,11 +3726,68 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/da.js
+var require_da = __commonJS({
+  "node_modules/moment/locale/da.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var da = moment2.defineLocale("da", {
+        months: "januar_februar_marts_april_maj_juni_juli_august_september_oktober_november_december".split("_"),
+        monthsShort: "jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec".split("_"),
+        weekdays: "s\xF8ndag_mandag_tirsdag_onsdag_torsdag_fredag_l\xF8rdag".split("_"),
+        weekdaysShort: "s\xF8n_man_tir_ons_tor_fre_l\xF8r".split("_"),
+        weekdaysMin: "s\xF8_ma_ti_on_to_fr_l\xF8".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D. MMMM YYYY",
+          LLL: "D. MMMM YYYY HH:mm",
+          LLLL: "dddd [d.] D. MMMM YYYY [kl.] HH:mm"
+        },
+        calendar: {
+          sameDay: "[i dag kl.] LT",
+          nextDay: "[i morgen kl.] LT",
+          nextWeek: "p\xE5 dddd [kl.] LT",
+          lastDay: "[i g\xE5r kl.] LT",
+          lastWeek: "[i] dddd[s kl.] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "om %s",
+          past: "%s siden",
+          s: "f\xE5 sekunder",
+          ss: "%d sekunder",
+          m: "et minut",
+          mm: "%d minutter",
+          h: "en time",
+          hh: "%d timer",
+          d: "en dag",
+          dd: "%d dage",
+          M: "en m\xE5ned",
+          MM: "%d m\xE5neder",
+          y: "et \xE5r",
+          yy: "%d \xE5r"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return da;
+    });
+  }
+});
+
 // src/da.js
 var import_moment = __toModule(require_moment());
+var import_da = __toModule(require_da());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("da");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3798,11 @@ var module_default = da_default;
 export {
   module_default as default
 };
+//! author : Ulrik Nielsen : https://github.com/mrbase
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Danish [da]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

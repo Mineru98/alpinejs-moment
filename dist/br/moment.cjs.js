@@ -3724,6 +3724,165 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/br.js
+var require_br = __commonJS({
+  "node_modules/moment/locale/br.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function relativeTimeWithMutation(number, withoutSuffix, key) {
+        var format = {
+          mm: "munutenn",
+          MM: "miz",
+          dd: "devezh"
+        };
+        return number + " " + mutation(format[key], number);
+      }
+      function specialMutationForYears(number) {
+        switch (lastNumber(number)) {
+          case 1:
+          case 3:
+          case 4:
+          case 5:
+          case 9:
+            return number + " bloaz";
+          default:
+            return number + " vloaz";
+        }
+      }
+      function lastNumber(number) {
+        if (number > 9) {
+          return lastNumber(number % 10);
+        }
+        return number;
+      }
+      function mutation(text, number) {
+        if (number === 2) {
+          return softMutation(text);
+        }
+        return text;
+      }
+      function softMutation(text) {
+        var mutationTable = {
+          m: "v",
+          b: "v",
+          d: "z"
+        };
+        if (mutationTable[text.charAt(0)] === void 0) {
+          return text;
+        }
+        return mutationTable[text.charAt(0)] + text.substring(1);
+      }
+      var monthsParse = [
+        /^gen/i,
+        /^c[ʼ\']hwe/i,
+        /^meu/i,
+        /^ebr/i,
+        /^mae/i,
+        /^(mez|eve)/i,
+        /^gou/i,
+        /^eos/i,
+        /^gwe/i,
+        /^her/i,
+        /^du/i,
+        /^ker/i
+      ], monthsRegex = /^(genver|c[ʼ\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu|gen|c[ʼ\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i, monthsStrictRegex = /^(genver|c[ʼ\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu)/i, monthsShortStrictRegex = /^(gen|c[ʼ\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i, fullWeekdaysParse = [
+        /^sul/i,
+        /^lun/i,
+        /^meurzh/i,
+        /^merc[ʼ\']her/i,
+        /^yaou/i,
+        /^gwener/i,
+        /^sadorn/i
+      ], shortWeekdaysParse = [
+        /^Sul/i,
+        /^Lun/i,
+        /^Meu/i,
+        /^Mer/i,
+        /^Yao/i,
+        /^Gwe/i,
+        /^Sad/i
+      ], minWeekdaysParse = [
+        /^Su/i,
+        /^Lu/i,
+        /^Me([^r]|$)/i,
+        /^Mer/i,
+        /^Ya/i,
+        /^Gw/i,
+        /^Sa/i
+      ];
+      var br = moment2.defineLocale("br", {
+        months: "Genver_C\u02BChwevrer_Meurzh_Ebrel_Mae_Mezheven_Gouere_Eost_Gwengolo_Here_Du_Kerzu".split("_"),
+        monthsShort: "Gen_C\u02BChwe_Meu_Ebr_Mae_Eve_Gou_Eos_Gwe_Her_Du_Ker".split("_"),
+        weekdays: "Sul_Lun_Meurzh_Merc\u02BCher_Yaou_Gwener_Sadorn".split("_"),
+        weekdaysShort: "Sul_Lun_Meu_Mer_Yao_Gwe_Sad".split("_"),
+        weekdaysMin: "Su_Lu_Me_Mer_Ya_Gw_Sa".split("_"),
+        weekdaysParse: minWeekdaysParse,
+        fullWeekdaysParse,
+        shortWeekdaysParse,
+        minWeekdaysParse,
+        monthsRegex,
+        monthsShortRegex: monthsRegex,
+        monthsStrictRegex,
+        monthsShortStrictRegex,
+        monthsParse,
+        longMonthsParse: monthsParse,
+        shortMonthsParse: monthsParse,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D [a viz] MMMM YYYY",
+          LLL: "D [a viz] MMMM YYYY HH:mm",
+          LLLL: "dddd, D [a viz] MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Hiziv da] LT",
+          nextDay: "[Warc\u02BChoazh da] LT",
+          nextWeek: "dddd [da] LT",
+          lastDay: "[Dec\u02BCh da] LT",
+          lastWeek: "dddd [paset da] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "a-benn %s",
+          past: "%s \u02BCzo",
+          s: "un nebeud segondenno\xF9",
+          ss: "%d eilenn",
+          m: "ur vunutenn",
+          mm: relativeTimeWithMutation,
+          h: "un eur",
+          hh: "%d eur",
+          d: "un devezh",
+          dd: relativeTimeWithMutation,
+          M: "ur miz",
+          MM: relativeTimeWithMutation,
+          y: "ur bloaz",
+          yy: specialMutationForYears
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(añ|vet)/,
+        ordinal: function(number) {
+          var output = number === 1 ? "a\xF1" : "vet";
+          return number + output;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        },
+        meridiemParse: /a.m.|g.m./,
+        isPM: function(token) {
+          return token === "g.m.";
+        },
+        meridiem: function(hour, minute, isLower) {
+          return hour < 12 ? "a.m." : "g.m.";
+        }
+      });
+      return br;
+    });
+  }
+});
+
 // builds/br/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3890,9 @@ __export(exports, {
 
 // src/br.js
 var import_moment = __toModule(require_moment());
+var import_br = __toModule(require_br());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("br");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3902,11 @@ var br_default = Plugin;
 var module_default = br_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Breton [br]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

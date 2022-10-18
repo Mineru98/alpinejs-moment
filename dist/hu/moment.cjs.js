@@ -3724,6 +3724,113 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/hu.js
+var require_hu = __commonJS({
+  "node_modules/moment/locale/hu.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var weekEndings = "vas\xE1rnap h\xE9tf\u0151n kedden szerd\xE1n cs\xFCt\xF6rt\xF6k\xF6n p\xE9nteken szombaton".split(" ");
+      function translate(number, withoutSuffix, key, isFuture) {
+        var num = number;
+        switch (key) {
+          case "s":
+            return isFuture || withoutSuffix ? "n\xE9h\xE1ny m\xE1sodperc" : "n\xE9h\xE1ny m\xE1sodperce";
+          case "ss":
+            return num + (isFuture || withoutSuffix) ? " m\xE1sodperc" : " m\xE1sodperce";
+          case "m":
+            return "egy" + (isFuture || withoutSuffix ? " perc" : " perce");
+          case "mm":
+            return num + (isFuture || withoutSuffix ? " perc" : " perce");
+          case "h":
+            return "egy" + (isFuture || withoutSuffix ? " \xF3ra" : " \xF3r\xE1ja");
+          case "hh":
+            return num + (isFuture || withoutSuffix ? " \xF3ra" : " \xF3r\xE1ja");
+          case "d":
+            return "egy" + (isFuture || withoutSuffix ? " nap" : " napja");
+          case "dd":
+            return num + (isFuture || withoutSuffix ? " nap" : " napja");
+          case "M":
+            return "egy" + (isFuture || withoutSuffix ? " h\xF3nap" : " h\xF3napja");
+          case "MM":
+            return num + (isFuture || withoutSuffix ? " h\xF3nap" : " h\xF3napja");
+          case "y":
+            return "egy" + (isFuture || withoutSuffix ? " \xE9v" : " \xE9ve");
+          case "yy":
+            return num + (isFuture || withoutSuffix ? " \xE9v" : " \xE9ve");
+        }
+        return "";
+      }
+      function week(isFuture) {
+        return (isFuture ? "" : "[m\xFAlt] ") + "[" + weekEndings[this.day()] + "] LT[-kor]";
+      }
+      var hu = moment2.defineLocale("hu", {
+        months: "janu\xE1r_febru\xE1r_m\xE1rcius_\xE1prilis_m\xE1jus_j\xFAnius_j\xFAlius_augusztus_szeptember_okt\xF3ber_november_december".split("_"),
+        monthsShort: "jan._feb._m\xE1rc._\xE1pr._m\xE1j._j\xFAn._j\xFAl._aug._szept._okt._nov._dec.".split("_"),
+        monthsParseExact: true,
+        weekdays: "vas\xE1rnap_h\xE9tf\u0151_kedd_szerda_cs\xFCt\xF6rt\xF6k_p\xE9ntek_szombat".split("_"),
+        weekdaysShort: "vas_h\xE9t_kedd_sze_cs\xFCt_p\xE9n_szo".split("_"),
+        weekdaysMin: "v_h_k_sze_cs_p_szo".split("_"),
+        longDateFormat: {
+          LT: "H:mm",
+          LTS: "H:mm:ss",
+          L: "YYYY.MM.DD.",
+          LL: "YYYY. MMMM D.",
+          LLL: "YYYY. MMMM D. H:mm",
+          LLLL: "YYYY. MMMM D., dddd H:mm"
+        },
+        meridiemParse: /de|du/i,
+        isPM: function(input) {
+          return input.charAt(1).toLowerCase() === "u";
+        },
+        meridiem: function(hours, minutes, isLower) {
+          if (hours < 12) {
+            return isLower === true ? "de" : "DE";
+          } else {
+            return isLower === true ? "du" : "DU";
+          }
+        },
+        calendar: {
+          sameDay: "[ma] LT[-kor]",
+          nextDay: "[holnap] LT[-kor]",
+          nextWeek: function() {
+            return week.call(this, true);
+          },
+          lastDay: "[tegnap] LT[-kor]",
+          lastWeek: function() {
+            return week.call(this, false);
+          },
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s m\xFAlva",
+          past: "%s",
+          s: translate,
+          ss: translate,
+          m: translate,
+          mm: translate,
+          h: translate,
+          hh: translate,
+          d: translate,
+          dd: translate,
+          M: translate,
+          MM: translate,
+          y: translate,
+          yy: translate
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return hu;
+    });
+  }
+});
+
 // builds/hu/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3838,9 @@ __export(exports, {
 
 // src/hu.js
 var import_moment = __toModule(require_moment());
+var import_hu = __toModule(require_hu());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("hu");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3850,12 @@ var hu_default = Plugin;
 var module_default = hu_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Adam Brunner : https://github.com/adambrunner
+//! author : Peter Viszt  : https://github.com/passatgt
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Hungarian [hu]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

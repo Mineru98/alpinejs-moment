@@ -3724,6 +3724,158 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/hi.js
+var require_hi = __commonJS({
+  "node_modules/moment/locale/hi.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var symbolMap = {
+        1: "\u0967",
+        2: "\u0968",
+        3: "\u0969",
+        4: "\u096A",
+        5: "\u096B",
+        6: "\u096C",
+        7: "\u096D",
+        8: "\u096E",
+        9: "\u096F",
+        0: "\u0966"
+      }, numberMap = {
+        "\u0967": "1",
+        "\u0968": "2",
+        "\u0969": "3",
+        "\u096A": "4",
+        "\u096B": "5",
+        "\u096C": "6",
+        "\u096D": "7",
+        "\u096E": "8",
+        "\u096F": "9",
+        "\u0966": "0"
+      }, monthsParse = [
+        /^जन/i,
+        /^फ़र|फर/i,
+        /^मार्च/i,
+        /^अप्रै/i,
+        /^मई/i,
+        /^जून/i,
+        /^जुल/i,
+        /^अग/i,
+        /^सितं|सित/i,
+        /^अक्टू/i,
+        /^नव|नवं/i,
+        /^दिसं|दिस/i
+      ], shortMonthsParse = [
+        /^जन/i,
+        /^फ़र/i,
+        /^मार्च/i,
+        /^अप्रै/i,
+        /^मई/i,
+        /^जून/i,
+        /^जुल/i,
+        /^अग/i,
+        /^सित/i,
+        /^अक्टू/i,
+        /^नव/i,
+        /^दिस/i
+      ];
+      var hi = moment2.defineLocale("hi", {
+        months: {
+          format: "\u091C\u0928\u0935\u0930\u0940_\u092B\u093C\u0930\u0935\u0930\u0940_\u092E\u093E\u0930\u094D\u091A_\u0905\u092A\u094D\u0930\u0948\u0932_\u092E\u0908_\u091C\u0942\u0928_\u091C\u0941\u0932\u093E\u0908_\u0905\u0917\u0938\u094D\u0924_\u0938\u093F\u0924\u092E\u094D\u092C\u0930_\u0905\u0915\u094D\u091F\u0942\u092C\u0930_\u0928\u0935\u092E\u094D\u092C\u0930_\u0926\u093F\u0938\u092E\u094D\u092C\u0930".split("_"),
+          standalone: "\u091C\u0928\u0935\u0930\u0940_\u092B\u0930\u0935\u0930\u0940_\u092E\u093E\u0930\u094D\u091A_\u0905\u092A\u094D\u0930\u0948\u0932_\u092E\u0908_\u091C\u0942\u0928_\u091C\u0941\u0932\u093E\u0908_\u0905\u0917\u0938\u094D\u0924_\u0938\u093F\u0924\u0902\u092C\u0930_\u0905\u0915\u094D\u091F\u0942\u092C\u0930_\u0928\u0935\u0902\u092C\u0930_\u0926\u093F\u0938\u0902\u092C\u0930".split("_")
+        },
+        monthsShort: "\u091C\u0928._\u092B\u093C\u0930._\u092E\u093E\u0930\u094D\u091A_\u0905\u092A\u094D\u0930\u0948._\u092E\u0908_\u091C\u0942\u0928_\u091C\u0941\u0932._\u0905\u0917._\u0938\u093F\u0924._\u0905\u0915\u094D\u091F\u0942._\u0928\u0935._\u0926\u093F\u0938.".split("_"),
+        weekdays: "\u0930\u0935\u093F\u0935\u093E\u0930_\u0938\u094B\u092E\u0935\u093E\u0930_\u092E\u0902\u0917\u0932\u0935\u093E\u0930_\u092C\u0941\u0927\u0935\u093E\u0930_\u0917\u0941\u0930\u0942\u0935\u093E\u0930_\u0936\u0941\u0915\u094D\u0930\u0935\u093E\u0930_\u0936\u0928\u093F\u0935\u093E\u0930".split("_"),
+        weekdaysShort: "\u0930\u0935\u093F_\u0938\u094B\u092E_\u092E\u0902\u0917\u0932_\u092C\u0941\u0927_\u0917\u0941\u0930\u0942_\u0936\u0941\u0915\u094D\u0930_\u0936\u0928\u093F".split("_"),
+        weekdaysMin: "\u0930_\u0938\u094B_\u092E\u0902_\u092C\u0941_\u0917\u0941_\u0936\u0941_\u0936".split("_"),
+        longDateFormat: {
+          LT: "A h:mm \u092C\u091C\u0947",
+          LTS: "A h:mm:ss \u092C\u091C\u0947",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY, A h:mm \u092C\u091C\u0947",
+          LLLL: "dddd, D MMMM YYYY, A h:mm \u092C\u091C\u0947"
+        },
+        monthsParse,
+        longMonthsParse: monthsParse,
+        shortMonthsParse,
+        monthsRegex: /^(जनवरी|जन\.?|फ़रवरी|फरवरी|फ़र\.?|मार्च?|अप्रैल|अप्रै\.?|मई?|जून?|जुलाई|जुल\.?|अगस्त|अग\.?|सितम्बर|सितंबर|सित\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर|नव\.?|दिसम्बर|दिसंबर|दिस\.?)/i,
+        monthsShortRegex: /^(जनवरी|जन\.?|फ़रवरी|फरवरी|फ़र\.?|मार्च?|अप्रैल|अप्रै\.?|मई?|जून?|जुलाई|जुल\.?|अगस्त|अग\.?|सितम्बर|सितंबर|सित\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर|नव\.?|दिसम्बर|दिसंबर|दिस\.?)/i,
+        monthsStrictRegex: /^(जनवरी?|फ़रवरी|फरवरी?|मार्च?|अप्रैल?|मई?|जून?|जुलाई?|अगस्त?|सितम्बर|सितंबर|सित?\.?|अक्टूबर|अक्टू\.?|नवम्बर|नवंबर?|दिसम्बर|दिसंबर?)/i,
+        monthsShortStrictRegex: /^(जन\.?|फ़र\.?|मार्च?|अप्रै\.?|मई?|जून?|जुल\.?|अग\.?|सित\.?|अक्टू\.?|नव\.?|दिस\.?)/i,
+        calendar: {
+          sameDay: "[\u0906\u091C] LT",
+          nextDay: "[\u0915\u0932] LT",
+          nextWeek: "dddd, LT",
+          lastDay: "[\u0915\u0932] LT",
+          lastWeek: "[\u092A\u093F\u091B\u0932\u0947] dddd, LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u092E\u0947\u0902",
+          past: "%s \u092A\u0939\u0932\u0947",
+          s: "\u0915\u0941\u091B \u0939\u0940 \u0915\u094D\u0937\u0923",
+          ss: "%d \u0938\u0947\u0915\u0902\u0921",
+          m: "\u090F\u0915 \u092E\u093F\u0928\u091F",
+          mm: "%d \u092E\u093F\u0928\u091F",
+          h: "\u090F\u0915 \u0918\u0902\u091F\u093E",
+          hh: "%d \u0918\u0902\u091F\u0947",
+          d: "\u090F\u0915 \u0926\u093F\u0928",
+          dd: "%d \u0926\u093F\u0928",
+          M: "\u090F\u0915 \u092E\u0939\u0940\u0928\u0947",
+          MM: "%d \u092E\u0939\u0940\u0928\u0947",
+          y: "\u090F\u0915 \u0935\u0930\u094D\u0937",
+          yy: "%d \u0935\u0930\u094D\u0937"
+        },
+        preparse: function(string) {
+          return string.replace(/[१२३४५६७८९०]/g, function(match) {
+            return numberMap[match];
+          });
+        },
+        postformat: function(string) {
+          return string.replace(/\d/g, function(match) {
+            return symbolMap[match];
+          });
+        },
+        meridiemParse: /रात|सुबह|दोपहर|शाम/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u0930\u093E\u0924") {
+            return hour < 4 ? hour : hour + 12;
+          } else if (meridiem === "\u0938\u0941\u092C\u0939") {
+            return hour;
+          } else if (meridiem === "\u0926\u094B\u092A\u0939\u0930") {
+            return hour >= 10 ? hour : hour + 12;
+          } else if (meridiem === "\u0936\u093E\u092E") {
+            return hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 4) {
+            return "\u0930\u093E\u0924";
+          } else if (hour < 10) {
+            return "\u0938\u0941\u092C\u0939";
+          } else if (hour < 17) {
+            return "\u0926\u094B\u092A\u0939\u0930";
+          } else if (hour < 20) {
+            return "\u0936\u093E\u092E";
+          } else {
+            return "\u0930\u093E\u0924";
+          }
+        },
+        week: {
+          dow: 0,
+          doy: 6
+        }
+      });
+      return hi;
+    });
+  }
+});
+
 // builds/hi/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3883,9 @@ __export(exports, {
 
 // src/hi.js
 var import_moment = __toModule(require_moment());
+var import_hi = __toModule(require_hi());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("hi");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3895,11 @@ var hi_default = Plugin;
 var module_default = hi_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Mayank Singhal : https://github.com/mayanksinghal
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Hindi [hi]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

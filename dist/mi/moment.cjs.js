@@ -3724,6 +3724,67 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/mi.js
+var require_mi = __commonJS({
+  "node_modules/moment/locale/mi.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var mi = moment2.defineLocale("mi", {
+        months: "Kohi-t\u0101te_Hui-tanguru_Pout\u016B-te-rangi_Paenga-wh\u0101wh\u0101_Haratua_Pipiri_H\u014Dngoingoi_Here-turi-k\u014Dk\u0101_Mahuru_Whiringa-\u0101-nuku_Whiringa-\u0101-rangi_Hakihea".split("_"),
+        monthsShort: "Kohi_Hui_Pou_Pae_Hara_Pipi_H\u014Dngoi_Here_Mahu_Whi-nu_Whi-ra_Haki".split("_"),
+        monthsRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
+        monthsStrictRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
+        monthsShortRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
+        monthsShortStrictRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,2}/i,
+        weekdays: "R\u0101tapu_Mane_T\u016Brei_Wenerei_T\u0101ite_Paraire_H\u0101tarei".split("_"),
+        weekdaysShort: "Ta_Ma_T\u016B_We_T\u0101i_Pa_H\u0101".split("_"),
+        weekdaysMin: "Ta_Ma_T\u016B_We_T\u0101i_Pa_H\u0101".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY [i] HH:mm",
+          LLLL: "dddd, D MMMM YYYY [i] HH:mm"
+        },
+        calendar: {
+          sameDay: "[i teie mahana, i] LT",
+          nextDay: "[apopo i] LT",
+          nextWeek: "dddd [i] LT",
+          lastDay: "[inanahi i] LT",
+          lastWeek: "dddd [whakamutunga i] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "i roto i %s",
+          past: "%s i mua",
+          s: "te h\u0113kona ruarua",
+          ss: "%d h\u0113kona",
+          m: "he meneti",
+          mm: "%d meneti",
+          h: "te haora",
+          hh: "%d haora",
+          d: "he ra",
+          dd: "%d ra",
+          M: "he marama",
+          MM: "%d marama",
+          y: "he tau",
+          yy: "%d tau"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}º/,
+        ordinal: "%d\xBA",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return mi;
+    });
+  }
+});
+
 // builds/mi/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3792,9 @@ __export(exports, {
 
 // src/mi.js
 var import_moment = __toModule(require_moment());
+var import_mi = __toModule(require_mi());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("mi");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3804,11 @@ var mi_default = Plugin;
 var module_default = mi_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Maori [mi]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

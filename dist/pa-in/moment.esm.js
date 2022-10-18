@@ -3726,11 +3726,127 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/pa-in.js
+var require_pa_in = __commonJS({
+  "node_modules/moment/locale/pa-in.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var symbolMap = {
+        1: "\u0A67",
+        2: "\u0A68",
+        3: "\u0A69",
+        4: "\u0A6A",
+        5: "\u0A6B",
+        6: "\u0A6C",
+        7: "\u0A6D",
+        8: "\u0A6E",
+        9: "\u0A6F",
+        0: "\u0A66"
+      }, numberMap = {
+        "\u0A67": "1",
+        "\u0A68": "2",
+        "\u0A69": "3",
+        "\u0A6A": "4",
+        "\u0A6B": "5",
+        "\u0A6C": "6",
+        "\u0A6D": "7",
+        "\u0A6E": "8",
+        "\u0A6F": "9",
+        "\u0A66": "0"
+      };
+      var paIn = moment2.defineLocale("pa-in", {
+        months: "\u0A1C\u0A28\u0A35\u0A30\u0A40_\u0A2B\u0A3C\u0A30\u0A35\u0A30\u0A40_\u0A2E\u0A3E\u0A30\u0A1A_\u0A05\u0A2A\u0A4D\u0A30\u0A48\u0A32_\u0A2E\u0A08_\u0A1C\u0A42\u0A28_\u0A1C\u0A41\u0A32\u0A3E\u0A08_\u0A05\u0A17\u0A38\u0A24_\u0A38\u0A24\u0A70\u0A2C\u0A30_\u0A05\u0A15\u0A24\u0A42\u0A2C\u0A30_\u0A28\u0A35\u0A70\u0A2C\u0A30_\u0A26\u0A38\u0A70\u0A2C\u0A30".split("_"),
+        monthsShort: "\u0A1C\u0A28\u0A35\u0A30\u0A40_\u0A2B\u0A3C\u0A30\u0A35\u0A30\u0A40_\u0A2E\u0A3E\u0A30\u0A1A_\u0A05\u0A2A\u0A4D\u0A30\u0A48\u0A32_\u0A2E\u0A08_\u0A1C\u0A42\u0A28_\u0A1C\u0A41\u0A32\u0A3E\u0A08_\u0A05\u0A17\u0A38\u0A24_\u0A38\u0A24\u0A70\u0A2C\u0A30_\u0A05\u0A15\u0A24\u0A42\u0A2C\u0A30_\u0A28\u0A35\u0A70\u0A2C\u0A30_\u0A26\u0A38\u0A70\u0A2C\u0A30".split("_"),
+        weekdays: "\u0A10\u0A24\u0A35\u0A3E\u0A30_\u0A38\u0A4B\u0A2E\u0A35\u0A3E\u0A30_\u0A2E\u0A70\u0A17\u0A32\u0A35\u0A3E\u0A30_\u0A2C\u0A41\u0A27\u0A35\u0A3E\u0A30_\u0A35\u0A40\u0A30\u0A35\u0A3E\u0A30_\u0A38\u0A3C\u0A41\u0A71\u0A15\u0A30\u0A35\u0A3E\u0A30_\u0A38\u0A3C\u0A28\u0A40\u0A1A\u0A30\u0A35\u0A3E\u0A30".split("_"),
+        weekdaysShort: "\u0A10\u0A24_\u0A38\u0A4B\u0A2E_\u0A2E\u0A70\u0A17\u0A32_\u0A2C\u0A41\u0A27_\u0A35\u0A40\u0A30_\u0A38\u0A3C\u0A41\u0A15\u0A30_\u0A38\u0A3C\u0A28\u0A40".split("_"),
+        weekdaysMin: "\u0A10\u0A24_\u0A38\u0A4B\u0A2E_\u0A2E\u0A70\u0A17\u0A32_\u0A2C\u0A41\u0A27_\u0A35\u0A40\u0A30_\u0A38\u0A3C\u0A41\u0A15\u0A30_\u0A38\u0A3C\u0A28\u0A40".split("_"),
+        longDateFormat: {
+          LT: "A h:mm \u0A35\u0A1C\u0A47",
+          LTS: "A h:mm:ss \u0A35\u0A1C\u0A47",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY, A h:mm \u0A35\u0A1C\u0A47",
+          LLLL: "dddd, D MMMM YYYY, A h:mm \u0A35\u0A1C\u0A47"
+        },
+        calendar: {
+          sameDay: "[\u0A05\u0A1C] LT",
+          nextDay: "[\u0A15\u0A32] LT",
+          nextWeek: "[\u0A05\u0A17\u0A32\u0A3E] dddd, LT",
+          lastDay: "[\u0A15\u0A32] LT",
+          lastWeek: "[\u0A2A\u0A3F\u0A1B\u0A32\u0A47] dddd, LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0A35\u0A3F\u0A71\u0A1A",
+          past: "%s \u0A2A\u0A3F\u0A1B\u0A32\u0A47",
+          s: "\u0A15\u0A41\u0A1D \u0A38\u0A15\u0A3F\u0A70\u0A1F",
+          ss: "%d \u0A38\u0A15\u0A3F\u0A70\u0A1F",
+          m: "\u0A07\u0A15 \u0A2E\u0A3F\u0A70\u0A1F",
+          mm: "%d \u0A2E\u0A3F\u0A70\u0A1F",
+          h: "\u0A07\u0A71\u0A15 \u0A18\u0A70\u0A1F\u0A3E",
+          hh: "%d \u0A18\u0A70\u0A1F\u0A47",
+          d: "\u0A07\u0A71\u0A15 \u0A26\u0A3F\u0A28",
+          dd: "%d \u0A26\u0A3F\u0A28",
+          M: "\u0A07\u0A71\u0A15 \u0A2E\u0A39\u0A40\u0A28\u0A3E",
+          MM: "%d \u0A2E\u0A39\u0A40\u0A28\u0A47",
+          y: "\u0A07\u0A71\u0A15 \u0A38\u0A3E\u0A32",
+          yy: "%d \u0A38\u0A3E\u0A32"
+        },
+        preparse: function(string) {
+          return string.replace(/[੧੨੩੪੫੬੭੮੯੦]/g, function(match) {
+            return numberMap[match];
+          });
+        },
+        postformat: function(string) {
+          return string.replace(/\d/g, function(match) {
+            return symbolMap[match];
+          });
+        },
+        meridiemParse: /ਰਾਤ|ਸਵੇਰ|ਦੁਪਹਿਰ|ਸ਼ਾਮ/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u0A30\u0A3E\u0A24") {
+            return hour < 4 ? hour : hour + 12;
+          } else if (meridiem === "\u0A38\u0A35\u0A47\u0A30") {
+            return hour;
+          } else if (meridiem === "\u0A26\u0A41\u0A2A\u0A39\u0A3F\u0A30") {
+            return hour >= 10 ? hour : hour + 12;
+          } else if (meridiem === "\u0A38\u0A3C\u0A3E\u0A2E") {
+            return hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 4) {
+            return "\u0A30\u0A3E\u0A24";
+          } else if (hour < 10) {
+            return "\u0A38\u0A35\u0A47\u0A30";
+          } else if (hour < 17) {
+            return "\u0A26\u0A41\u0A2A\u0A39\u0A3F\u0A30";
+          } else if (hour < 20) {
+            return "\u0A38\u0A3C\u0A3E\u0A2E";
+          } else {
+            return "\u0A30\u0A3E\u0A24";
+          }
+        },
+        week: {
+          dow: 0,
+          doy: 6
+        }
+      });
+      return paIn;
+    });
+  }
+});
+
 // src/pa-in.js
 var import_moment = __toModule(require_moment());
+var import_pa_in = __toModule(require_pa_in());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("pa-in");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3857,11 @@ var module_default = pa_in_default;
 export {
   module_default as default
 };
+//! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Punjabi (India) [pa-in]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

@@ -3724,6 +3724,102 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ga.js
+var require_ga = __commonJS({
+  "node_modules/moment/locale/ga.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var months = [
+        "Ean\xE1ir",
+        "Feabhra",
+        "M\xE1rta",
+        "Aibre\xE1n",
+        "Bealtaine",
+        "Meitheamh",
+        "I\xFAil",
+        "L\xFAnasa",
+        "Me\xE1n F\xF3mhair",
+        "Deireadh F\xF3mhair",
+        "Samhain",
+        "Nollaig"
+      ], monthsShort = [
+        "Ean",
+        "Feabh",
+        "M\xE1rt",
+        "Aib",
+        "Beal",
+        "Meith",
+        "I\xFAil",
+        "L\xFAn",
+        "M.F.",
+        "D.F.",
+        "Samh",
+        "Noll"
+      ], weekdays = [
+        "D\xE9 Domhnaigh",
+        "D\xE9 Luain",
+        "D\xE9 M\xE1irt",
+        "D\xE9 C\xE9adaoin",
+        "D\xE9ardaoin",
+        "D\xE9 hAoine",
+        "D\xE9 Sathairn"
+      ], weekdaysShort = ["Domh", "Luan", "M\xE1irt", "C\xE9ad", "D\xE9ar", "Aoine", "Sath"], weekdaysMin = ["Do", "Lu", "M\xE1", "C\xE9", "D\xE9", "A", "Sa"];
+      var ga = moment2.defineLocale("ga", {
+        months,
+        monthsShort,
+        monthsParseExact: true,
+        weekdays,
+        weekdaysShort,
+        weekdaysMin,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Inniu ag] LT",
+          nextDay: "[Am\xE1rach ag] LT",
+          nextWeek: "dddd [ag] LT",
+          lastDay: "[Inn\xE9 ag] LT",
+          lastWeek: "dddd [seo caite] [ag] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "i %s",
+          past: "%s \xF3 shin",
+          s: "c\xFApla soicind",
+          ss: "%d soicind",
+          m: "n\xF3im\xE9ad",
+          mm: "%d n\xF3im\xE9ad",
+          h: "uair an chloig",
+          hh: "%d uair an chloig",
+          d: "l\xE1",
+          dd: "%d l\xE1",
+          M: "m\xED",
+          MM: "%d m\xEDonna",
+          y: "bliain",
+          yy: "%d bliain"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(d|na|mh)/,
+        ordinal: function(number) {
+          var output = number === 1 ? "d" : number % 10 === 2 ? "na" : "mh";
+          return number + output;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return ga;
+    });
+  }
+});
+
 // builds/ga/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3827,9 @@ __export(exports, {
 
 // src/ga.js
 var import_moment = __toModule(require_moment());
+var import_ga = __toModule(require_ga());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ga");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3839,11 @@ var ga_default = Plugin;
 var module_default = ga_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : André Silva : https://github.com/askpt
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Irish or Irish Gaelic [ga]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

@@ -3726,11 +3726,133 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/gom-deva.js
+var require_gom_deva = __commonJS({
+  "node_modules/moment/locale/gom-deva.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function processRelativeTime(number, withoutSuffix, key, isFuture) {
+        var format = {
+          s: ["\u0925\u094B\u0921\u092F\u093E \u0938\u0945\u0915\u0902\u0921\u093E\u0902\u0928\u0940", "\u0925\u094B\u0921\u0947 \u0938\u0945\u0915\u0902\u0921"],
+          ss: [number + " \u0938\u0945\u0915\u0902\u0921\u093E\u0902\u0928\u0940", number + " \u0938\u0945\u0915\u0902\u0921"],
+          m: ["\u090F\u0915\u093E \u092E\u093F\u0923\u091F\u093E\u0928", "\u090F\u0915 \u092E\u093F\u0928\u0942\u091F"],
+          mm: [number + " \u092E\u093F\u0923\u091F\u093E\u0902\u0928\u0940", number + " \u092E\u093F\u0923\u091F\u093E\u0902"],
+          h: ["\u090F\u0915\u093E \u0935\u0930\u093E\u0928", "\u090F\u0915 \u0935\u0930"],
+          hh: [number + " \u0935\u0930\u093E\u0902\u0928\u0940", number + " \u0935\u0930\u093E\u0902"],
+          d: ["\u090F\u0915\u093E \u0926\u093F\u0938\u093E\u0928", "\u090F\u0915 \u0926\u0940\u0938"],
+          dd: [number + " \u0926\u093F\u0938\u093E\u0902\u0928\u0940", number + " \u0926\u0940\u0938"],
+          M: ["\u090F\u0915\u093E \u092E\u094D\u0939\u092F\u0928\u094D\u092F\u093E\u0928", "\u090F\u0915 \u092E\u094D\u0939\u092F\u0928\u094B"],
+          MM: [number + " \u092E\u094D\u0939\u092F\u0928\u094D\u092F\u093E\u0928\u0940", number + " \u092E\u094D\u0939\u092F\u0928\u0947"],
+          y: ["\u090F\u0915\u093E \u0935\u0930\u094D\u0938\u093E\u0928", "\u090F\u0915 \u0935\u0930\u094D\u0938"],
+          yy: [number + " \u0935\u0930\u094D\u0938\u093E\u0902\u0928\u0940", number + " \u0935\u0930\u094D\u0938\u093E\u0902"]
+        };
+        return isFuture ? format[key][0] : format[key][1];
+      }
+      var gomDeva = moment2.defineLocale("gom-deva", {
+        months: {
+          standalone: "\u091C\u093E\u0928\u0947\u0935\u093E\u0930\u0940_\u092B\u0947\u092C\u094D\u0930\u0941\u0935\u093E\u0930\u0940_\u092E\u093E\u0930\u094D\u091A_\u090F\u092A\u094D\u0930\u0940\u0932_\u092E\u0947_\u091C\u0942\u0928_\u091C\u0941\u0932\u092F_\u0911\u0917\u0938\u094D\u091F_\u0938\u092A\u094D\u091F\u0947\u0902\u092C\u0930_\u0911\u0915\u094D\u091F\u094B\u092C\u0930_\u0928\u094B\u0935\u094D\u0939\u0947\u0902\u092C\u0930_\u0921\u093F\u0938\u0947\u0902\u092C\u0930".split("_"),
+          format: "\u091C\u093E\u0928\u0947\u0935\u093E\u0930\u0940\u091A\u094D\u092F\u093E_\u092B\u0947\u092C\u094D\u0930\u0941\u0935\u093E\u0930\u0940\u091A\u094D\u092F\u093E_\u092E\u093E\u0930\u094D\u091A\u093E\u091A\u094D\u092F\u093E_\u090F\u092A\u094D\u0930\u0940\u0932\u093E\u091A\u094D\u092F\u093E_\u092E\u0947\u092F\u093E\u091A\u094D\u092F\u093E_\u091C\u0942\u0928\u093E\u091A\u094D\u092F\u093E_\u091C\u0941\u0932\u092F\u093E\u091A\u094D\u092F\u093E_\u0911\u0917\u0938\u094D\u091F\u093E\u091A\u094D\u092F\u093E_\u0938\u092A\u094D\u091F\u0947\u0902\u092C\u0930\u093E\u091A\u094D\u092F\u093E_\u0911\u0915\u094D\u091F\u094B\u092C\u0930\u093E\u091A\u094D\u092F\u093E_\u0928\u094B\u0935\u094D\u0939\u0947\u0902\u092C\u0930\u093E\u091A\u094D\u092F\u093E_\u0921\u093F\u0938\u0947\u0902\u092C\u0930\u093E\u091A\u094D\u092F\u093E".split("_"),
+          isFormat: /MMMM(\s)+D[oD]?/
+        },
+        monthsShort: "\u091C\u093E\u0928\u0947._\u092B\u0947\u092C\u094D\u0930\u0941._\u092E\u093E\u0930\u094D\u091A_\u090F\u092A\u094D\u0930\u0940._\u092E\u0947_\u091C\u0942\u0928_\u091C\u0941\u0932._\u0911\u0917._\u0938\u092A\u094D\u091F\u0947\u0902._\u0911\u0915\u094D\u091F\u094B._\u0928\u094B\u0935\u094D\u0939\u0947\u0902._\u0921\u093F\u0938\u0947\u0902.".split("_"),
+        monthsParseExact: true,
+        weekdays: "\u0906\u092F\u0924\u093E\u0930_\u0938\u094B\u092E\u093E\u0930_\u092E\u0902\u0917\u0933\u093E\u0930_\u092C\u0941\u0927\u0935\u093E\u0930_\u092C\u093F\u0930\u0947\u0938\u094D\u0924\u093E\u0930_\u0938\u0941\u0915\u094D\u0930\u093E\u0930_\u0936\u0947\u0928\u0935\u093E\u0930".split("_"),
+        weekdaysShort: "\u0906\u092F\u0924._\u0938\u094B\u092E._\u092E\u0902\u0917\u0933._\u092C\u0941\u0927._\u092C\u094D\u0930\u0947\u0938\u094D\u0924._\u0938\u0941\u0915\u094D\u0930._\u0936\u0947\u0928.".split("_"),
+        weekdaysMin: "\u0906_\u0938\u094B_\u092E\u0902_\u092C\u0941_\u092C\u094D\u0930\u0947_\u0938\u0941_\u0936\u0947".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "A h:mm [\u0935\u093E\u091C\u0924\u093E\u0902]",
+          LTS: "A h:mm:ss [\u0935\u093E\u091C\u0924\u093E\u0902]",
+          L: "DD-MM-YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY A h:mm [\u0935\u093E\u091C\u0924\u093E\u0902]",
+          LLLL: "dddd, MMMM Do, YYYY, A h:mm [\u0935\u093E\u091C\u0924\u093E\u0902]",
+          llll: "ddd, D MMM YYYY, A h:mm [\u0935\u093E\u091C\u0924\u093E\u0902]"
+        },
+        calendar: {
+          sameDay: "[\u0906\u092F\u091C] LT",
+          nextDay: "[\u092B\u093E\u0932\u094D\u092F\u093E\u0902] LT",
+          nextWeek: "[\u092B\u0941\u0921\u0932\u094B] dddd[,] LT",
+          lastDay: "[\u0915\u093E\u0932] LT",
+          lastWeek: "[\u092B\u093E\u091F\u0932\u094B] dddd[,] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s",
+          past: "%s \u0906\u0926\u0940\u0902",
+          s: processRelativeTime,
+          ss: processRelativeTime,
+          m: processRelativeTime,
+          mm: processRelativeTime,
+          h: processRelativeTime,
+          hh: processRelativeTime,
+          d: processRelativeTime,
+          dd: processRelativeTime,
+          M: processRelativeTime,
+          MM: processRelativeTime,
+          y: processRelativeTime,
+          yy: processRelativeTime
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(वेर)/,
+        ordinal: function(number, period) {
+          switch (period) {
+            case "D":
+              return number + "\u0935\u0947\u0930";
+            default:
+            case "M":
+            case "Q":
+            case "DDD":
+            case "d":
+            case "w":
+            case "W":
+              return number;
+          }
+        },
+        week: {
+          dow: 0,
+          doy: 3
+        },
+        meridiemParse: /राती|सकाळीं|दनपारां|सांजे/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u0930\u093E\u0924\u0940") {
+            return hour < 4 ? hour : hour + 12;
+          } else if (meridiem === "\u0938\u0915\u093E\u0933\u0940\u0902") {
+            return hour;
+          } else if (meridiem === "\u0926\u0928\u092A\u093E\u0930\u093E\u0902") {
+            return hour > 12 ? hour : hour + 12;
+          } else if (meridiem === "\u0938\u093E\u0902\u091C\u0947") {
+            return hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 4) {
+            return "\u0930\u093E\u0924\u0940";
+          } else if (hour < 12) {
+            return "\u0938\u0915\u093E\u0933\u0940\u0902";
+          } else if (hour < 16) {
+            return "\u0926\u0928\u092A\u093E\u0930\u093E\u0902";
+          } else if (hour < 20) {
+            return "\u0938\u093E\u0902\u091C\u0947";
+          } else {
+            return "\u0930\u093E\u0924\u0940";
+          }
+        }
+      });
+      return gomDeva;
+    });
+  }
+});
+
 // src/gom-deva.js
 var import_moment = __toModule(require_moment());
+var import_gom_deva = __toModule(require_gom_deva());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("gom-deva");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3863,11 @@ var module_default = gom_deva_default;
 export {
   module_default as default
 };
+//! author : The Discoverer : https://github.com/WikiDiscoverer
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Konkani Devanagari script [gom-deva]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

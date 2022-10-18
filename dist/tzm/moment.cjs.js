@@ -3724,6 +3724,61 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/tzm.js
+var require_tzm = __commonJS({
+  "node_modules/moment/locale/tzm.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var tzm = moment2.defineLocale("tzm", {
+        months: "\u2D49\u2D4F\u2D4F\u2D30\u2D62\u2D54_\u2D31\u2D55\u2D30\u2D62\u2D55_\u2D4E\u2D30\u2D55\u2D5A_\u2D49\u2D31\u2D54\u2D49\u2D54_\u2D4E\u2D30\u2D62\u2D62\u2D53_\u2D62\u2D53\u2D4F\u2D62\u2D53_\u2D62\u2D53\u2D4D\u2D62\u2D53\u2D63_\u2D56\u2D53\u2D5B\u2D5C_\u2D5B\u2D53\u2D5C\u2D30\u2D4F\u2D31\u2D49\u2D54_\u2D3D\u2D5F\u2D53\u2D31\u2D55_\u2D4F\u2D53\u2D61\u2D30\u2D4F\u2D31\u2D49\u2D54_\u2D37\u2D53\u2D4A\u2D4F\u2D31\u2D49\u2D54".split("_"),
+        monthsShort: "\u2D49\u2D4F\u2D4F\u2D30\u2D62\u2D54_\u2D31\u2D55\u2D30\u2D62\u2D55_\u2D4E\u2D30\u2D55\u2D5A_\u2D49\u2D31\u2D54\u2D49\u2D54_\u2D4E\u2D30\u2D62\u2D62\u2D53_\u2D62\u2D53\u2D4F\u2D62\u2D53_\u2D62\u2D53\u2D4D\u2D62\u2D53\u2D63_\u2D56\u2D53\u2D5B\u2D5C_\u2D5B\u2D53\u2D5C\u2D30\u2D4F\u2D31\u2D49\u2D54_\u2D3D\u2D5F\u2D53\u2D31\u2D55_\u2D4F\u2D53\u2D61\u2D30\u2D4F\u2D31\u2D49\u2D54_\u2D37\u2D53\u2D4A\u2D4F\u2D31\u2D49\u2D54".split("_"),
+        weekdays: "\u2D30\u2D59\u2D30\u2D4E\u2D30\u2D59_\u2D30\u2D62\u2D4F\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D4F\u2D30\u2D59_\u2D30\u2D3D\u2D54\u2D30\u2D59_\u2D30\u2D3D\u2D61\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D4E\u2D61\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D39\u2D62\u2D30\u2D59".split("_"),
+        weekdaysShort: "\u2D30\u2D59\u2D30\u2D4E\u2D30\u2D59_\u2D30\u2D62\u2D4F\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D4F\u2D30\u2D59_\u2D30\u2D3D\u2D54\u2D30\u2D59_\u2D30\u2D3D\u2D61\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D4E\u2D61\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D39\u2D62\u2D30\u2D59".split("_"),
+        weekdaysMin: "\u2D30\u2D59\u2D30\u2D4E\u2D30\u2D59_\u2D30\u2D62\u2D4F\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D4F\u2D30\u2D59_\u2D30\u2D3D\u2D54\u2D30\u2D59_\u2D30\u2D3D\u2D61\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D4E\u2D61\u2D30\u2D59_\u2D30\u2D59\u2D49\u2D39\u2D62\u2D30\u2D59".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[\u2D30\u2D59\u2D37\u2D45 \u2D34] LT",
+          nextDay: "[\u2D30\u2D59\u2D3D\u2D30 \u2D34] LT",
+          nextWeek: "dddd [\u2D34] LT",
+          lastDay: "[\u2D30\u2D5A\u2D30\u2D4F\u2D5C \u2D34] LT",
+          lastWeek: "dddd [\u2D34] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "\u2D37\u2D30\u2D37\u2D45 \u2D59 \u2D62\u2D30\u2D4F %s",
+          past: "\u2D62\u2D30\u2D4F %s",
+          s: "\u2D49\u2D4E\u2D49\u2D3D",
+          ss: "%d \u2D49\u2D4E\u2D49\u2D3D",
+          m: "\u2D4E\u2D49\u2D4F\u2D53\u2D3A",
+          mm: "%d \u2D4E\u2D49\u2D4F\u2D53\u2D3A",
+          h: "\u2D59\u2D30\u2D44\u2D30",
+          hh: "%d \u2D5C\u2D30\u2D59\u2D59\u2D30\u2D44\u2D49\u2D4F",
+          d: "\u2D30\u2D59\u2D59",
+          dd: "%d o\u2D59\u2D59\u2D30\u2D4F",
+          M: "\u2D30\u2D62o\u2D53\u2D54",
+          MM: "%d \u2D49\u2D62\u2D62\u2D49\u2D54\u2D4F",
+          y: "\u2D30\u2D59\u2D33\u2D30\u2D59",
+          yy: "%d \u2D49\u2D59\u2D33\u2D30\u2D59\u2D4F"
+        },
+        week: {
+          dow: 6,
+          doy: 12
+        }
+      });
+      return tzm;
+    });
+  }
+});
+
 // builds/tzm/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3786,9 @@ __export(exports, {
 
 // src/tzm.js
 var import_moment = __toModule(require_moment());
+var import_tzm = __toModule(require_tzm());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("tzm");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3798,11 @@ var tzm_default = Plugin;
 var module_default = tzm_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Abdel Said : https://github.com/abdelsaid
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Central Atlas Tamazight [tzm]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

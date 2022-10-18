@@ -3726,11 +3726,93 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ca.js
+var require_ca = __commonJS({
+  "node_modules/moment/locale/ca.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var ca = moment2.defineLocale("ca", {
+        months: {
+          standalone: "gener_febrer_mar\xE7_abril_maig_juny_juliol_agost_setembre_octubre_novembre_desembre".split("_"),
+          format: "de gener_de febrer_de mar\xE7_d'abril_de maig_de juny_de juliol_d'agost_de setembre_d'octubre_de novembre_de desembre".split("_"),
+          isFormat: /D[oD]?(\s)+MMMM/
+        },
+        monthsShort: "gen._febr._mar\xE7_abr._maig_juny_jul._ag._set._oct._nov._des.".split("_"),
+        monthsParseExact: true,
+        weekdays: "diumenge_dilluns_dimarts_dimecres_dijous_divendres_dissabte".split("_"),
+        weekdaysShort: "dg._dl._dt._dc._dj._dv._ds.".split("_"),
+        weekdaysMin: "dg_dl_dt_dc_dj_dv_ds".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "H:mm",
+          LTS: "H:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM [de] YYYY",
+          ll: "D MMM YYYY",
+          LLL: "D MMMM [de] YYYY [a les] H:mm",
+          lll: "D MMM YYYY, H:mm",
+          LLLL: "dddd D MMMM [de] YYYY [a les] H:mm",
+          llll: "ddd D MMM YYYY, H:mm"
+        },
+        calendar: {
+          sameDay: function() {
+            return "[avui a " + (this.hours() !== 1 ? "les" : "la") + "] LT";
+          },
+          nextDay: function() {
+            return "[dem\xE0 a " + (this.hours() !== 1 ? "les" : "la") + "] LT";
+          },
+          nextWeek: function() {
+            return "dddd [a " + (this.hours() !== 1 ? "les" : "la") + "] LT";
+          },
+          lastDay: function() {
+            return "[ahir a " + (this.hours() !== 1 ? "les" : "la") + "] LT";
+          },
+          lastWeek: function() {
+            return "[el] dddd [passat a " + (this.hours() !== 1 ? "les" : "la") + "] LT";
+          },
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "d'aqu\xED %s",
+          past: "fa %s",
+          s: "uns segons",
+          ss: "%d segons",
+          m: "un minut",
+          mm: "%d minuts",
+          h: "una hora",
+          hh: "%d hores",
+          d: "un dia",
+          dd: "%d dies",
+          M: "un mes",
+          MM: "%d mesos",
+          y: "un any",
+          yy: "%d anys"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(r|n|t|è|a)/,
+        ordinal: function(number, period) {
+          var output = number === 1 ? "r" : number === 2 ? "n" : number === 3 ? "r" : number === 4 ? "t" : "\xE8";
+          if (period === "w" || period === "W") {
+            output = "a";
+          }
+          return number + output;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return ca;
+    });
+  }
+});
+
 // src/ca.js
 var import_moment = __toModule(require_moment());
+var import_ca = __toModule(require_ca());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ca");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3823,11 @@ var module_default = ca_default;
 export {
   module_default as default
 };
+//! author : Juan G. Hurtado : https://github.com/juanghurtado
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Catalan [ca]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

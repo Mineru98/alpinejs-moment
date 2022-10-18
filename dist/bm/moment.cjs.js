@@ -3724,6 +3724,61 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/bm.js
+var require_bm = __commonJS({
+  "node_modules/moment/locale/bm.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var bm = moment2.defineLocale("bm", {
+        months: "Zanwuyekalo_Fewuruyekalo_Marisikalo_Awirilikalo_M\u025Bkalo_Zuw\u025Bnkalo_Zuluyekalo_Utikalo_S\u025Btanburukalo_\u0254kut\u0254burukalo_Nowanburukalo_Desanburukalo".split("_"),
+        monthsShort: "Zan_Few_Mar_Awi_M\u025B_Zuw_Zul_Uti_S\u025Bt_\u0254ku_Now_Des".split("_"),
+        weekdays: "Kari_Nt\u025Bn\u025Bn_Tarata_Araba_Alamisa_Juma_Sibiri".split("_"),
+        weekdaysShort: "Kar_Nt\u025B_Tar_Ara_Ala_Jum_Sib".split("_"),
+        weekdaysMin: "Ka_Nt_Ta_Ar_Al_Ju_Si".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "MMMM [tile] D [san] YYYY",
+          LLL: "MMMM [tile] D [san] YYYY [l\u025Br\u025B] HH:mm",
+          LLLL: "dddd MMMM [tile] D [san] YYYY [l\u025Br\u025B] HH:mm"
+        },
+        calendar: {
+          sameDay: "[Bi l\u025Br\u025B] LT",
+          nextDay: "[Sini l\u025Br\u025B] LT",
+          nextWeek: "dddd [don l\u025Br\u025B] LT",
+          lastDay: "[Kunu l\u025Br\u025B] LT",
+          lastWeek: "dddd [t\u025Bm\u025Bnen l\u025Br\u025B] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s k\u0254n\u0254",
+          past: "a b\u025B %s b\u0254",
+          s: "sanga dama dama",
+          ss: "sekondi %d",
+          m: "miniti kelen",
+          mm: "miniti %d",
+          h: "l\u025Br\u025B kelen",
+          hh: "l\u025Br\u025B %d",
+          d: "tile kelen",
+          dd: "tile %d",
+          M: "kalo kelen",
+          MM: "kalo %d",
+          y: "san kelen",
+          yy: "san %d"
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return bm;
+    });
+  }
+});
+
 // builds/bm/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3786,9 @@ __export(exports, {
 
 // src/bm.js
 var import_moment = __toModule(require_moment());
+var import_bm = __toModule(require_bm());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("bm");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3798,11 @@ var bm_default = Plugin;
 var module_default = bm_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Estelle Comment : https://github.com/estellecomment
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Bambara [bm]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

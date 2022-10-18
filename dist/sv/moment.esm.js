@@ -3726,11 +3726,73 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/sv.js
+var require_sv = __commonJS({
+  "node_modules/moment/locale/sv.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var sv = moment2.defineLocale("sv", {
+        months: "januari_februari_mars_april_maj_juni_juli_augusti_september_oktober_november_december".split("_"),
+        monthsShort: "jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec".split("_"),
+        weekdays: "s\xF6ndag_m\xE5ndag_tisdag_onsdag_torsdag_fredag_l\xF6rdag".split("_"),
+        weekdaysShort: "s\xF6n_m\xE5n_tis_ons_tor_fre_l\xF6r".split("_"),
+        weekdaysMin: "s\xF6_m\xE5_ti_on_to_fr_l\xF6".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "YYYY-MM-DD",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY [kl.] HH:mm",
+          LLLL: "dddd D MMMM YYYY [kl.] HH:mm",
+          lll: "D MMM YYYY HH:mm",
+          llll: "ddd D MMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Idag] LT",
+          nextDay: "[Imorgon] LT",
+          lastDay: "[Ig\xE5r] LT",
+          nextWeek: "[P\xE5] dddd LT",
+          lastWeek: "[I] dddd[s] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "om %s",
+          past: "f\xF6r %s sedan",
+          s: "n\xE5gra sekunder",
+          ss: "%d sekunder",
+          m: "en minut",
+          mm: "%d minuter",
+          h: "en timme",
+          hh: "%d timmar",
+          d: "en dag",
+          dd: "%d dagar",
+          M: "en m\xE5nad",
+          MM: "%d m\xE5nader",
+          y: "ett \xE5r",
+          yy: "%d \xE5r"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(\:e|\:a)/,
+        ordinal: function(number) {
+          var b = number % 10, output = ~~(number % 100 / 10) === 1 ? ":e" : b === 1 ? ":a" : b === 2 ? ":a" : b === 3 ? ":e" : ":e";
+          return number + output;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return sv;
+    });
+  }
+});
+
 // src/sv.js
 var import_moment = __toModule(require_moment());
+var import_sv = __toModule(require_sv());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("sv");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3803,11 @@ var module_default = sv_default;
 export {
   module_default as default
 };
+//! author : Jens Alm : https://github.com/ulmus
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Swedish [sv]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

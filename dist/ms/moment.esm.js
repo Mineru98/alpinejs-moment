@@ -3726,11 +3726,90 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ms.js
+var require_ms = __commonJS({
+  "node_modules/moment/locale/ms.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var ms = moment2.defineLocale("ms", {
+        months: "Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember".split("_"),
+        monthsShort: "Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ogs_Sep_Okt_Nov_Dis".split("_"),
+        weekdays: "Ahad_Isnin_Selasa_Rabu_Khamis_Jumaat_Sabtu".split("_"),
+        weekdaysShort: "Ahd_Isn_Sel_Rab_Kha_Jum_Sab".split("_"),
+        weekdaysMin: "Ah_Is_Sl_Rb_Km_Jm_Sb".split("_"),
+        longDateFormat: {
+          LT: "HH.mm",
+          LTS: "HH.mm.ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY [pukul] HH.mm",
+          LLLL: "dddd, D MMMM YYYY [pukul] HH.mm"
+        },
+        meridiemParse: /pagi|tengahari|petang|malam/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "pagi") {
+            return hour;
+          } else if (meridiem === "tengahari") {
+            return hour >= 11 ? hour : hour + 12;
+          } else if (meridiem === "petang" || meridiem === "malam") {
+            return hour + 12;
+          }
+        },
+        meridiem: function(hours, minutes, isLower) {
+          if (hours < 11) {
+            return "pagi";
+          } else if (hours < 15) {
+            return "tengahari";
+          } else if (hours < 19) {
+            return "petang";
+          } else {
+            return "malam";
+          }
+        },
+        calendar: {
+          sameDay: "[Hari ini pukul] LT",
+          nextDay: "[Esok pukul] LT",
+          nextWeek: "dddd [pukul] LT",
+          lastDay: "[Kelmarin pukul] LT",
+          lastWeek: "dddd [lepas pukul] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "dalam %s",
+          past: "%s yang lepas",
+          s: "beberapa saat",
+          ss: "%d saat",
+          m: "seminit",
+          mm: "%d minit",
+          h: "sejam",
+          hh: "%d jam",
+          d: "sehari",
+          dd: "%d hari",
+          M: "sebulan",
+          MM: "%d bulan",
+          y: "setahun",
+          yy: "%d tahun"
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return ms;
+    });
+  }
+});
+
 // src/ms.js
 var import_moment = __toModule(require_moment());
+var import_ms = __toModule(require_ms());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ms");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3820,11 @@ var module_default = ms_default;
 export {
   module_default as default
 };
+//! author : Weldan Jamili : https://github.com/weldan
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Malay [ms]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

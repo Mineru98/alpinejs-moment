@@ -3724,6 +3724,91 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ur.js
+var require_ur = __commonJS({
+  "node_modules/moment/locale/ur.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var months = [
+        "\u062C\u0646\u0648\u0631\u06CC",
+        "\u0641\u0631\u0648\u0631\u06CC",
+        "\u0645\u0627\u0631\u0686",
+        "\u0627\u067E\u0631\u06CC\u0644",
+        "\u0645\u0626\u06CC",
+        "\u062C\u0648\u0646",
+        "\u062C\u0648\u0644\u0627\u0626\u06CC",
+        "\u0627\u06AF\u0633\u062A",
+        "\u0633\u062A\u0645\u0628\u0631",
+        "\u0627\u06A9\u062A\u0648\u0628\u0631",
+        "\u0646\u0648\u0645\u0628\u0631",
+        "\u062F\u0633\u0645\u0628\u0631"
+      ], days = ["\u0627\u062A\u0648\u0627\u0631", "\u067E\u06CC\u0631", "\u0645\u0646\u06AF\u0644", "\u0628\u062F\u06BE", "\u062C\u0645\u0639\u0631\u0627\u062A", "\u062C\u0645\u0639\u06C1", "\u06C1\u0641\u062A\u06C1"];
+      var ur = moment2.defineLocale("ur", {
+        months,
+        monthsShort: months,
+        weekdays: days,
+        weekdaysShort: days,
+        weekdaysMin: days,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd\u060C D MMMM YYYY HH:mm"
+        },
+        meridiemParse: /صبح|شام/,
+        isPM: function(input) {
+          return input === "\u0634\u0627\u0645";
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 12) {
+            return "\u0635\u0628\u062D";
+          }
+          return "\u0634\u0627\u0645";
+        },
+        calendar: {
+          sameDay: "[\u0622\u062C \u0628\u0648\u0642\u062A] LT",
+          nextDay: "[\u06A9\u0644 \u0628\u0648\u0642\u062A] LT",
+          nextWeek: "dddd [\u0628\u0648\u0642\u062A] LT",
+          lastDay: "[\u06AF\u0630\u0634\u062A\u06C1 \u0631\u0648\u0632 \u0628\u0648\u0642\u062A] LT",
+          lastWeek: "[\u06AF\u0630\u0634\u062A\u06C1] dddd [\u0628\u0648\u0642\u062A] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u0628\u0639\u062F",
+          past: "%s \u0642\u0628\u0644",
+          s: "\u0686\u0646\u062F \u0633\u06CC\u06A9\u0646\u0688",
+          ss: "%d \u0633\u06CC\u06A9\u0646\u0688",
+          m: "\u0627\u06CC\u06A9 \u0645\u0646\u0679",
+          mm: "%d \u0645\u0646\u0679",
+          h: "\u0627\u06CC\u06A9 \u06AF\u06BE\u0646\u0679\u06C1",
+          hh: "%d \u06AF\u06BE\u0646\u0679\u06D2",
+          d: "\u0627\u06CC\u06A9 \u062F\u0646",
+          dd: "%d \u062F\u0646",
+          M: "\u0627\u06CC\u06A9 \u0645\u0627\u06C1",
+          MM: "%d \u0645\u0627\u06C1",
+          y: "\u0627\u06CC\u06A9 \u0633\u0627\u0644",
+          yy: "%d \u0633\u0627\u0644"
+        },
+        preparse: function(string) {
+          return string.replace(/،/g, ",");
+        },
+        postformat: function(string) {
+          return string.replace(/,/g, "\u060C");
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return ur;
+    });
+  }
+});
+
 // builds/ur/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3816,9 @@ __export(exports, {
 
 // src/ur.js
 var import_moment = __toModule(require_moment());
+var import_ur = __toModule(require_ur());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ur");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3828,12 @@ var ur_default = Plugin;
 var module_default = ur_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Sawood Alam : https://github.com/ibnesayeed
+//! author : Zack : https://github.com/ZackVision
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Urdu [ur]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

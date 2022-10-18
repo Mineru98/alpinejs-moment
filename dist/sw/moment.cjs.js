@@ -3724,6 +3724,62 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/sw.js
+var require_sw = __commonJS({
+  "node_modules/moment/locale/sw.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var sw = moment2.defineLocale("sw", {
+        months: "Januari_Februari_Machi_Aprili_Mei_Juni_Julai_Agosti_Septemba_Oktoba_Novemba_Desemba".split("_"),
+        monthsShort: "Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ago_Sep_Okt_Nov_Des".split("_"),
+        weekdays: "Jumapili_Jumatatu_Jumanne_Jumatano_Alhamisi_Ijumaa_Jumamosi".split("_"),
+        weekdaysShort: "Jpl_Jtat_Jnne_Jtan_Alh_Ijm_Jmos".split("_"),
+        weekdaysMin: "J2_J3_J4_J5_Al_Ij_J1".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "hh:mm A",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[leo saa] LT",
+          nextDay: "[kesho saa] LT",
+          nextWeek: "[wiki ijayo] dddd [saat] LT",
+          lastDay: "[jana] LT",
+          lastWeek: "[wiki iliyopita] dddd [saat] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s baadaye",
+          past: "tokea %s",
+          s: "hivi punde",
+          ss: "sekunde %d",
+          m: "dakika moja",
+          mm: "dakika %d",
+          h: "saa limoja",
+          hh: "masaa %d",
+          d: "siku moja",
+          dd: "siku %d",
+          M: "mwezi mmoja",
+          MM: "miezi %d",
+          y: "mwaka mmoja",
+          yy: "miaka %d"
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return sw;
+    });
+  }
+});
+
 // builds/sw/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3787,9 @@ __export(exports, {
 
 // src/sw.js
 var import_moment = __toModule(require_moment());
+var import_sw = __toModule(require_sw());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("sw");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3799,11 @@ var sw_default = Plugin;
 var module_default = sw_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Fahad Kassim : https://github.com/fadsel
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Swahili [sw]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

@@ -3726,11 +3726,68 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/mt.js
+var require_mt = __commonJS({
+  "node_modules/moment/locale/mt.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var mt = moment2.defineLocale("mt", {
+        months: "Jannar_Frar_Marzu_April_Mejju_\u0120unju_Lulju_Awwissu_Settembru_Ottubru_Novembru_Di\u010Bembru".split("_"),
+        monthsShort: "Jan_Fra_Mar_Apr_Mej_\u0120un_Lul_Aww_Set_Ott_Nov_Di\u010B".split("_"),
+        weekdays: "Il-\u0126add_It-Tnejn_It-Tlieta_L-Erbg\u0127a_Il-\u0126amis_Il-\u0120img\u0127a_Is-Sibt".split("_"),
+        weekdaysShort: "\u0126ad_Tne_Tli_Erb_\u0126am_\u0120im_Sib".split("_"),
+        weekdaysMin: "\u0126a_Tn_Tl_Er_\u0126a_\u0120i_Si".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Illum fil-]LT",
+          nextDay: "[G\u0127ada fil-]LT",
+          nextWeek: "dddd [fil-]LT",
+          lastDay: "[Il-biera\u0127 fil-]LT",
+          lastWeek: "dddd [li g\u0127adda] [fil-]LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "f\u2019 %s",
+          past: "%s ilu",
+          s: "ftit sekondi",
+          ss: "%d sekondi",
+          m: "minuta",
+          mm: "%d minuti",
+          h: "sieg\u0127a",
+          hh: "%d sieg\u0127at",
+          d: "\u0121urnata",
+          dd: "%d \u0121ranet",
+          M: "xahar",
+          MM: "%d xhur",
+          y: "sena",
+          yy: "%d sni"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}º/,
+        ordinal: "%d\xBA",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return mt;
+    });
+  }
+});
+
 // src/mt.js
 var import_moment = __toModule(require_moment());
+var import_mt = __toModule(require_mt());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("mt");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3798,11 @@ var module_default = mt_default;
 export {
   module_default as default
 };
+//! author : Alessandro Maruccia : https://github.com/alesma
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Maltese (Malta) [mt]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

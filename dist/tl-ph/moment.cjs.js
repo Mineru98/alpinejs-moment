@@ -3724,6 +3724,65 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/tl-ph.js
+var require_tl_ph = __commonJS({
+  "node_modules/moment/locale/tl-ph.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var tlPh = moment2.defineLocale("tl-ph", {
+        months: "Enero_Pebrero_Marso_Abril_Mayo_Hunyo_Hulyo_Agosto_Setyembre_Oktubre_Nobyembre_Disyembre".split("_"),
+        monthsShort: "Ene_Peb_Mar_Abr_May_Hun_Hul_Ago_Set_Okt_Nob_Dis".split("_"),
+        weekdays: "Linggo_Lunes_Martes_Miyerkules_Huwebes_Biyernes_Sabado".split("_"),
+        weekdaysShort: "Lin_Lun_Mar_Miy_Huw_Biy_Sab".split("_"),
+        weekdaysMin: "Li_Lu_Ma_Mi_Hu_Bi_Sab".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "MM/D/YYYY",
+          LL: "MMMM D, YYYY",
+          LLL: "MMMM D, YYYY HH:mm",
+          LLLL: "dddd, MMMM DD, YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "LT [ngayong araw]",
+          nextDay: "[Bukas ng] LT",
+          nextWeek: "LT [sa susunod na] dddd",
+          lastDay: "LT [kahapon]",
+          lastWeek: "LT [noong nakaraang] dddd",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "sa loob ng %s",
+          past: "%s ang nakalipas",
+          s: "ilang segundo",
+          ss: "%d segundo",
+          m: "isang minuto",
+          mm: "%d minuto",
+          h: "isang oras",
+          hh: "%d oras",
+          d: "isang araw",
+          dd: "%d araw",
+          M: "isang buwan",
+          MM: "%d buwan",
+          y: "isang taon",
+          yy: "%d taon"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}/,
+        ordinal: function(number) {
+          return number;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return tlPh;
+    });
+  }
+});
+
 // builds/tl-ph/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3790,9 @@ __export(exports, {
 
 // src/tl-ph.js
 var import_moment = __toModule(require_moment());
+var import_tl_ph = __toModule(require_tl_ph());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("tl-ph");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3802,11 @@ var tl_ph_default = Plugin;
 var module_default = tl_ph_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Dan Hagman : https://github.com/hagmandan
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Tagalog (Philippines) [tl-ph]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

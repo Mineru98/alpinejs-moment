@@ -3724,6 +3724,63 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/pt-br.js
+var require_pt_br = __commonJS({
+  "node_modules/moment/locale/pt-br.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var ptBr = moment2.defineLocale("pt-br", {
+        months: "janeiro_fevereiro_mar\xE7o_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro".split("_"),
+        monthsShort: "jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez".split("_"),
+        weekdays: "domingo_segunda-feira_ter\xE7a-feira_quarta-feira_quinta-feira_sexta-feira_s\xE1bado".split("_"),
+        weekdaysShort: "dom_seg_ter_qua_qui_sex_s\xE1b".split("_"),
+        weekdaysMin: "do_2\xAA_3\xAA_4\xAA_5\xAA_6\xAA_s\xE1".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D [de] MMMM [de] YYYY",
+          LLL: "D [de] MMMM [de] YYYY [\xE0s] HH:mm",
+          LLLL: "dddd, D [de] MMMM [de] YYYY [\xE0s] HH:mm"
+        },
+        calendar: {
+          sameDay: "[Hoje \xE0s] LT",
+          nextDay: "[Amanh\xE3 \xE0s] LT",
+          nextWeek: "dddd [\xE0s] LT",
+          lastDay: "[Ontem \xE0s] LT",
+          lastWeek: function() {
+            return this.day() === 0 || this.day() === 6 ? "[\xDAltimo] dddd [\xE0s] LT" : "[\xDAltima] dddd [\xE0s] LT";
+          },
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "em %s",
+          past: "h\xE1 %s",
+          s: "poucos segundos",
+          ss: "%d segundos",
+          m: "um minuto",
+          mm: "%d minutos",
+          h: "uma hora",
+          hh: "%d horas",
+          d: "um dia",
+          dd: "%d dias",
+          M: "um m\xEAs",
+          MM: "%d meses",
+          y: "um ano",
+          yy: "%d anos"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}º/,
+        ordinal: "%d\xBA",
+        invalidDate: "Data inv\xE1lida"
+      });
+      return ptBr;
+    });
+  }
+});
+
 // builds/pt-br/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3788,9 @@ __export(exports, {
 
 // src/pt-br.js
 var import_moment = __toModule(require_moment());
+var import_pt_br = __toModule(require_pt_br());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("pt-br");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3800,11 @@ var pt_br_default = Plugin;
 var module_default = pt_br_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Portuguese (Brazil) [pt-br]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

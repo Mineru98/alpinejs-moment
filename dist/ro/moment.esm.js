@@ -3726,11 +3726,84 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/ro.js
+var require_ro = __commonJS({
+  "node_modules/moment/locale/ro.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function relativeTimeWithPlural(number, withoutSuffix, key) {
+        var format = {
+          ss: "secunde",
+          mm: "minute",
+          hh: "ore",
+          dd: "zile",
+          ww: "s\u0103pt\u0103m\xE2ni",
+          MM: "luni",
+          yy: "ani"
+        }, separator = " ";
+        if (number % 100 >= 20 || number >= 100 && number % 100 === 0) {
+          separator = " de ";
+        }
+        return number + separator + format[key];
+      }
+      var ro = moment2.defineLocale("ro", {
+        months: "ianuarie_februarie_martie_aprilie_mai_iunie_iulie_august_septembrie_octombrie_noiembrie_decembrie".split("_"),
+        monthsShort: "ian._feb._mart._apr._mai_iun._iul._aug._sept._oct._nov._dec.".split("_"),
+        monthsParseExact: true,
+        weekdays: "duminic\u0103_luni_mar\u021Bi_miercuri_joi_vineri_s\xE2mb\u0103t\u0103".split("_"),
+        weekdaysShort: "Dum_Lun_Mar_Mie_Joi_Vin_S\xE2m".split("_"),
+        weekdaysMin: "Du_Lu_Ma_Mi_Jo_Vi_S\xE2".split("_"),
+        longDateFormat: {
+          LT: "H:mm",
+          LTS: "H:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY H:mm",
+          LLLL: "dddd, D MMMM YYYY H:mm"
+        },
+        calendar: {
+          sameDay: "[azi la] LT",
+          nextDay: "[m\xE2ine la] LT",
+          nextWeek: "dddd [la] LT",
+          lastDay: "[ieri la] LT",
+          lastWeek: "[fosta] dddd [la] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "peste %s",
+          past: "%s \xEEn urm\u0103",
+          s: "c\xE2teva secunde",
+          ss: relativeTimeWithPlural,
+          m: "un minut",
+          mm: relativeTimeWithPlural,
+          h: "o or\u0103",
+          hh: relativeTimeWithPlural,
+          d: "o zi",
+          dd: relativeTimeWithPlural,
+          w: "o s\u0103pt\u0103m\xE2n\u0103",
+          ww: relativeTimeWithPlural,
+          M: "o lun\u0103",
+          MM: relativeTimeWithPlural,
+          y: "un an",
+          yy: relativeTimeWithPlural
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return ro;
+    });
+  }
+});
+
 // src/ro.js
 var import_moment = __toModule(require_moment());
+var import_ro = __toModule(require_ro());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("ro");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3814,13 @@ var module_default = ro_default;
 export {
   module_default as default
 };
+//! author : Emanuel Cepoi : https://github.com/cepem
+//! author : Valentin Agachi : https://github.com/avaly
+//! author : Vlad Gurdiga : https://github.com/gurdiga
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Romanian [ro]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

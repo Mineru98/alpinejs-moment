@@ -3726,11 +3726,72 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/nn.js
+var require_nn = __commonJS({
+  "node_modules/moment/locale/nn.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var nn = moment2.defineLocale("nn", {
+        months: "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split("_"),
+        monthsShort: "jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.".split("_"),
+        monthsParseExact: true,
+        weekdays: "sundag_m\xE5ndag_tysdag_onsdag_torsdag_fredag_laurdag".split("_"),
+        weekdaysShort: "su._m\xE5._ty._on._to._fr._lau.".split("_"),
+        weekdaysMin: "su_m\xE5_ty_on_to_fr_la".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D. MMMM YYYY",
+          LLL: "D. MMMM YYYY [kl.] H:mm",
+          LLLL: "dddd D. MMMM YYYY [kl.] HH:mm"
+        },
+        calendar: {
+          sameDay: "[I dag klokka] LT",
+          nextDay: "[I morgon klokka] LT",
+          nextWeek: "dddd [klokka] LT",
+          lastDay: "[I g\xE5r klokka] LT",
+          lastWeek: "[F\xF8reg\xE5ande] dddd [klokka] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "om %s",
+          past: "%s sidan",
+          s: "nokre sekund",
+          ss: "%d sekund",
+          m: "eit minutt",
+          mm: "%d minutt",
+          h: "ein time",
+          hh: "%d timar",
+          d: "ein dag",
+          dd: "%d dagar",
+          w: "ei veke",
+          ww: "%d veker",
+          M: "ein m\xE5nad",
+          MM: "%d m\xE5nader",
+          y: "eit \xE5r",
+          yy: "%d \xE5r"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}\./,
+        ordinal: "%d.",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return nn;
+    });
+  }
+});
+
 // src/nn.js
 var import_moment = __toModule(require_moment());
+var import_nn = __toModule(require_nn());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("nn");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3802,12 @@ var module_default = nn_default;
 export {
   module_default as default
 };
+//!           Stephen Ramthun : https://github.com/stephenramthun
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+//! authors : https://github.com/mechuwind
 //! license : MIT
+//! locale : Nynorsk [nn]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

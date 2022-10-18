@@ -3724,6 +3724,130 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/bn-bd.js
+var require_bn_bd = __commonJS({
+  "node_modules/moment/locale/bn-bd.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var symbolMap = {
+        1: "\u09E7",
+        2: "\u09E8",
+        3: "\u09E9",
+        4: "\u09EA",
+        5: "\u09EB",
+        6: "\u09EC",
+        7: "\u09ED",
+        8: "\u09EE",
+        9: "\u09EF",
+        0: "\u09E6"
+      }, numberMap = {
+        "\u09E7": "1",
+        "\u09E8": "2",
+        "\u09E9": "3",
+        "\u09EA": "4",
+        "\u09EB": "5",
+        "\u09EC": "6",
+        "\u09ED": "7",
+        "\u09EE": "8",
+        "\u09EF": "9",
+        "\u09E6": "0"
+      };
+      var bnBd = moment2.defineLocale("bn-bd", {
+        months: "\u099C\u09BE\u09A8\u09C1\u09DF\u09BE\u09B0\u09BF_\u09AB\u09C7\u09AC\u09CD\u09B0\u09C1\u09DF\u09BE\u09B0\u09BF_\u09AE\u09BE\u09B0\u09CD\u099A_\u098F\u09AA\u09CD\u09B0\u09BF\u09B2_\u09AE\u09C7_\u099C\u09C1\u09A8_\u099C\u09C1\u09B2\u09BE\u0987_\u0986\u0997\u09B8\u09CD\u099F_\u09B8\u09C7\u09AA\u09CD\u099F\u09C7\u09AE\u09CD\u09AC\u09B0_\u0985\u0995\u09CD\u099F\u09CB\u09AC\u09B0_\u09A8\u09AD\u09C7\u09AE\u09CD\u09AC\u09B0_\u09A1\u09BF\u09B8\u09C7\u09AE\u09CD\u09AC\u09B0".split("_"),
+        monthsShort: "\u099C\u09BE\u09A8\u09C1_\u09AB\u09C7\u09AC\u09CD\u09B0\u09C1_\u09AE\u09BE\u09B0\u09CD\u099A_\u098F\u09AA\u09CD\u09B0\u09BF\u09B2_\u09AE\u09C7_\u099C\u09C1\u09A8_\u099C\u09C1\u09B2\u09BE\u0987_\u0986\u0997\u09B8\u09CD\u099F_\u09B8\u09C7\u09AA\u09CD\u099F_\u0985\u0995\u09CD\u099F\u09CB_\u09A8\u09AD\u09C7_\u09A1\u09BF\u09B8\u09C7".split("_"),
+        weekdays: "\u09B0\u09AC\u09BF\u09AC\u09BE\u09B0_\u09B8\u09CB\u09AE\u09AC\u09BE\u09B0_\u09AE\u0999\u09CD\u0997\u09B2\u09AC\u09BE\u09B0_\u09AC\u09C1\u09A7\u09AC\u09BE\u09B0_\u09AC\u09C3\u09B9\u09B8\u09CD\u09AA\u09A4\u09BF\u09AC\u09BE\u09B0_\u09B6\u09C1\u0995\u09CD\u09B0\u09AC\u09BE\u09B0_\u09B6\u09A8\u09BF\u09AC\u09BE\u09B0".split("_"),
+        weekdaysShort: "\u09B0\u09AC\u09BF_\u09B8\u09CB\u09AE_\u09AE\u0999\u09CD\u0997\u09B2_\u09AC\u09C1\u09A7_\u09AC\u09C3\u09B9\u09B8\u09CD\u09AA\u09A4\u09BF_\u09B6\u09C1\u0995\u09CD\u09B0_\u09B6\u09A8\u09BF".split("_"),
+        weekdaysMin: "\u09B0\u09AC\u09BF_\u09B8\u09CB\u09AE_\u09AE\u0999\u09CD\u0997\u09B2_\u09AC\u09C1\u09A7_\u09AC\u09C3\u09B9_\u09B6\u09C1\u0995\u09CD\u09B0_\u09B6\u09A8\u09BF".split("_"),
+        longDateFormat: {
+          LT: "A h:mm \u09B8\u09AE\u09DF",
+          LTS: "A h:mm:ss \u09B8\u09AE\u09DF",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY, A h:mm \u09B8\u09AE\u09DF",
+          LLLL: "dddd, D MMMM YYYY, A h:mm \u09B8\u09AE\u09DF"
+        },
+        calendar: {
+          sameDay: "[\u0986\u099C] LT",
+          nextDay: "[\u0986\u0997\u09BE\u09AE\u09C0\u0995\u09BE\u09B2] LT",
+          nextWeek: "dddd, LT",
+          lastDay: "[\u0997\u09A4\u0995\u09BE\u09B2] LT",
+          lastWeek: "[\u0997\u09A4] dddd, LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u09AA\u09B0\u09C7",
+          past: "%s \u0986\u0997\u09C7",
+          s: "\u0995\u09DF\u09C7\u0995 \u09B8\u09C7\u0995\u09C7\u09A8\u09CD\u09A1",
+          ss: "%d \u09B8\u09C7\u0995\u09C7\u09A8\u09CD\u09A1",
+          m: "\u098F\u0995 \u09AE\u09BF\u09A8\u09BF\u099F",
+          mm: "%d \u09AE\u09BF\u09A8\u09BF\u099F",
+          h: "\u098F\u0995 \u0998\u09A8\u09CD\u099F\u09BE",
+          hh: "%d \u0998\u09A8\u09CD\u099F\u09BE",
+          d: "\u098F\u0995 \u09A6\u09BF\u09A8",
+          dd: "%d \u09A6\u09BF\u09A8",
+          M: "\u098F\u0995 \u09AE\u09BE\u09B8",
+          MM: "%d \u09AE\u09BE\u09B8",
+          y: "\u098F\u0995 \u09AC\u099B\u09B0",
+          yy: "%d \u09AC\u099B\u09B0"
+        },
+        preparse: function(string) {
+          return string.replace(/[১২৩৪৫৬৭৮৯০]/g, function(match) {
+            return numberMap[match];
+          });
+        },
+        postformat: function(string) {
+          return string.replace(/\d/g, function(match) {
+            return symbolMap[match];
+          });
+        },
+        meridiemParse: /রাত|ভোর|সকাল|দুপুর|বিকাল|সন্ধ্যা|রাত/,
+        meridiemHour: function(hour, meridiem) {
+          if (hour === 12) {
+            hour = 0;
+          }
+          if (meridiem === "\u09B0\u09BE\u09A4") {
+            return hour < 4 ? hour : hour + 12;
+          } else if (meridiem === "\u09AD\u09CB\u09B0") {
+            return hour;
+          } else if (meridiem === "\u09B8\u0995\u09BE\u09B2") {
+            return hour;
+          } else if (meridiem === "\u09A6\u09C1\u09AA\u09C1\u09B0") {
+            return hour >= 3 ? hour : hour + 12;
+          } else if (meridiem === "\u09AC\u09BF\u0995\u09BE\u09B2") {
+            return hour + 12;
+          } else if (meridiem === "\u09B8\u09A8\u09CD\u09A7\u09CD\u09AF\u09BE") {
+            return hour + 12;
+          }
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 4) {
+            return "\u09B0\u09BE\u09A4";
+          } else if (hour < 6) {
+            return "\u09AD\u09CB\u09B0";
+          } else if (hour < 12) {
+            return "\u09B8\u0995\u09BE\u09B2";
+          } else if (hour < 15) {
+            return "\u09A6\u09C1\u09AA\u09C1\u09B0";
+          } else if (hour < 18) {
+            return "\u09AC\u09BF\u0995\u09BE\u09B2";
+          } else if (hour < 20) {
+            return "\u09B8\u09A8\u09CD\u09A7\u09CD\u09AF\u09BE";
+          } else {
+            return "\u09B0\u09BE\u09A4";
+          }
+        },
+        week: {
+          dow: 0,
+          doy: 6
+        }
+      });
+      return bnBd;
+    });
+  }
+});
+
 // builds/bn-bd/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3855,9 @@ __export(exports, {
 
 // src/bn-bd.js
 var import_moment = __toModule(require_moment());
+var import_bn_bd = __toModule(require_bn_bd());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("bn-bd");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3867,11 @@ var bn_bd_default = Plugin;
 var module_default = bn_bd_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Asraf Hossain Patoary : https://github.com/ashwoolford
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Bengali (Bangladesh) [bn-bd]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

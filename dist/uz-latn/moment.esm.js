@@ -3726,11 +3726,66 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/uz-latn.js
+var require_uz_latn = __commonJS({
+  "node_modules/moment/locale/uz-latn.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var uzLatn = moment2.defineLocale("uz-latn", {
+        months: "Yanvar_Fevral_Mart_Aprel_May_Iyun_Iyul_Avgust_Sentabr_Oktabr_Noyabr_Dekabr".split("_"),
+        monthsShort: "Yan_Fev_Mar_Apr_May_Iyun_Iyul_Avg_Sen_Okt_Noy_Dek".split("_"),
+        weekdays: "Yakshanba_Dushanba_Seshanba_Chorshanba_Payshanba_Juma_Shanba".split("_"),
+        weekdaysShort: "Yak_Dush_Sesh_Chor_Pay_Jum_Shan".split("_"),
+        weekdaysMin: "Ya_Du_Se_Cho_Pa_Ju_Sha".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "D MMMM YYYY, dddd HH:mm"
+        },
+        calendar: {
+          sameDay: "[Bugun soat] LT [da]",
+          nextDay: "[Ertaga] LT [da]",
+          nextWeek: "dddd [kuni soat] LT [da]",
+          lastDay: "[Kecha soat] LT [da]",
+          lastWeek: "[O'tgan] dddd [kuni soat] LT [da]",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "Yaqin %s ichida",
+          past: "Bir necha %s oldin",
+          s: "soniya",
+          ss: "%d soniya",
+          m: "bir daqiqa",
+          mm: "%d daqiqa",
+          h: "bir soat",
+          hh: "%d soat",
+          d: "bir kun",
+          dd: "%d kun",
+          M: "bir oy",
+          MM: "%d oy",
+          y: "bir yil",
+          yy: "%d yil"
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return uzLatn;
+    });
+  }
+});
+
 // src/uz-latn.js
 var import_moment = __toModule(require_moment());
+var import_uz_latn = __toModule(require_uz_latn());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("uz-latn");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3796,11 @@ var module_default = uz_latn_default;
 export {
   module_default as default
 };
+//! author : Rasulbek Mirzayev : github.com/Rasulbeeek
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Uzbek Latin [uz-latn]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

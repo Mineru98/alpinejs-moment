@@ -3724,6 +3724,68 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/pt.js
+var require_pt = __commonJS({
+  "node_modules/moment/locale/pt.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var pt = moment2.defineLocale("pt", {
+        months: "janeiro_fevereiro_mar\xE7o_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro".split("_"),
+        monthsShort: "jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez".split("_"),
+        weekdays: "Domingo_Segunda-feira_Ter\xE7a-feira_Quarta-feira_Quinta-feira_Sexta-feira_S\xE1bado".split("_"),
+        weekdaysShort: "Dom_Seg_Ter_Qua_Qui_Sex_S\xE1b".split("_"),
+        weekdaysMin: "Do_2\xAA_3\xAA_4\xAA_5\xAA_6\xAA_S\xE1".split("_"),
+        weekdaysParseExact: true,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D [de] MMMM [de] YYYY",
+          LLL: "D [de] MMMM [de] YYYY HH:mm",
+          LLLL: "dddd, D [de] MMMM [de] YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Hoje \xE0s] LT",
+          nextDay: "[Amanh\xE3 \xE0s] LT",
+          nextWeek: "dddd [\xE0s] LT",
+          lastDay: "[Ontem \xE0s] LT",
+          lastWeek: function() {
+            return this.day() === 0 || this.day() === 6 ? "[\xDAltimo] dddd [\xE0s] LT" : "[\xDAltima] dddd [\xE0s] LT";
+          },
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "em %s",
+          past: "h\xE1 %s",
+          s: "segundos",
+          ss: "%d segundos",
+          m: "um minuto",
+          mm: "%d minutos",
+          h: "uma hora",
+          hh: "%d horas",
+          d: "um dia",
+          dd: "%d dias",
+          w: "uma semana",
+          ww: "%d semanas",
+          M: "um m\xEAs",
+          MM: "%d meses",
+          y: "um ano",
+          yy: "%d anos"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}º/,
+        ordinal: "%d\xBA",
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return pt;
+    });
+  }
+});
+
 // builds/pt/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3793,9 @@ __export(exports, {
 
 // src/pt.js
 var import_moment = __toModule(require_moment());
+var import_pt = __toModule(require_pt());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("pt");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3805,11 @@ var pt_default = Plugin;
 var module_default = pt_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Jefferson : https://github.com/jalex79
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Portuguese [pt]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

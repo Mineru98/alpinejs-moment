@@ -3726,11 +3726,71 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/tet.js
+var require_tet = __commonJS({
+  "node_modules/moment/locale/tet.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var tet = moment2.defineLocale("tet", {
+        months: "Janeiru_Fevereiru_Marsu_Abril_Maiu_Ju\xF1u_Jullu_Agustu_Setembru_Outubru_Novembru_Dezembru".split("_"),
+        monthsShort: "Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez".split("_"),
+        weekdays: "Domingu_Segunda_Tersa_Kuarta_Kinta_Sesta_Sabadu".split("_"),
+        weekdaysShort: "Dom_Seg_Ters_Kua_Kint_Sest_Sab".split("_"),
+        weekdaysMin: "Do_Seg_Te_Ku_Ki_Ses_Sa".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd, D MMMM YYYY HH:mm"
+        },
+        calendar: {
+          sameDay: "[Ohin iha] LT",
+          nextDay: "[Aban iha] LT",
+          nextWeek: "dddd [iha] LT",
+          lastDay: "[Horiseik iha] LT",
+          lastWeek: "dddd [semana kotuk] [iha] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "iha %s",
+          past: "%s liuba",
+          s: "segundu balun",
+          ss: "segundu %d",
+          m: "minutu ida",
+          mm: "minutu %d",
+          h: "oras ida",
+          hh: "oras %d",
+          d: "loron ida",
+          dd: "loron %d",
+          M: "fulan ida",
+          MM: "fulan %d",
+          y: "tinan ida",
+          yy: "tinan %d"
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
+        ordinal: function(number) {
+          var b = number % 10, output = ~~(number % 100 / 10) === 1 ? "th" : b === 1 ? "st" : b === 2 ? "nd" : b === 3 ? "rd" : "th";
+          return number + output;
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return tet;
+    });
+  }
+});
+
 // src/tet.js
 var import_moment = __toModule(require_moment());
+var import_tet = __toModule(require_tet());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("tet");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3801,13 @@ var module_default = tet_default;
 export {
   module_default as default
 };
+//! author : Joshua Brooks : https://github.com/joshbrooks
+//! author : Onorio De J. Afonso : https://github.com/marobo
+//! author : Sonia Simoes : https://github.com/soniasimoes
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Tetun Dili (East Timor) [tet]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

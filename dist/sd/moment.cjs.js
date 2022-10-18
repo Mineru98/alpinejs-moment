@@ -3724,6 +3724,91 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/sd.js
+var require_sd = __commonJS({
+  "node_modules/moment/locale/sd.js"(exports, module2) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module2 !== "undefined" && typeof require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      var months = [
+        "\u062C\u0646\u0648\u0631\u064A",
+        "\u0641\u064A\u0628\u0631\u0648\u0631\u064A",
+        "\u0645\u0627\u0631\u0686",
+        "\u0627\u067E\u0631\u064A\u0644",
+        "\u0645\u0626\u064A",
+        "\u062C\u0648\u0646",
+        "\u062C\u0648\u0644\u0627\u0621\u0650",
+        "\u0622\u06AF\u0633\u067D",
+        "\u0633\u064A\u067E\u067D\u0645\u0628\u0631",
+        "\u0622\u06AA\u067D\u0648\u0628\u0631",
+        "\u0646\u0648\u0645\u0628\u0631",
+        "\u068A\u0633\u0645\u0628\u0631"
+      ], days = ["\u0622\u0686\u0631", "\u0633\u0648\u0645\u0631", "\u0627\u06B1\u0627\u0631\u0648", "\u0627\u0631\u0628\u0639", "\u062E\u0645\u064A\u0633", "\u062C\u0645\u0639", "\u0687\u0646\u0687\u0631"];
+      var sd = moment2.defineLocale("sd", {
+        months,
+        monthsShort: months,
+        weekdays: days,
+        weekdaysShort: days,
+        weekdaysMin: days,
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD/MM/YYYY",
+          LL: "D MMMM YYYY",
+          LLL: "D MMMM YYYY HH:mm",
+          LLLL: "dddd\u060C D MMMM YYYY HH:mm"
+        },
+        meridiemParse: /صبح|شام/,
+        isPM: function(input) {
+          return input === "\u0634\u0627\u0645";
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 12) {
+            return "\u0635\u0628\u062D";
+          }
+          return "\u0634\u0627\u0645";
+        },
+        calendar: {
+          sameDay: "[\u0627\u0684] LT",
+          nextDay: "[\u0633\u0680\u0627\u06BB\u064A] LT",
+          nextWeek: "dddd [\u0627\u06B3\u064A\u0646 \u0647\u0641\u062A\u064A \u062A\u064A] LT",
+          lastDay: "[\u06AA\u0627\u0644\u0647\u0647] LT",
+          lastWeek: "[\u06AF\u0632\u0631\u064A\u0644 \u0647\u0641\u062A\u064A] dddd [\u062A\u064A] LT",
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "%s \u067E\u0648\u0621",
+          past: "%s \u0627\u06B3",
+          s: "\u0686\u0646\u062F \u0633\u064A\u06AA\u0646\u068A",
+          ss: "%d \u0633\u064A\u06AA\u0646\u068A",
+          m: "\u0647\u06AA \u0645\u0646\u067D",
+          mm: "%d \u0645\u0646\u067D",
+          h: "\u0647\u06AA \u06AA\u0644\u0627\u06AA",
+          hh: "%d \u06AA\u0644\u0627\u06AA",
+          d: "\u0647\u06AA \u068F\u064A\u0646\u0647\u0646",
+          dd: "%d \u068F\u064A\u0646\u0647\u0646",
+          M: "\u0647\u06AA \u0645\u0647\u064A\u0646\u0648",
+          MM: "%d \u0645\u0647\u064A\u0646\u0627",
+          y: "\u0647\u06AA \u0633\u0627\u0644",
+          yy: "%d \u0633\u0627\u0644"
+        },
+        preparse: function(string) {
+          return string.replace(/،/g, ",");
+        },
+        postformat: function(string) {
+          return string.replace(/,/g, "\u060C");
+        },
+        week: {
+          dow: 1,
+          doy: 4
+        }
+      });
+      return sd;
+    });
+  }
+});
+
 // builds/sd/module.js
 __export(exports, {
   default: () => module_default
@@ -3731,9 +3816,9 @@ __export(exports, {
 
 // src/sd.js
 var import_moment = __toModule(require_moment());
+var import_sd = __toModule(require_sd());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("sd");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3743,8 +3828,11 @@ var sd_default = Plugin;
 var module_default = sd_default;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {});
+//! author : Narain Sagar : https://github.com/narainsagar
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Sindhi [sd]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4

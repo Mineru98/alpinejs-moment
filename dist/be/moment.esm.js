@@ -3726,11 +3726,137 @@ var require_moment = __commonJS({
   }
 });
 
+// node_modules/moment/locale/be.js
+var require_be = __commonJS({
+  "node_modules/moment/locale/be.js"(exports, module) {
+    (function(global, factory) {
+      typeof exports === "object" && typeof module !== "undefined" && typeof __require === "function" ? factory(require_moment()) : typeof define === "function" && define.amd ? define(["../moment"], factory) : factory(global.moment);
+    })(exports, function(moment2) {
+      "use strict";
+      function plural(word, num) {
+        var forms = word.split("_");
+        return num % 10 === 1 && num % 100 !== 11 ? forms[0] : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2];
+      }
+      function relativeTimeWithPlural(number, withoutSuffix, key) {
+        var format = {
+          ss: withoutSuffix ? "\u0441\u0435\u043A\u0443\u043D\u0434\u0430_\u0441\u0435\u043A\u0443\u043D\u0434\u044B_\u0441\u0435\u043A\u0443\u043D\u0434" : "\u0441\u0435\u043A\u0443\u043D\u0434\u0443_\u0441\u0435\u043A\u0443\u043D\u0434\u044B_\u0441\u0435\u043A\u0443\u043D\u0434",
+          mm: withoutSuffix ? "\u0445\u0432\u0456\u043B\u0456\u043D\u0430_\u0445\u0432\u0456\u043B\u0456\u043D\u044B_\u0445\u0432\u0456\u043B\u0456\u043D" : "\u0445\u0432\u0456\u043B\u0456\u043D\u0443_\u0445\u0432\u0456\u043B\u0456\u043D\u044B_\u0445\u0432\u0456\u043B\u0456\u043D",
+          hh: withoutSuffix ? "\u0433\u0430\u0434\u0437\u0456\u043D\u0430_\u0433\u0430\u0434\u0437\u0456\u043D\u044B_\u0433\u0430\u0434\u0437\u0456\u043D" : "\u0433\u0430\u0434\u0437\u0456\u043D\u0443_\u0433\u0430\u0434\u0437\u0456\u043D\u044B_\u0433\u0430\u0434\u0437\u0456\u043D",
+          dd: "\u0434\u0437\u0435\u043D\u044C_\u0434\u043D\u0456_\u0434\u0437\u0451\u043D",
+          MM: "\u043C\u0435\u0441\u044F\u0446_\u043C\u0435\u0441\u044F\u0446\u044B_\u043C\u0435\u0441\u044F\u0446\u0430\u045E",
+          yy: "\u0433\u043E\u0434_\u0433\u0430\u0434\u044B_\u0433\u0430\u0434\u043E\u045E"
+        };
+        if (key === "m") {
+          return withoutSuffix ? "\u0445\u0432\u0456\u043B\u0456\u043D\u0430" : "\u0445\u0432\u0456\u043B\u0456\u043D\u0443";
+        } else if (key === "h") {
+          return withoutSuffix ? "\u0433\u0430\u0434\u0437\u0456\u043D\u0430" : "\u0433\u0430\u0434\u0437\u0456\u043D\u0443";
+        } else {
+          return number + " " + plural(format[key], +number);
+        }
+      }
+      var be = moment2.defineLocale("be", {
+        months: {
+          format: "\u0441\u0442\u0443\u0434\u0437\u0435\u043D\u044F_\u043B\u044E\u0442\u0430\u0433\u0430_\u0441\u0430\u043A\u0430\u0432\u0456\u043A\u0430_\u043A\u0440\u0430\u0441\u0430\u0432\u0456\u043A\u0430_\u0442\u0440\u0430\u045E\u043D\u044F_\u0447\u044D\u0440\u0432\u0435\u043D\u044F_\u043B\u0456\u043F\u0435\u043D\u044F_\u0436\u043D\u0456\u045E\u043D\u044F_\u0432\u0435\u0440\u0430\u0441\u043D\u044F_\u043A\u0430\u0441\u0442\u0440\u044B\u0447\u043D\u0456\u043A\u0430_\u043B\u0456\u0441\u0442\u0430\u043F\u0430\u0434\u0430_\u0441\u043D\u0435\u0436\u043D\u044F".split("_"),
+          standalone: "\u0441\u0442\u0443\u0434\u0437\u0435\u043D\u044C_\u043B\u044E\u0442\u044B_\u0441\u0430\u043A\u0430\u0432\u0456\u043A_\u043A\u0440\u0430\u0441\u0430\u0432\u0456\u043A_\u0442\u0440\u0430\u0432\u0435\u043D\u044C_\u0447\u044D\u0440\u0432\u0435\u043D\u044C_\u043B\u0456\u043F\u0435\u043D\u044C_\u0436\u043D\u0456\u0432\u0435\u043D\u044C_\u0432\u0435\u0440\u0430\u0441\u0435\u043D\u044C_\u043A\u0430\u0441\u0442\u0440\u044B\u0447\u043D\u0456\u043A_\u043B\u0456\u0441\u0442\u0430\u043F\u0430\u0434_\u0441\u043D\u0435\u0436\u0430\u043D\u044C".split("_")
+        },
+        monthsShort: "\u0441\u0442\u0443\u0434_\u043B\u044E\u0442_\u0441\u0430\u043A_\u043A\u0440\u0430\u0441_\u0442\u0440\u0430\u0432_\u0447\u044D\u0440\u0432_\u043B\u0456\u043F_\u0436\u043D\u0456\u0432_\u0432\u0435\u0440_\u043A\u0430\u0441\u0442_\u043B\u0456\u0441\u0442_\u0441\u043D\u0435\u0436".split("_"),
+        weekdays: {
+          format: "\u043D\u044F\u0434\u0437\u0435\u043B\u044E_\u043F\u0430\u043D\u044F\u0434\u0437\u0435\u043B\u0430\u043A_\u0430\u045E\u0442\u043E\u0440\u0430\u043A_\u0441\u0435\u0440\u0430\u0434\u0443_\u0447\u0430\u0446\u0432\u0435\u0440_\u043F\u044F\u0442\u043D\u0456\u0446\u0443_\u0441\u0443\u0431\u043E\u0442\u0443".split("_"),
+          standalone: "\u043D\u044F\u0434\u0437\u0435\u043B\u044F_\u043F\u0430\u043D\u044F\u0434\u0437\u0435\u043B\u0430\u043A_\u0430\u045E\u0442\u043E\u0440\u0430\u043A_\u0441\u0435\u0440\u0430\u0434\u0430_\u0447\u0430\u0446\u0432\u0435\u0440_\u043F\u044F\u0442\u043D\u0456\u0446\u0430_\u0441\u0443\u0431\u043E\u0442\u0430".split("_"),
+          isFormat: /\[ ?[Ууў] ?(?:мінулую|наступную)? ?\] ?dddd/
+        },
+        weekdaysShort: "\u043D\u0434_\u043F\u043D_\u0430\u0442_\u0441\u0440_\u0447\u0446_\u043F\u0442_\u0441\u0431".split("_"),
+        weekdaysMin: "\u043D\u0434_\u043F\u043D_\u0430\u0442_\u0441\u0440_\u0447\u0446_\u043F\u0442_\u0441\u0431".split("_"),
+        longDateFormat: {
+          LT: "HH:mm",
+          LTS: "HH:mm:ss",
+          L: "DD.MM.YYYY",
+          LL: "D MMMM YYYY \u0433.",
+          LLL: "D MMMM YYYY \u0433., HH:mm",
+          LLLL: "dddd, D MMMM YYYY \u0433., HH:mm"
+        },
+        calendar: {
+          sameDay: "[\u0421\u0451\u043D\u043D\u044F \u045E] LT",
+          nextDay: "[\u0417\u0430\u045E\u0442\u0440\u0430 \u045E] LT",
+          lastDay: "[\u0423\u0447\u043E\u0440\u0430 \u045E] LT",
+          nextWeek: function() {
+            return "[\u0423] dddd [\u045E] LT";
+          },
+          lastWeek: function() {
+            switch (this.day()) {
+              case 0:
+              case 3:
+              case 5:
+              case 6:
+                return "[\u0423 \u043C\u0456\u043D\u0443\u043B\u0443\u044E] dddd [\u045E] LT";
+              case 1:
+              case 2:
+              case 4:
+                return "[\u0423 \u043C\u0456\u043D\u0443\u043B\u044B] dddd [\u045E] LT";
+            }
+          },
+          sameElse: "L"
+        },
+        relativeTime: {
+          future: "\u043F\u0440\u0430\u0437 %s",
+          past: "%s \u0442\u0430\u043C\u0443",
+          s: "\u043D\u0435\u043A\u0430\u043B\u044C\u043A\u0456 \u0441\u0435\u043A\u0443\u043D\u0434",
+          m: relativeTimeWithPlural,
+          mm: relativeTimeWithPlural,
+          h: relativeTimeWithPlural,
+          hh: relativeTimeWithPlural,
+          d: "\u0434\u0437\u0435\u043D\u044C",
+          dd: relativeTimeWithPlural,
+          M: "\u043C\u0435\u0441\u044F\u0446",
+          MM: relativeTimeWithPlural,
+          y: "\u0433\u043E\u0434",
+          yy: relativeTimeWithPlural
+        },
+        meridiemParse: /ночы|раніцы|дня|вечара/,
+        isPM: function(input) {
+          return /^(дня|вечара)$/.test(input);
+        },
+        meridiem: function(hour, minute, isLower) {
+          if (hour < 4) {
+            return "\u043D\u043E\u0447\u044B";
+          } else if (hour < 12) {
+            return "\u0440\u0430\u043D\u0456\u0446\u044B";
+          } else if (hour < 17) {
+            return "\u0434\u043D\u044F";
+          } else {
+            return "\u0432\u0435\u0447\u0430\u0440\u0430";
+          }
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}-(і|ы|га)/,
+        ordinal: function(number, period) {
+          switch (period) {
+            case "M":
+            case "d":
+            case "DDD":
+            case "w":
+            case "W":
+              return (number % 10 === 2 || number % 10 === 3) && number % 100 !== 12 && number % 100 !== 13 ? number + "-\u0456" : number + "-\u044B";
+            case "D":
+              return number + "-\u0433\u0430";
+            default:
+              return number;
+          }
+        },
+        week: {
+          dow: 1,
+          doy: 7
+        }
+      });
+      return be;
+    });
+  }
+});
+
 // src/be.js
 var import_moment = __toModule(require_moment());
+var import_be = __toModule(require_be());
 var Plugin = function(Alpine) {
   Alpine.magic("moment", () => {
-    import_moment.default.locale("be");
     return (value) => (0, import_moment.default)(value);
   });
 };
@@ -3741,8 +3867,13 @@ var module_default = be_default;
 export {
   module_default as default
 };
+//! Author : Menelion Elensúle : https://github.com/Oire
+//! author : Dmitry Demidov : https://github.com/demidov91
+//! author: Praleska: http://praleska.pro/
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
+//! locale : Belarusian [be]
 //! moment.js
+//! moment.js locale configuration
 //! momentjs.com
 //! version : 2.29.4
