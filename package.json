@@ -1,17 +1,19 @@
 {
-  "name": "@victoryoalli/alpinejs-plugin-blueprint",
-  "version": "1.0.0",
-  "description": "Super alpine.js plugin",
-  "main": "dist/plugin.cjs.js",
-  "module": "dist/plugin.esm.js",
-  "unpkg": "dist/plugin.min.js",
-  "keywords": [],
-  "author": "Victor Yoalli",
-  "license": "MIT",
-  "dependencies": {
-    "esbuild": "^0.12.22"
-  },
-  "scripts": {
-    "build": "node scripts/build.js"
-  }
+    "name": "@Mineru98/alpinejs-moment",
+    "version": "1.0.0",
+    "description": "An alpine.js magic helper plugin wrapper for moment.js + locale",
+    "author": "iamiks <rmstjr1030@naver.com>",
+    "main": "dist/moment.cjs.js",
+    "module": "dist/moment.esm.js",
+    "unpkg": "dist/moment.min.js",
+    "keywords": [],
+    "license": "MIT",
+    "dependencies": {
+        "esbuild": "^0.12.22",
+        "moment": "^2.29.4"
+    },
+    "scripts": {
+        "prebuild": "node scripts/prebuild.js",
+        "build": "node scripts/build.js"
+    }
 }
