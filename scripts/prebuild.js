@@ -180,7 +180,7 @@ for (let i = 0; i < locales.length; i++) {
 let build_input = `//CDN
 build({
     entryPoints: ["builds/cdn.js"],
-    outfile: "dist/plugin.min.js",
+    outfile: "dist/moment.min.js",
     bundle: true,
     minify: true,
     sourcemap: false,
@@ -192,7 +192,7 @@ build({
 for (let i = 0; i < locales.length; i++) {
     build_input += `build({
     entryPoints: ["builds/${locales[i]}/cdn.js"],
-    outfile: "dist/${locales[i]}/plugin.min.js",
+    outfile: "dist/${locales[i]}/moment.min.js",
     bundle: true,
     minify: true,
     sourcemap: false,
@@ -205,7 +205,7 @@ for (let i = 0; i < locales.length; i++) {
 build_input += `//Module
 build({
     entryPoints: ["builds/module.js"],
-    outfile: "dist/plugin.esm.js",
+    outfile: "dist/moment.esm.js",
     bundle: true,
     bundle: true,
     platform: "neutral",
@@ -213,7 +213,7 @@ build({
 });
 build({
     entryPoints: ["builds/module.js"],
-    outfile: "dist/plugin.cjs.js",
+    outfile: "dist/moment.cjs.js",
     bundle: true,
     target: ["node10.4"],
     platform: "node",
@@ -223,7 +223,7 @@ build({
 for (let i = 0; i < locales.length; i++) {
     build_input += `build({
     entryPoints: ["builds/${locales[i]}/module.js"],
-    outfile: "dist/${locales[i]}/plugin.esm.js",
+    outfile: "dist/${locales[i]}/moment.esm.js",
     bundle: true,
     bundle: true,
     platform: "neutral",
@@ -231,7 +231,7 @@ for (let i = 0; i < locales.length; i++) {
 });
 build({
     entryPoints: ["builds/${locales[i]}/module.js"],
-    outfile: "dist/${locales[i]}/plugin.cjs.js",
+    outfile: "dist/${locales[i]}/moment.cjs.js",
     bundle: true,
     target: ["node10.4"],
     platform: "node",

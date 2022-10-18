@@ -1,6 +1,6 @@
 {
     "name": "@mineru98/alpinejs-moment",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An alpine.js magic helper plugin wrapper for moment.js + locale",
     "author": "iamiks <rmstjr1030@naver.com>",
     "main": "dist/moment.cjs.js",
